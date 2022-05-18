@@ -297,16 +297,10 @@ paths:
                       - lannister
                       - chargeback
       parameters:
-        - name: Content-Type
-          in: header
+        - name: requests
+          in: body
           schema:
-            type: string
-          example: application/json
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
+            type: application/json
       responses:
         '200':
           description: OK
@@ -382,11 +376,83 @@ paths:
         Here you can list and filter all Pix Requests you have made. We return
         it paged.
       parameters:
-        - name: version
-          in: path
+        - name: cursor
+          in: query
+          description: String used to get the next batch of results.
+          required: false
           schema:
             type: string
-          required: true
+            format: byte
+        - name: limit
+          in: query
+          description: Number of results per cursor. Max = 100.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: after
+          in: query
+          description: Filter entities created after this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: before
+          in: query
+          description: Filter entities created before this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: status
+          in: query
+          description: Filter entities by the specified status.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: tags
+          in: query
+          description: Filter entities that contain the specified tags.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: ids
+          in: query
+          description: List of strings to get specific entities by their ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: externalIds
+          in: query
+          description: List of strings to get specific entities by externalIds.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: endToEndIds
+          in: query
+          description: List of strings to get specific entities by endToEndIds.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -490,17 +556,21 @@ paths:
       summary: Get pix request by ID
       description: Get a single Pix Request by its id.
       parameters:
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
         - name: requestId
           in: path
+          description: Entity unique identifier.
+          required: true
           schema:
             type: string
-          required: true
-          description: (Required) Object's unique identifier.
+            format: '^\d{16}$'
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -576,11 +646,67 @@ paths:
         Get a paged list of all Pix Request Logs. A log tracks a change a Pix
         Request entity according to its life cycle.
       parameters:
-        - name: version
-          in: path
+        - name: cursor
+          in: query
+          description: String used to get the next batch of results.
+          required: false
           schema:
             type: string
-          required: true
+            format: byte
+        - name: limit
+          in: query
+          description: Number of results per cursor. Max = 100.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: after
+          in: query
+          description: Filter entities created after this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: before
+          in: query
+          description: Filter entities created before this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: types
+          in: query
+          description: Filter logs by log types.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: requestIds
+          in: query
+          description: List of strings to get specific logs by their Pix Request ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: reconciliationId
+          in: query
+          description: Filter entities by their reconciliation ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -4160,17 +4286,21 @@ paths:
       summary: Get pix request log by ID
       description: Get a single Pix Request Log by its id.
       parameters:
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
         - name: logId
           in: path
+          description: Entity unique identifier.
+          required: true
           schema:
             type: string
-          required: true
-          description: (Required) Object's unique identifier.
+            format: '^\d{16}$'
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -4286,16 +4416,10 @@ paths:
                       - lannister
                       - chargeback
       parameters:
-        - name: Content-Type
-          in: header
+        - name: reversals
+          in: body
           schema:
-            type: string
-          example: application/json
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
+            type: application/json
       responses:
         '200':
           description: OK
@@ -4353,11 +4477,83 @@ paths:
         Here you can list and filter all Pix Reversals you have made. We return
         it paged.
       parameters:
-        - name: version
-          in: path
+        - name: cursor
+          in: query
+          description: String used to get the next batch of results.
+          required: false
           schema:
             type: string
-          required: true
+            format: byte
+        - name: limit
+          in: query
+          description: Number of results per cursor. Max = 100.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: after
+          in: query
+          description: Filter entities created after this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: before
+          in: query
+          description: Filter entities created before this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: status
+          in: query
+          description: Filter entities by the specified status.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: tags
+          in: query
+          description: Filter entities that contain the specified tags.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: ids
+          in: query
+          description: List of strings to get specific entities by their ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: returnIds
+          in: query
+          description: List of strings to get specific entities by returnIds.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: externalIds
+          in: query
+          description: List of strings to get specific entities by externalIds.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -4425,17 +4621,21 @@ paths:
       summary: Get pix reversal by ID
       description: Get a single Pix Reversal by its id.
       parameters:
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
         - name: reversalId
           in: path
+          description: Entity unique identifier.
+          required: true
           schema:
             type: string
-          required: true
-          description: (Required) Object's unique identifier.
+            format: '^\d{16}$'
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -4491,11 +4691,59 @@ paths:
         Get a paged list of all Pix Reversal Logs. A log tracks a change in the
         Pix Request Logs entity according to its life cycle.
       parameters:
-        - name: version
-          in: path
+        - name:
+          in: query
+          description: String used to get the next batch of results.
+          required: false
           schema:
             type: string
-          required: true
+            format: byte
+        - name: limit
+          in: query
+          description: Number of results per cursor. Max = 100.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: after
+          in: query
+          description: Filter entities created after this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: before
+          in: query
+          description: Filter entities created before this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: types
+          in: query
+          description: Filter logs by log types.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: reversalIds
+          in: query
+          description: List of strings to get specific logs by their Pix Reversal ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -4573,17 +4821,21 @@ paths:
       summary: Get pix reversal log by ID
       description: Get a single Pix Reversal Log by its id.
       parameters:
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
         - name: logId
           in: path
+          description: Entity unique identifier.
+          required: true
           schema:
             type: string
-          required: true
-          description: (Required) Object's unique identifier.
+            format: '^\d{16}$'
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -4641,17 +4893,6 @@ paths:
         - Pix > Pix Balance
       summary: List balances
       description: Get the current Pix Balance in your workspace.
-      parameters:
-        - name: Content-Type
-          in: header
-          schema:
-            type: string
-          example: application/json
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
       responses:
         '200':
           description: OK
@@ -4727,16 +4968,10 @@ paths:
                 before: '2022-01-01'
                 type: interchange
       parameters:
-        - name: Content-Type
-          in: header
+        - name: statement
+          in: body
           schema:
-            type: string
-          example: application/json
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
+            type: application/json
       responses:
         '200':
           description: OK
@@ -4786,16 +5021,37 @@ paths:
         Here you can list and filter all Pix Statements you have created. We
         return it paged.
       parameters:
-        - name: Content-Type
-          in: header
+        - name: cursor
+          in: query
+          description: String used to get the next batch of results.
+          required: false
           schema:
             type: string
-          example: application/json
-        - name: version
-          in: path
+            format: byte
+        - name: limit
+          in: query
+          description: Number of results per cursor. Max = 100.
+          required: false
           schema:
-            type: string
-          required: true
+            type: integer
+            minimum: 1
+            maximum: 100
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: ids
+          in: query
+          description: List of strings to get specific entities by their ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -4855,17 +5111,21 @@ paths:
         Retrieve a specific Pix Statement that was previously created by it's
         id.
       parameters:
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
         - name: statementId
           in: path
+          description: Entity unique identifier.
+          required: true
           schema:
             type: string
-          required: true
-          description: (Required) Object's unique identifier.
+            format: '^\d{16}$'
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
       responses:
         '200':
           description: OK
@@ -4916,56 +5176,21 @@ paths:
         Download a specific Pix Statement in CSV format. You can only download a
         Pix Statement after its status has changed to "success".
       parameters:
-        - name: version
-          in: path
-          schema:
-            type: string
-          required: true
         - name: statementId
           in: path
+          description: Entity unique identifier.
+          required: true
           schema:
             type: string
-          required: true
-          description: (Required) Object's unique identifier.
+            format: '^\d{16}$'
       responses:
         '200':
-          description: OK
-          headers:
-            content-type:
-              schema:
-                type: string
-                example: application/gzip
-            content-disposition:
-              schema:
-                type: number
-                example: >-
-                  attachment; filename=pix-statement - 2022-01-01T03:00:00+00:00
-                  to 2022-01-02T02:59:59.999999+00:00
-            x-cloud-trace-context:
-              schema:
-                type: string
-                example: 729475504557947e03a6ab3463cc1686;o=1
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Date:
-              schema:
-                type: string
-                example: Tue, 17 May 2022 21:39:11 GMT
-            Server:
-              schema:
-                type: string
-                example: Google Frontend
-            Content-Length:
-              schema:
-                type: integer
-                example: '330'
+          description: Pix Statement .zip receipt blob
           content:
-            text/plain:
+            application/json:
               schema:
                 type: string
-              example: "PK\x03\x04\x14\0\b\b\b\0�zvT\0\0\0\0\0\0\0\0\0\0\0\0\x17\0\0\0RELACAO_LANCAMENTOS.CSV]��j�@\fD��\x16����`h��C���Ĉڒ�j\x03���C{�E���𺔬j\f\x19\x1Ar��!�ԭ\a�ޑ%.��\x184\x1F�9M�QKo\x19�j�#:_8@7^*�i�\x12^�1t�}�|�vN�_��v��\x04�/���\x04\x1ATB���#{��D�@77�?��ot�\\\x10�����\e�\f�\x03���O^q2��\x0FIx�\x03\v��7+x�\x05PK\a\b��Z��\0\0\0\e\x01\0\0PK\x01\x02\x14\0\x14\0\b\b\b\0�zvT��Z��\0\0\0\e\x01\0\0\x17\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0RELACAO_LANCAMENTOS.CSVPK\x05\x06\0\0\0\0\x01\0\x01\0E\0\0\0�\0\0\0\0\0"
+                format: binary
   /{version}/pix-key:
     post:
       tags:

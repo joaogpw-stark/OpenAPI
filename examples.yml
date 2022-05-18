@@ -1,0 +1,179 @@
+        - name: requests
+          in: body
+          schema:
+            type: application/json
+
+------------------------------------------------------------------------------------------------------------------------
+
+        - name: cursor
+          in: query
+          description: String used to get the next batch of results.
+          required: false
+          schema:
+            type: string
+            format: byte
+        - name: limit
+          in: query
+          description: Number of results per cursor. Max = 100.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: after
+          in: query
+          description: Filter entities created after this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: before
+          in: query
+          description: Filter entities created before this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: status
+          in: query
+          description: Filter entities by the specified status.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: tags
+          in: query
+          description: Filter entities that contain the specified tags.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: ids
+          in: query
+          description: List of strings to get specific entities by their ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: returnIds
+          in: query
+          description: List of strings to get specific entities by returnIds.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: externalIds
+          in: query
+          description: List of strings to get specific entities by externalIds.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+
+------------------------------------------------------------------------------------------------------------------------
+
+        - name: <>Id
+          in: path
+          description: Entity unique identifier.
+          required: true
+          schema:
+            type: string
+            format: '^\d{16}$'
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+
+------------------------------------------------------------------------------------------------------------------------
+
+        - name: cursor
+          in: query
+          description: String used to get the next batch of results.
+          required: false
+          schema:
+            type: string
+            format: byte
+        - name: limit
+          in: query
+          description: Number of results per cursor. Max = 100.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: after
+          in: query
+          description: Filter entities created after this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: before
+          in: query
+          description: Filter entities created before this date.
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: types
+          in: query
+          description: Filter logs by log types.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: reversalIds
+          in: query
+          description: List of strings to get specific logs by their Pix Reversal ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+------------------------------------------------------------------------------------------------------------------------
+
+        - name: logId
+          in: path
+          description: Entity unique identifier.
+          required: true
+          schema:
+            type: string
+            format: '^\d{16}$'
+        - name: fields
+          in: query
+          description: List of strings to filter response JSON keys.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+
+NOTES:
+
+- parou na linha 5193, antes de começar o pix statement
