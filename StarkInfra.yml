@@ -1,15 +1,20 @@
 openapi: 3.0.0
 info:
   title: Stark Infra API
-  description: |-
-    Stark Infra API for financial services in Brazil
-
-    Contact Support:  
-    Name: Stark Developers  
-    Email: [help@starkbank.com](mailto:developers@starkbank.com)
   version: v2
+  description: Stark Infra API for financial services in Brazil
+  contact:
+    email: developers@starkinfra.com
+    name: Stark Infra Developers
+    url: 'https://starkinfra.com'
+  license:
+    name: Stark Infra License
+externalDocs:
+  url: 'https://starkinfra.com/docs/api'
+  description: StarkInfra API documentation
 servers:
-  - url: http://{{baseinfraurl}}
+  - url: 'https://sandbox.api.starkinfra.com/'
+  - url: 'https://api.starkinfra.com/'
 tags:
   - name: Pix
   - name: Pix > Pix Request
