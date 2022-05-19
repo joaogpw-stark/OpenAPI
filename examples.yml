@@ -42,17 +42,31 @@
           schema:
             type: string
             format: date
-        - name: status
+        - name: eventlIds
           in: query
-          description: Filter entities by the specified status.
+          description: List of strings to get specific entities by Event ids.
           required: false
           schema:
             type: array
             items:
               type: string
+        - name: webhookIds
+          in: query
+          description: List of strings to get specific entities by Webhook ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: isDelivered
+          in: query
+          description: If false, only gets events that haven't been delivered. If true, only gets events that have already been delivered.
+          required: false
+          schema:
+            type: boolean
         - name: tags
           in: query
-          description: Filter entities that contain the specified tags.
+          description: List of strings to get specific entities by their tags.
           required: false
           schema:
             type: array
@@ -66,6 +80,36 @@
             type: array
             items:
               type: string
+        - name: holderIds
+          in: query
+          description: List of strings to filter Issuing Purchases by cardholder's ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: cardIds
+          in: query
+          description: List of strings to filter Issuing Purchases by Issuing Card ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: endToEndIds
+          in: query
+          description: List of strings to filter Issuing Purchases by endToEndIds.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: agent
+          in: query
+          description: Filter entities by their agent.
+          required: false
+          schema:
+            type: string
         - name: returnIds
           in: query
           description: List of strings to get specific entities by returnIds.
@@ -85,7 +129,7 @@
 
 ------------------------------------------------------------------------------------------------------------------------
 
-        - name: <>Id
+        - name: eventId
           in: path
           description: Entity unique identifier.
           required: true
@@ -148,9 +192,17 @@
             type: array
             items:
               type: string
-        - name: reversalIds
+        - name: chargebackIds
           in: query
-          description: List of strings to get specific logs by their Pix Reversal ids.
+          description: List of strings to get specific logs by their Pix Chargeback ids.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+        - name: ids
+          in: query
+          description: List of strings to get specific entities by their ids.
           required: false
           schema:
             type: array
@@ -174,6 +226,35 @@
             items:
               type: string
 
+--------------------------------------------------------------------------------------------------------
+
+        '400':
+          description: Input error
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                code: 400
+                message: Input error
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                code: 500
+                message: Huston, we have a problem
+
+
 NOTES:
 
-- parou na linha 5193, antes de começar o pix statement
+- Fix the patch 
+- How to describe create single and multi parameters?
+- Add errors
+- add ids to the creditnote log query? Not working -> dalton
+
+HOME:
+- fix the 2 comments from rafael
+- Add the missing parametes for the event attempt

@@ -1345,13 +1345,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Errors'
+                type: object
+              example:
+                code: 400
+                message: Input error
         '500':
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Errors'
+                type: object
+              example:
+                code: 500
+                message: Huston, we have a problem
         default:
           description: Unexpected error
   /boleto/{boletoId}:
