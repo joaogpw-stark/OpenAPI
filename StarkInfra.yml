@@ -270,38 +270,21 @@ paths:
         information. Options: "manual", "dict", "initiator", "dynamicQrcode",
         "staticQrcode" and "payerQrcode" |
       requestBody:
-        content:
+        ccontent:
           application/json:
             schema:
-              type: object
-              example:
-                requests:
-                  - amount: 10000
-                    cashAmount: 100
-                    cashierBankCode: '20018183'
-                    cashierType: merchant
-                    description: A Lannister always pays his debts
-                    endToEndId: E35547753202201201450u34sDGd19l2
-                    externalId: my_unique_id_2
-                    receiverAccountNumber: '00000'
-                    receiverAccountType: checking
-                    receiverBankCode: '20018183'
-                    receiverBranchCode: '0001'
-                    receiverName: Arya Stark
-                    receiverTaxId: 012.345.678-90
-                    senderAccountNumber: '00000'
-                    senderAccountType: checking
-                    senderBranchCode: '0000'
-                    senderName: jamie Lannister
-                    senderTaxId: 594.739.480-42
-                    tags:
-                      - lannister
-                      - chargeback
+              $ref: '#/components/schemas/Request'
       parameters:
-        - name: requests
-          in: body
+        - name: Content-Type
+          in: header
           schema:
-            type: application/json
+            type: string
+          example: application/json
+        - name: version
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: OK
@@ -962,10 +945,16 @@ paths:
                       - lannister
                       - chargeback
       parameters:
-        - name: reversals
-          in: body
+        - name: Content-Type
+          in: header
           schema:
-            type: application/json
+            type: string
+          example: application/json
+        - name: version
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: OK
@@ -1520,10 +1509,16 @@ paths:
                 before: '2022-01-01'
                 type: interchange
       parameters:
-        - name: statement
-          in: body
+        - name: Content-Type
+          in: header
           schema:
-            type: application/json
+            type: string
+          example: application/json
+        - name: version
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: OK
@@ -3273,10 +3268,16 @@ paths:
                   - referenceId: E20018183202201201450u34sDGd19lz
                     type: fraud
       parameters:
-        - name: infractions
-          in: body
+        - name: Content-Type
+          in: header
           schema:
-            type: application/json
+            type: string
+          example: application/json
+        - name: version
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: OK
@@ -3962,10 +3963,16 @@ paths:
                     reason: fraud
                     referenceId: E20018183202201201450u34sDGd19lz
       parameters:
-        - name: chargebacks
-          in: body
+        - name: Content-Type
+          in: header
           schema:
-            type: application/json
+            type: string
+          example: application/json
+        - name: version
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: OK
@@ -9618,3 +9625,114 @@ paths:
                     - credit-note
                     - signer
                   url: https://webhook.site/287d2ec8-bc67-4a1e-83b9-d3151ebfcfb7
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          readOnly: true
+        message:
+          type: string
+          readOnly: true
+    Errors:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
+    Request:
+      type: object
+      required:
+        - amount
+        - externalId
+        - senderName
+        - senderTaxId
+        - senderBranchCode
+        - senderAccountNumber
+        - senderAccountType
+        - receiverName
+        - receiverTaxId
+        - receiverBankCode
+        - receiverAccountNumber
+        - receiverBranchCode
+        - receiverAccountType
+        - endToEndId
+      properties:
+        amount:
+          type: integer
+        cashAmount:
+          type: string
+        cashierBankCode:
+          type: string
+        cashierType:
+          type: string
+        created:
+          type: string
+          format: date
+          readOnly: true
+        endToEndId:
+          type: string
+        external_id:
+          type: string
+        fee:
+          type: integer
+          readOnly: true
+        flow:
+          type: string
+          readOnly: true
+        id:
+          type: string
+          readOnly: true
+        initiatorTaxId:
+          type: string
+        method:
+          type: string
+        receiverAccountNumber:
+          type: string
+        receiverAccountType:
+          type: string
+        receiverBankCode:
+          type: string
+        receiverBranchCode:
+          type: string
+        receiverKeyId:
+          type: string
+        receiverName:
+          type: string
+        receiverTaxId:
+          type: string
+        reconciliation_id:
+          type: string
+        senderAccountNumber:
+          type: string
+        senderAccountType:
+          type: string
+        senderBankCode:
+          readOnly: true
+          type: string
+        senderBranchCode:
+          type: string
+        senderName:
+          type: string
+        senderTaxId:
+          type: string
+        status:
+          type: string
+          readOnly: true
+        tags:
+          items:
+            type: string
+        updated:
+          type: string
+          format: date
+          readOnly: true
+    Requests:
+      type: object
+      properties:
+        requests:
+          type: array
+          items:
+            $ref: '#/components/schemas/Request'

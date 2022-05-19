@@ -247,13 +247,181 @@
                 code: 500
                 message: Huston, we have a problem
 
+----------------------------------------------------------------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+    Reversal:
+      type: object
+      required:
+        - amount
+        - externalId
+        - endToEndId
+        - reason
+      properties:
+        amount:
+          type: integer
+        bankCode:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        externalId:
+          type: string
+        endToEndId:
+          type: string
+        fee:
+          type: integer
+          readOnly: true
+        flow:
+          type: string
+          readOnly: true
+        ids:
+          type: string
+          readOnly: true
+        reason:
+          type: string
+        returnId:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        tags:
+          items:
+            type: string
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Reversals:
+      type: object
+      properties:
+        requests:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reversal'
+
+
+    Statement:
+      type: object
+      required:
+        - after
+        - before
+        - type
+      properties:
+        after:
+          type: string
+          format: date
+        before:
+          type: string
+          format: date
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        id:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        transactionCount:
+          type: string
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+
+
+
+    Key:
+      type: object
+      required:
+        - after
+        - before
+        - type
+      properties:
+        accountCreated:
+          type: string
+          format: datetime
+        accountNumber:
+          type: string
+          format: date
+        accountType:
+          type: string
+          format: date
+          readOnly: true
+        branchCode:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        transactionCount:
+          type: string
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+
+
+accountCreated:
+  type: string
+accountNumber:
+  type: string
+accountType:
+  type: string
+bankCode:
+  type: string
+bankName:
+  type: string
+branchCode
+  type: string
+created:
+  type: string
+id:
+  type: string
+name:
+  type: string
+owned:
+  type: string
+ownerType:
+  type: string
+status:
+  type: string
+tags:
+  type: string
+taxId:
+  type: string
+type:
+  type: string
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------
 NOTES:
 
 - Fix the patch 
-- How to describe create single and multi parameters?
+- Fix create
 - Add errors
-- add ids to the creditnote log query? Not working -> dalton
 
 HOME:
 - fix the 2 comments from rafael
