@@ -276,7 +276,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Request'
+              $ref: '#/components/schemas/Requests'
       parameters:
         - name: version
           in: path
@@ -401,7 +401,71 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Requests'
+                type: object
+              example:
+                cursor: >-
+                  CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ==
+                requests:
+                  - amount: 10
+                    cashAmount: 0
+                    cashierBankCode: ''
+                    cashierType: ''
+                    created: '2022-05-18T17:23:00.278215+00:00'
+                    description: ''
+                    endToEndId: E35547753202205181722Jy9eAC3yjXX
+                    externalId: php-438493277
+                    fee: 35
+                    flow: out
+                    id: '4684809204924416'
+                    initiatorTaxId: ''
+                    method: manual
+                    receiverAccountNumber: '000001'
+                    receiverAccountType: checking
+                    receiverBankCode: '341'
+                    receiverBranchCode: '0001'
+                    receiverKeyId: ''
+                    receiverName: Daenerys Targaryen Stormborn
+                    receiverTaxId: 012.345.678-90
+                    reconciliationId: ''
+                    senderAccountNumber: '765438'
+                    senderAccountType: checking
+                    senderBankCode: '35547753'
+                    senderBranchCode: '2201'
+                    senderName: Joao
+                    senderTaxId: 594.739.480-42
+                    status: success
+                    tags: []
+                    updated: '2022-05-18T17:23:06.472103+00:00'
+                  - amount: 1000
+                    cashAmount: 0
+                    cashierBankCode: ''
+                    cashierType: ''
+                    created: '2022-05-17T21:13:06.035916+00:00'
+                    description: Money for nothing
+                    endToEndId: E34052649202205172113cHFAlbI6WO9
+                    externalId: ''
+                    fee: 0
+                    flow: in
+                    id: '5702879260180480'
+                    initiatorTaxId: ''
+                    method: manual
+                    receiverAccountNumber: '00000'
+                    receiverAccountType: checking
+                    receiverBankCode: '35547753'
+                    receiverBranchCode: '0000'
+                    receiverKeyId: ''
+                    receiverName: ''
+                    receiverTaxId: 594.739.480-42
+                    reconciliationId: ''
+                    senderAccountNumber: '5692908409716736'
+                    senderAccountType: checking
+                    senderBankCode: '34052649'
+                    senderBranchCode: '0001'
+                    senderName: Cora Pagamentos Ltda.
+                    senderTaxId: 34.052.649/0001-78
+                    status: failed
+                    tags: []
+                    updated: '2022-05-17T21:13:07.365846+00:00'
         '400':
           description: Input error
           content:
@@ -450,7 +514,41 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Requests'
+                type: object
+              example:
+                request:
+                  amount: 10000
+                  cashAmount: 100
+                  cashierBankCode: '20018183'
+                  cashierType: merchant
+                  created: '2022-05-17T18:58:38.092412+00:00'
+                  description: A Lannister always pays his debts
+                  endToEndId: E35547753202201201450u34sDGd19l3
+                  externalId: my_unique_id_1
+                  fee: 35
+                  flow: out
+                  id: '5632510516002816'
+                  initiatorTaxId: ''
+                  method: manual
+                  receiverAccountNumber: '00000'
+                  receiverAccountType: checking
+                  receiverBankCode: '20018183'
+                  receiverBranchCode: '0001'
+                  receiverKeyId: ''
+                  receiverName: Arya Stark
+                  receiverTaxId: 012.345.678-90
+                  reconciliationId: ''
+                  senderAccountNumber: '00000'
+                  senderAccountType: checking
+                  senderBankCode: '35547753'
+                  senderBranchCode: '0000'
+                  senderName: jamie Lannister
+                  senderTaxId: 594.739.480-42
+                  status: failed
+                  tags:
+                    - lannister
+                    - chargeback
+                  updated: '2022-05-17T18:58:42.863663+00:00'
         '400':
           description: Input error
           content:
@@ -547,7 +645,87 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RequestLogs'
+                type: object
+              example:
+                cursor: >-
+                  CkoKFAoHY3JlYXRlZBIJCMaFuPOC1fcCEi5qEGl-YXBpLW1zLXNwaS1kZXZyGgsSDVBpeFJlcXVlc3RMb2cYgICAlPDXyAgMGAAgAQ==
+                logs:
+                  - created: '2022-05-17T18:58:41.842058+00:00'
+                    errors: []
+                    id: '4790818795683840'
+                    request:
+                      amount: 10000
+                      cashAmount: 100
+                      cashierBankCode: '20018183'
+                      cashierType: merchant
+                      created: '2022-05-17T18:58:38.092412+00:00'
+                      description: A Lannister always pays his debts
+                      endToEndId: E35547753202201201450u34sDGd19l3
+                      externalId: my_unique_id_1
+                      fee: 35
+                      flow: out
+                      id: '5632510516002816'
+                      initiatorTaxId: ''
+                      method: manual
+                      receiverAccountNumber: '00000'
+                      receiverAccountType: checking
+                      receiverBankCode: '20018183'
+                      receiverBranchCode: '0001'
+                      receiverKeyId: ''
+                      receiverName: Arya Stark
+                      receiverTaxId: 012.345.678-90
+                      reconciliationId: ''
+                      senderAccountNumber: '00000'
+                      senderAccountType: checking
+                      senderBankCode: '35547753'
+                      senderBranchCode: '0000'
+                      senderName: jamie Lannister
+                      senderTaxId: 594.739.480-42
+                      status: failed
+                      tags:
+                        - lannister
+                        - chargeback
+                      updated: '2022-05-17T18:58:42.882204+00:00'
+                    type: refunded
+                  - created: '2022-05-17T18:58:40.872310+00:00'
+                    errors:
+                      - code: invalidAccountNumber
+                        message: Invalid account number
+                    id: '5913985492713472'
+                    request:
+                      amount: 10000
+                      cashAmount: 100
+                      cashierBankCode: '20018183'
+                      cashierType: merchant
+                      created: '2022-05-17T18:58:38.092412+00:00'
+                      description: A Lannister always pays his debts
+                      endToEndId: E35547753202201201450u34sDGd19l3
+                      externalId: my_unique_id_1
+                      fee: 35
+                      flow: out
+                      id: '5632510516002816'
+                      initiatorTaxId: ''
+                      method: manual
+                      receiverAccountNumber: '00000'
+                      receiverAccountType: checking
+                      receiverBankCode: '20018183'
+                      receiverBranchCode: '0001'
+                      receiverKeyId: ''
+                      receiverName: Arya Stark
+                      receiverTaxId: 012.345.678-90
+                      reconciliationId: ''
+                      senderAccountNumber: '00000'
+                      senderAccountType: checking
+                      senderBankCode: '35547753'
+                      senderBranchCode: '0000'
+                      senderName: jamie Lannister
+                      senderTaxId: 594.739.480-42
+                      status: failed
+                      tags:
+                        - lannister
+                        - chargeback
+                      updated: '2022-05-17T18:58:42.882093+00:00'
+                    type: failed
         '400':
           description: Input error
           content:
@@ -596,7 +774,46 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RequestLogs'
+                type: object
+              example:
+                log:
+                  created: '2022-05-17T18:58:41.842058+00:00'
+                  errors: []
+                  id: '4790818795683840'
+                  request:
+                    amount: 10000
+                    cashAmount: 100
+                    cashierBankCode: '20018183'
+                    cashierType: merchant
+                    created: '2022-05-17T18:58:38.092412+00:00'
+                    description: A Lannister always pays his debts
+                    endToEndId: E35547753202201201450u34sDGd19l3
+                    externalId: my_unique_id_1
+                    fee: 35
+                    flow: out
+                    id: '5632510516002816'
+                    initiatorTaxId: ''
+                    method: manual
+                    receiverAccountNumber: '00000'
+                    receiverAccountType: checking
+                    receiverBankCode: '20018183'
+                    receiverBranchCode: '0001'
+                    receiverKeyId: ''
+                    receiverName: Arya Stark
+                    receiverTaxId: 012.345.678-90
+                    reconciliationId: ''
+                    senderAccountNumber: '00000'
+                    senderAccountType: checking
+                    senderBankCode: '35547753'
+                    senderBranchCode: '0000'
+                    senderName: jamie Lannister
+                    senderTaxId: 594.739.480-42
+                    status: failed
+                    tags:
+                      - lannister
+                      - chargeback
+                    updated: '2022-05-17T18:58:42.882204+00:00'
+                  type: refunded
         '400':
           description: Input error
           content:
@@ -645,16 +862,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                reversals:
-                  - amount: 10000
-                    endToEndId: E20018183202201201450u34sDGd19lz
-                    externalId: my_unique_id
-                    reason: fraud
-                    tags:
-                      - lannister
-                      - chargeback
+              $ref: '#/components/schemas/Reversals'
       parameters:
         - name: version
           in: path
@@ -779,7 +987,35 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Reversals'
+                type: object
+              example:
+                cursor: >-
+                  CkgKFAoHY3JlYXRlZBIJCNru8oXIzfYCEixqEGl-YXBpLW1zLXNwaS1kZXZyGAsSC1BpeFJldmVyc2FsGICAgKSCxrAJDBgAIAE=
+                reversals:
+                  - amount: 10
+                    created: '2022-05-10T18:22:39.490292+00:00'
+                    endToEndId: E00000000202205101815RMpeESzgU7U
+                    externalId: euibgfquikq2222e232242u1vy232rjkqef
+                    fee: 50
+                    flow: out
+                    id: '5891059359940608'
+                    reason: bankError
+                    returnId: D34052649202205101822417Mfcaz73q
+                    status: success
+                    tags: []
+                    updated: '2022-05-10T18:22:45.088746+00:00'
+                  - amount: 1
+                    created: '2022-03-17T16:27:14.727770+00:00'
+                    endToEndId: E34052649202203041806u3kgzzaazla
+                    externalId: null
+                    fee: 0
+                    flow: in
+                    id: '5280061607378944'
+                    reason: fraud
+                    returnId: D39908427202203171627FgbOba4nEnt
+                    status: failed
+                    tags: []
+                    updated: '2022-03-17T16:27:17.888461+00:00'
         '400':
           description: Input error
           content:
@@ -828,7 +1064,21 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Reversals'
+                type: object
+              example:
+                reversal:
+                  amount: 10
+                  created: '2022-05-10T18:22:39.490292+00:00'
+                  endToEndId: E00000000202205101815RMpeESzgU7U
+                  externalId: euibgfquikq2222e232242u1vy232rjkqef
+                  fee: 50
+                  flow: out
+                  id: '5891059359940608'
+                  reason: bankError
+                  returnId: D34052649202205101822417Mfcaz73q
+                  status: success
+                  tags: []
+                  updated: '2022-05-10T18:22:45.088746+00:00'
         '400':
           description: Input error
           content:
@@ -917,7 +1167,45 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ReversalLogs'
+                type: object
+              example:
+                cursor: >-
+                  CksKFAoHY3JlYXRlZBIJCISgxMjG1fcCEi9qEGl-YXBpLW1zLXNwaS1kZXZyGwsSDlBpeFJldmVyc2FsTG9nGICAgKSyvLsLDBgAIAE=
+                logs:
+                  - created: '2022-05-10T18:22:44.867189+00:00'
+                    errors: []
+                    id: '5046634429808640'
+                    reversal:
+                      amount: 10
+                      created: '2022-05-10T18:22:39.490292+00:00'
+                      endToEndId: E00000000202205101815RMpeESzgU7U
+                      externalId: euibgfquikq2222e232242u1vy232rjkqef
+                      fee: 50
+                      flow: out
+                      id: '5891059359940608'
+                      reason: bankError
+                      returnId: D34052649202205101822417Mfcaz73q
+                      status: success
+                      tags: []
+                      updated: '2022-05-10T18:22:45.106138+00:00'
+                    type: success
+                  - created: '2022-05-10T18:22:42.020356+00:00'
+                    errors: []
+                    id: '6454009313361920'
+                    reversal:
+                      amount: 10
+                      created: '2022-05-10T18:22:39.490292+00:00'
+                      endToEndId: E00000000202205101815RMpeESzgU7U
+                      externalId: euibgfquikq2222e232242u1vy232rjkqef
+                      fee: 50
+                      flow: out
+                      id: '5891059359940608'
+                      reason: bankError
+                      returnId: D34052649202205101822417Mfcaz73q
+                      status: processing
+                      tags: []
+                      updated: '2022-05-10T18:22:45.106048+00:00'
+                    type: sent
         '400':
           description: Input error
           content:
@@ -966,7 +1254,26 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ReversalLogs'
+                type: object
+              example:
+                log:
+                  created: '2022-05-10T18:22:44.867189+00:00'
+                  errors: []
+                  id: '5046634429808640'
+                  reversal:
+                    amount: 10
+                    created: '2022-05-10T18:22:39.490292+00:00'
+                    endToEndId: E00000000202205101815RMpeESzgU7U
+                    externalId: euibgfquikq2222e232242u1vy232rjkqef
+                    fee: 50
+                    flow: out
+                    id: '5891059359940608'
+                    reason: bankError
+                    returnId: D34052649202205101822417Mfcaz73q
+                    status: success
+                    tags: []
+                    updated: '2022-05-10T18:22:45.106138+00:00'
+                  type: success
         '400':
           description: Input error
           content:
@@ -1000,7 +1307,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Balances'
+                type: object
+              example:
+                balances:
+                  - amount: 46641
+                    currency: BRL
+                    id: '6275127679385600'
+                    updated: '2022-05-17T18:58:41.670570+00:00'
+                cursor: null
         '400':
           description: Input error
           content:
@@ -1046,11 +1360,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                after: '2022-01-01'
-                before: '2022-01-01'
-                type: interchange
+              $ref: '#/components/schemas/Statement'
       parameters:
         - name: version
           in: path
@@ -1063,7 +1373,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Statements'
+                $ref: '#/components/schemas/Statement'
         '400':
           description: Input error
           content:
@@ -1129,7 +1439,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Statements'
+                type: object
+              example:
+                cursor: >-
+                  CjMSLWoQaX5hcGktbXMtc3BpLWRldnIZCxIMUGl4U3RhdGVtZW50GICAgKTO7pIIDBgAIAA=
+                statements:
+                  - after: '2022-01-01T03:00:00+00:00'
+                    before: '2022-01-02T02:59:59.999999+00:00'
+                    created: '2022-03-22T18:20:51.308948+00:00'
+                    id: '4544014539816960'
+                    status: success
+                    transactionCount: 0
+                    updated: '2022-03-22T18:20:56.320174+00:00'
+                  - after: '2022-01-10T03:00:00+00:00'
+                    before: '2022-01-11T02:59:59.999999+00:00'
+                    created: '2022-02-17T19:42:28.092174+00:00'
+                    id: '4586565049253888'
+                    status: failed
+                    transactionCount: 0
+                    updated: '2022-02-17T19:42:30.818301+00:00'
         '400':
           description: Input error
           content:
@@ -1180,7 +1508,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Statements'
+                type: object
+              example:
+                statement:
+                  after: '2022-01-01T03:00:00+00:00'
+                  before: '2022-01-02T02:59:59.999999+00:00'
+                  created: '2022-03-22T18:20:51.308948+00:00'
+                  id: '4544014539816960'
+                  status: success
+                  transactionCount: 0
+                  updated: '2022-03-22T18:20:56.320174+00:00'
         '400':
           description: Input error
           content:
@@ -1282,15 +1619,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                accountCreated: '2022-02-01'
-                accountNumber: '0000'
-                accountType: savings
-                branchCode: '0000'
-                id: '+5511989898989'
-                name: Jamie Lannister
-                taxId: 012.345.678-90
+              $ref: '#/components/schemas/Key'
       parameters:
         - name: version
           in: path
@@ -1303,7 +1632,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Keys'
+                $ref: '#/components/schemas/Key'
         '400':
           description: Input error
           content:
@@ -1403,7 +1732,41 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Keys'
+                type: object
+              example:
+                cursor: >-
+                  CkUKFAoHY3JlYXRlZBIJCMbA3o385PcCEilqEWl-YXBpLW1zLWRpY3QtZGV2chQLEgdEaWN0S2V5GICAgITe4YkKDBgAIAE=
+                keys:
+                  - accountCreated: '2022-02-02T02:59:59.999999+00:00'
+                    accountNumber: '0000'
+                    accountType: savings
+                    bankCode: '35547753'
+                    bankName: ''
+                    branchCode: '0000'
+                    created: '2022-05-17T19:19:46.274234+00:00'
+                    id: exemplopostman@hotmail.com
+                    name: Jamie Lannister
+                    owned: '2022-05-17T19:19:46.274234+00:00'
+                    ownerType: individual
+                    status: registered
+                    tags: []
+                    taxId: 012.345.678-90
+                    type: email
+                  - accountCreated: '2022-01-02T02:59:59.999999+00:00'
+                    accountNumber: '76543'
+                    accountType: salary
+                    bankCode: '35547753'
+                    bankName: ''
+                    branchCode: '1234'
+                    created: '2022-05-16T21:32:10.415213+00:00'
+                    id: bdb5b5b8-f963-4834-93e5-9078dc946704
+                    name: Jamie Lannister
+                    owned: '2022-05-16T21:32:10.415213+00:00'
+                    ownerType: individual
+                    status: registered
+                    tags: []
+                    taxId: 012.345.678-90
+                    type: evp
         '400':
           description: Input error
           content:
@@ -1448,7 +1811,7 @@ paths:
         - name: endToEndId
           in: query
           description: Central Bank's unique transaction id. If the request results in the creation of a Pix Request, the same end to end id should be used. If this parameter is not passed, one endToEndId will be automatically created.
-          required: true
+          required: false
           schema:
             type: string
         - name: fields
@@ -1465,7 +1828,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Keys'
+                type: object
+              example:
+                key:
+                  accountCreated: '2022-02-02T02:59:59.999999+00:00'
+                  accountNumber: '0000'
+                  accountType: savings
+                  bankCode: '35547753'
+                  bankName: ''
+                  branchCode: '0000'
+                  created: '2022-05-17T19:19:46.274234+00:00'
+                  id: exemplopostman@hotmail.com
+                  name: Jamie Lannister
+                  owned: '2022-05-17T19:19:46.274234+00:00'
+                  ownerType: individual
+                  status: registered
+                  tags: []
+                  taxId: 012.345.678-90
+                  type: email
         '400':
           description: Input error
           content:
@@ -1512,7 +1892,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Keys'
+                type: object
+              example:
+                key:
+                  accountCreated: '2022-02-02T02:59:59.999999+00:00'
+                  accountNumber: '0000'
+                  accountType: savings
+                  bankCode: '35547753'
+                  bankName: ''
+                  branchCode: '0000'
+                  created: '2022-05-17T19:19:46.274234+00:00'
+                  id: exemplopostman@hotmail.com
+                  name: Jamie Lannister
+                  owned: '2022-05-17T19:19:46.274234+00:00'
+                  ownerType: individual
+                  status: registered
+                  tags: []
+                  taxId: 012.345.678-90
+                  type: email
+                message: Key deletion successfully requested.
         '400':
           description: Input error
           content:
@@ -1568,33 +1966,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - id
-                - reason
-              properties:
-                id:
-                  type: string
-                  example: "+5511989898989"
-                reason:
-                  type: string
-                  example: branchTransfer
-                accountCreated:
-                  type: string
-                  format: datetime
-                  example: 2022-01-01T00:00:00+00:00
-                accountNumber:
-                  type: string
-                  example: "00000"
-                accountType:
-                  type: string
-                  example: checking
-                branchCode:
-                  type: string
-                  example: "0000"
-                name:
-                  type: string
-                  example: jamie Lannister
+              $ref: '#/components/schemas/Key'
       parameters:
         - name: version
           in: path
@@ -1613,7 +1985,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Keys'
+                $ref: '#/components/schemas/Key'
         '400':
           description: Input error
           content:
@@ -1710,7 +2082,51 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/KeyLogs'
+                type: object
+              example:
+                cursor: >-
+                  CkgKFAoHY3JlYXRlZBIJCMb5weSh5_cCEixqEWl-YXBpLW1zLWRpY3QtZGV2chcLEgpEaWN0S2V5TG9nGICAgISC_4oIDBgAIAE=
+                logs:
+                  - created: '2022-05-17T19:27:38.430274+00:00'
+                    errors: []
+                    id: '6629439869812736'
+                    key:
+                      accountCreated: '2022-01-02T02:59:59.999999+00:00'
+                      accountNumber: '121212'
+                      accountType: savings
+                      bankCode: '35547753'
+                      bankName: ''
+                      branchCode: '0001'
+                      created: '2022-05-17T19:26:03.784235+00:00'
+                      id: '+551196969696'
+                      name: Jamie Lannister
+                      owned: '2022-05-17T19:26:03.784235+00:00'
+                      ownerType: individual
+                      status: registered
+                      tags: []
+                      taxId: 012.345.678-90
+                      type: phone
+                    type: updated
+                  - created: '2022-05-17T19:26:03.881670+00:00'
+                    errors: []
+                    id: '4551944324513792'
+                    key:
+                      accountCreated: '2022-02-02T02:59:59.999999+00:00'
+                      accountNumber: '0000'
+                      accountType: savings
+                      bankCode: '35547753'
+                      bankName: ''
+                      branchCode: '0000'
+                      created: '2022-05-17T19:26:03.784235+00:00'
+                      id: '+551196969696'
+                      name: Jamie Lannister
+                      owned: '2022-05-17T19:26:03.784235+00:00'
+                      ownerType: individual
+                      status: registered
+                      tags: []
+                      taxId: 012.345.678-90
+                      type: phone
+                    type: registered
         '400':
           description: Input error
           content:
@@ -1759,7 +2175,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/KeyLogs'
+                type: object
+              example:
+                log:
+                  created: '2022-05-17T19:27:38.430274+00:00'
+                  errors: []
+                  id: '6629439869812736'
+                  key:
+                    accountCreated: '2022-01-02T02:59:59.999999+00:00'
+                    accountNumber: '121212'
+                    accountType: savings
+                    bankCode: '35547753'
+                    bankName: ''
+                    branchCode: '0001'
+                    created: '2022-05-17T19:26:03.784235+00:00'
+                    id: '+551196969696'
+                    name: Jamie Lannister
+                    owned: '2022-05-17T19:26:03.784235+00:00'
+                    ownerType: individual
+                    status: registered
+                    tags: []
+                    taxId: 012.345.678-90
+                    type: phone
+                  type: updated
         '400':
           description: Input error
           content:
@@ -1825,15 +2263,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                accountCreated: '2022-02-01'
-                accountNumber: '5692908409716736'
-                accountType: checking
-                branchCode: '0000'
-                keyId: '+5511989898989'
-                name: testKey
-                taxId: 012.345.678-90
+              $ref: '#/components/schemas/Claim'
       parameters:
         - name: version
           in: path
@@ -1846,7 +2276,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Claims'
+                $ref: '#/components/schemas/Claim'
         '400':
           description: Input error
           content:
@@ -1958,7 +2388,45 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Claims'
+                type: object
+              example:
+                claims:
+                  - accountCreated: '2022-02-02T02:59:59.999999+00:00'
+                    accountNumber: '5692908409716736'
+                    accountType: checking
+                    agent: claimer
+                    bankCode: '35547753'
+                    branchCode: '0000'
+                    claimedBankCode: '31804966'
+                    claimerBankCode: '35547753'
+                    created: '2022-05-17T19:31:21.972149+00:00'
+                    id: '5961418104897536'
+                    keyId: postmanteste@starkbank.com
+                    keyType: email
+                    name: testKey
+                    status: created
+                    taxId: 012.345.678-90
+                    type: ownership
+                    updated: '2022-05-17T19:31:25.234171+00:00'
+                  - accountCreated: '2022-01-02T02:59:59.999999+00:00'
+                    accountNumber: '76549'
+                    accountType: salary
+                    agent: claimer
+                    bankCode: '35547753'
+                    branchCode: '1234'
+                    claimedBankCode: '70431630'
+                    claimerBankCode: '35547753'
+                    created: '2022-05-16T21:20:40.479804+00:00'
+                    id: '6129836925911040'
+                    keyId: '+551165857989'
+                    keyType: phone
+                    name: Tony Stark
+                    status: delivered
+                    taxId: 012.345.678-90
+                    type: ownership
+                    updated: '2022-05-16T21:21:01.253442+00:00'
+                cursor: >-
+                  CkcKFAoHY3JlYXRlZBIJCLzY5sT55PcCEitqEWl-YXBpLW1zLWRpY3QtZGV2chYLEglEaWN0Q2xhaW0YgICAhN7h8QoMGAAgAQ==
         '400':
           description: Input error
           content:
@@ -2007,7 +2475,26 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Claims'
+                type: object
+              example:
+                claim:
+                  accountCreated: '2022-02-02T02:59:59.999999+00:00'
+                  accountNumber: '5692908409716736'
+                  accountType: checking
+                  agent: claimer
+                  bankCode: '35547753'
+                  branchCode: '0000'
+                  claimedBankCode: '31804966'
+                  claimerBankCode: '35547753'
+                  created: '2022-05-17T19:31:21.972149+00:00'
+                  id: '5961418104897536'
+                  keyId: postmanteste@starkbank.com
+                  keyType: email
+                  name: testKey
+                  status: delivered
+                  taxId: 012.345.678-90
+                  type: ownership
+                  updated: '2022-05-17T19:32:00.656440+00:00'
         '400':
           description: Input error
           content:
@@ -2055,20 +2542,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - id
-                - status
-              properties:
-                id:
-                  type: string
-                  example: 5719405850615809
-                status:
-                  type: string
-                  example: canceled
-                reason:
-                  type: string
-                  example: userRequested
+              $ref: '#/components/schemas/Claim'
       parameters:
         - name: version
           in: path
@@ -2087,7 +2561,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Claims'
+                $ref: '#/components/schemas/Claim'
         '400':
           description: Input error
           content:
@@ -2182,7 +2656,59 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClaimLogs'
+                type: object
+              example:
+                cursor: >-
+                  CkoKFAoHY3JlYXRlZBIJCLHpgZyj5_cCEi5qEWl-YXBpLW1zLWRpY3QtZGV2chkLEgxEaWN0Q2xhaW1Mb2cYgICAhI28ywsMGAAgAQ==
+                logs:
+                  - agent: claimer
+                    claim:
+                      accountCreated: '2022-02-02T02:59:59.999999+00:00'
+                      accountNumber: '5692908409716736'
+                      accountType: checking
+                      agent: claimer
+                      bankCode: '35547753'
+                      branchCode: '0000'
+                      claimedBankCode: '31804966'
+                      claimerBankCode: '35547753'
+                      created: '2022-05-17T19:31:21.972149+00:00'
+                      id: '5961418104897536'
+                      keyId: postmanteste@starkbank.com
+                      keyType: email
+                      name: testKey
+                      status: canceled
+                      taxId: 012.345.678-90
+                      type: ownership
+                      updated: '2022-05-17T19:32:32.002810+00:00'
+                    created: '2022-05-17T19:32:28.894495+00:00'
+                    errors: []
+                    id: '5232635437645824'
+                    reason: null
+                    type: canceled
+                  - agent: claimer
+                    claim:
+                      accountCreated: '2022-02-02T02:59:59.999999+00:00'
+                      accountNumber: '5692908409716736'
+                      accountType: checking
+                      agent: claimer
+                      bankCode: '35547753'
+                      branchCode: '0000'
+                      claimedBankCode: '31804966'
+                      claimerBankCode: '35547753'
+                      created: '2022-05-17T19:31:21.972149+00:00'
+                      id: '5961418104897536'
+                      keyId: postmanteste@starkbank.com
+                      keyType: email
+                      name: testKey
+                      status: delivered
+                      taxId: 012.345.678-90
+                      type: ownership
+                      updated: '2022-05-17T19:32:32.002707+00:00'
+                    created: '2022-05-17T19:32:28.706993+00:00'
+                    errors: []
+                    id: '6524368058318848'
+                    reason: userRequested
+                    type: canceling
         '400':
           description: Input error
           content:
@@ -2231,7 +2757,33 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ClaimLogs'
+                type: object
+              example:
+                log:
+                  agent: claimer
+                  claim:
+                    accountCreated: '2022-02-02T02:59:59.999999+00:00'
+                    accountNumber: '5692908409716736'
+                    accountType: checking
+                    agent: claimer
+                    bankCode: '35547753'
+                    branchCode: '0000'
+                    claimedBankCode: '31804966'
+                    claimerBankCode: '35547753'
+                    created: '2022-05-17T19:31:21.972149+00:00'
+                    id: '5961418104897536'
+                    keyId: postmanteste@starkbank.com
+                    keyType: email
+                    name: testKey
+                    status: canceled
+                    taxId: 012.345.678-90
+                    type: ownership
+                    updated: '2022-05-17T19:32:32.002810+00:00'
+                  created: '2022-05-17T19:32:28.894495+00:00'
+                  errors: []
+                  id: '5232635437645824'
+                  reason: null
+                  type: canceled
         '400':
           description: Input error
           content:
@@ -2287,16 +2839,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                email: edward@starkbank.com
-                name: Anthony Edward Stark
-                taxId: 012.345.678-90
-                password: abcd1234
-                phone: +55-11999999999
-                teamEmail: family@starkbank.com
-                teamPhones:
-                  - +55-11997979797
+              $ref: '#/components/schemas/Director'
       parameters:
         - name: version
           in: path
@@ -2309,7 +2852,7 @@ paths:
           content:
             application/json: 
               schema:
-                $ref: '#/components/schemas/Directors'
+                $ref: '#/components/schemas/Director'
         '400':
           description: Input error
           content:
@@ -2353,11 +2896,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                infractions:
-                  - referenceId: E20018183202201201450u34sDGd19lz
-                    type: fraud
+              $ref: '#/components/schemas/Infractions'
       parameters:
         - name: version
           in: path
@@ -2464,7 +3003,39 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Infractions'
+                type: object
+              example:
+                cursor: >-
+                  Ck4KFAoHY3JlYXRlZBIJCJi1_ePi5vcCEjJqEWl-YXBpLW1zLWRpY3QtZGV2ch0LEhBJbmZyYWN0aW9uUmVwb3J0GICAgPjs998JDBgAIAE=
+                infractions:
+                  - agent: reporter
+                    analysis: ''
+                    bacenId: 5c166c61-50ae-4399-ad3e-12660b7548dd
+                    created: '2022-05-17T19:35:05.414532+00:00'
+                    creditedBankCode: '90400888'
+                    debitedBankCode: '35547753'
+                    description: ''
+                    id: '4588746288660480'
+                    referenceId: E35547753202201201450u34sDGd19l3
+                    reportedBy: debited
+                    result: ''
+                    status: created
+                    type: fraud
+                    updated: '2022-05-17T19:35:08.845617+00:00'
+                  - agent: reporter
+                    analysis: ''
+                    bacenId: d8e25aac-982f-4713-ab99-67c56c118c04
+                    created: '2022-05-17T14:44:11.325080+00:00'
+                    creditedBankCode: '81192106'
+                    debitedBankCode: '35547753'
+                    description: ''
+                    id: '5488482050899968'
+                    referenceId: E35547753202205101724kmMpSb0eS9b
+                    reportedBy: debited
+                    result: ''
+                    status: canceled
+                    type: fraud
+                    updated: '2022-05-17T14:44:43.497703+00:00'
         '400':
           description: Input error
           content:
@@ -2513,7 +3084,23 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Infractions'
+                type: object
+              example:
+                infraction:
+                  agent: reporter
+                  analysis: ''
+                  bacenId: 5c166c61-50ae-4399-ad3e-12660b7548dd
+                  created: '2022-05-17T19:35:05.414532+00:00'
+                  creditedBankCode: '90400888'
+                  debitedBankCode: '35547753'
+                  description: ''
+                  id: '4588746288660480'
+                  referenceId: E35547753202201201450u34sDGd19l3
+                  reportedBy: debited
+                  result: ''
+                  status: created
+                  type: fraud
+                  updated: '2022-05-17T19:35:08.845617+00:00'
         '400':
           description: Input error
           content:
@@ -2553,20 +3140,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - id
-                - result
-              properties:
-                id:
-                  type: string
-                  example: 5719405850615809
-                result:
-                  type: string
-                  example: agreed
-                analysis:
-                  type: string
-                  example: Upon investigation, several identical transactions were identified.
+              $ref: '#/components/schemas/Infraction'
       parameters:
         - name: version
           in: path
@@ -2635,7 +3209,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Infractions'
+                type: object
+              example:
+                infraction:
+                  agent: reporter
+                  analysis: ''
+                  bacenId: 5c166c61-50ae-4399-ad3e-12660b7548dd
+                  created: '2022-05-17T19:35:05.414532+00:00'
+                  creditedBankCode: '90400888'
+                  debitedBankCode: '35547753'
+                  description: ''
+                  id: '4588746288660480'
+                  referenceId: E35547753202201201450u34sDGd19l3
+                  reportedBy: debited
+                  result: ''
+                  status: canceled
+                  type: fraud
+                  updated: '2022-05-17T19:35:08.845617+00:00'
+                message: Pix infraction cancellation successfully requested
         '400':
           description: Input error
           content:
@@ -2732,7 +3323,51 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InfractionLogs'
+                type: object
+              example:
+                cursor: >-
+                  ClEKFAoHY3JlYXRlZBIJCOrK9Oak5_cCEjVqEWl-YXBpLW1zLWRpY3QtZGV2ciALEhNJbmZyYWN0aW9uUmVwb3J0TG9nGICAgISNvKsIDBgAIAE=
+                logs:
+                  - created: '2022-05-17T19:40:13.028853+00:00'
+                    errors: []
+                    id: '5151696242081792'
+                    infraction:
+                      agent: reporter
+                      analysis: ''
+                      bacenId: 5c166c61-50ae-4399-ad3e-12660b7548dd
+                      created: '2022-05-17T19:35:05.414532+00:00'
+                      creditedBankCode: '90400888'
+                      debitedBankCode: '35547753'
+                      description: ''
+                      id: '4588746288660480'
+                      referenceId: E35547753202201201450u34sDGd19l3
+                      reportedBy: debited
+                      result: ''
+                      status: canceled
+                      type: fraud
+                      updated: '2022-05-17T19:40:13.256549+00:00'
+                    type: canceled
+                  - created: '2022-05-17T19:39:34.211946+00:00'
+                    errors: []
+                    id: '4694780709699584'
+                    infraction:
+                      agent: reported
+                      analysis: >-
+                        Upon investigation, several identical transactions were
+                        identified.
+                      bacenId: 670966f5-8926-409f-85b2-e0bb5395d76f
+                      created: '2022-05-12T19:08:01.294891+00:00'
+                      creditedBankCode: '35547753'
+                      debitedBankCode: '20018183'
+                      description: ''
+                      id: '5229959379419136'
+                      referenceId: E20018183202204951450u34sDGd19lz
+                      reportedBy: credited
+                      result: agreed
+                      status: closed
+                      type: fraud
+                      updated: '2022-05-17T19:39:34.580234+00:00'
+                    type: closed
         '400':
           description: Input error
           content:
@@ -2781,7 +3416,28 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/InfractionLogs'
+                type: object
+              example:
+                log:
+                  created: '2022-05-17T19:40:13.028853+00:00'
+                  errors: []
+                  id: '5151696242081792'
+                  infraction:
+                    agent: reporter
+                    analysis: ''
+                    bacenId: 5c166c61-50ae-4399-ad3e-12660b7548dd
+                    created: '2022-05-17T19:35:05.414532+00:00'
+                    creditedBankCode: '90400888'
+                    debitedBankCode: '35547753'
+                    description: ''
+                    id: '4588746288660480'
+                    referenceId: E35547753202201201450u34sDGd19l3
+                    reportedBy: debited
+                    result: ''
+                    status: canceled
+                    type: fraud
+                    updated: '2022-05-17T19:40:13.256549+00:00'
+                  type: canceled
         '400':
           description: Input error
           content:
@@ -2826,13 +3482,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                chargebacks:
-                  - amount: 10000
-                    description: Client payed for an item and never received it.
-                    reason: fraud
-                    referenceId: E20018183202201201450u34sDGd19lz
+              $ref: '#/components/schemas/Chargebacks'
       parameters:
         - name: version
           in: path
@@ -2933,7 +3583,41 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Chargebacks'
+                type: object
+              example:
+                chargebacks:
+                  - amount: 100
+                    analysis: ''
+                    bacenId: b9dd3250-0ea4-44c7-bc95-a0fb293c92be
+                    created: '2022-05-17T19:43:12.382174+00:00'
+                    description: Client payed for an item and never received it.
+                    id: '5331161626705920'
+                    reason: fraud
+                    receiverBankCode: '54401286'
+                    referenceId: E35547753202205101724tM25SPNVfSp
+                    rejectionReason: ''
+                    result: ''
+                    reversalReferenceId: ''
+                    senderBankCode: '35547753'
+                    status: delivered
+                    updated: '2022-05-17T19:43:15.628222+00:00'
+                  - amount: 100
+                    analysis: ''
+                    bacenId: b7733ddc-12f9-4ee3-a299-10a4c4bf4b3c
+                    created: '2022-05-17T19:42:55.411062+00:00'
+                    description: ''
+                    id: '5820680616542208'
+                    reason: fraud
+                    receiverBankCode: '37880206'
+                    referenceId: E35547753202205101724tM25SPNVfSp
+                    rejectionReason: ''
+                    result: ''
+                    reversalReferenceId: ''
+                    senderBankCode: '35547753'
+                    status: delivered
+                    updated: '2022-05-17T19:42:58.915360+00:00'
+                cursor: >-
+                  Ck0KFAoHY3JlYXRlZBIJCPbm7Mal5_cCEjFqEWl-YXBpLW1zLWRpY3QtZGV2chwLEg9SZXZlcnNhbFJlcXVlc3QYgICAhI28qwoMGAAgAQ==
         '400':
           description: Input error
           content:
@@ -2982,7 +3666,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Chargebacks'
+                type: object
+              example:
+                chargeback:
+                  amount: 100
+                  analysis: ''
+                  bacenId: b9dd3250-0ea4-44c7-bc95-a0fb293c92be
+                  created: '2022-05-17T19:43:12.382174+00:00'
+                  description: Client payed for an item and never received it.
+                  id: '5331161626705920'
+                  reason: fraud
+                  receiverBankCode: '54401286'
+                  referenceId: E35547753202205101724tM25SPNVfSp
+                  rejectionReason: ''
+                  result: ''
+                  reversalReferenceId: ''
+                  senderBankCode: '35547753'
+                  status: delivered
+                  updated: '2022-05-17T19:43:15.628222+00:00'
         '400':
           description: Input error
           content:
@@ -3031,26 +3732,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - id
-                - result
-              properties:
-                id:
-                  type: string
-                  example: 5719405850615809
-                result:
-                  type: string
-                  example: accepted
-                rejectionReason:
-                  type: string
-                  example: accountClosed
-                reversalReferenceId:
-                  type: string
-                  example: D20018183202201201450u34sDGd19lz
-                analysis:
-                  type: string
-                  example: Upon investigation, several identical transactions were identified.
+              $ref: '#/components/schemas/Chargeback'
       parameters:
         - name: version
           in: path
@@ -3119,7 +3801,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Chargebacks'
+                type: object
+              example:
+                chargeback:
+                  amount: 100
+                  analysis: ''
+                  bacenId: b9dd3250-0ea4-44c7-bc95-a0fb293c92be
+                  created: '2022-05-17T19:43:12.382174+00:00'
+                  description: Client payed for an item and never received it.
+                  id: '5331161626705920'
+                  reason: fraud
+                  receiverBankCode: '54401286'
+                  referenceId: E35547753202205101724tM25SPNVfSp
+                  rejectionReason: ''
+                  result: ''
+                  reversalReferenceId: ''
+                  senderBankCode: '35547753'
+                  status: canceled
+                  updated: '2022-05-17T19:43:15.628222+00:00'
+                message: Pix chargeback cancellation successfully requested
         '400':
           description: Input error
           content:
@@ -3137,7 +3837,7 @@ paths:
   /{version}/pix-chargeback/log:
     get:
       tags:
-       - Pix > Pix Chargeback
+      - Pix > Pix Chargeback
       operationId: listPixChargebackLogs
         - Pix > Pix Chargeback
       summary: List Pix chargeback logs
@@ -3217,7 +3917,51 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChargebackLogs'
+                type: object
+              example:
+                cursor: >-
+                  ClAKFAoHY3JlYXRlZBIJCJSQ6POn5_cCEjRqEWl-YXBpLW1zLWRpY3QtZGV2ch8LEhJSZXZlcnNhbFJlcXVlc3RMb2cYgICA-OyPsAgMGAAgAQ==
+                logs:
+                  - chargeback:
+                      amount: 100
+                      analysis: ''
+                      bacenId: b9dd3250-0ea4-44c7-bc95-a0fb293c92be
+                      created: '2022-05-17T19:43:12.382174+00:00'
+                      description: Client payed for an item and never received it.
+                      id: '5331161626705920'
+                      reason: fraud
+                      receiverBankCode: '54401286'
+                      referenceId: E35547753202205101724tM25SPNVfSp
+                      rejectionReason: ''
+                      result: ''
+                      reversalReferenceId: ''
+                      senderBankCode: '35547753'
+                      status: canceled
+                      updated: '2022-05-17T19:55:42.948866+00:00'
+                    created: '2022-05-17T19:55:42.534512+00:00'
+                    errors: []
+                    id: '5818581719711744'
+                    type: canceled
+                  - chargeback:
+                      amount: 10000
+                      analysis: ''
+                      bacenId: af9cffdb-c8ca-4b30-9eab-f69093751690
+                      created: '2022-05-17T19:52:40.057934+00:00'
+                      description: Client payed for an item and never received it.
+                      id: '5418937940443136'
+                      reason: fraud
+                      receiverBankCode: '09313766'
+                      referenceId: E20018183202201201450u34sDGd19lz
+                      rejectionReason: ''
+                      result: ''
+                      reversalReferenceId: ''
+                      senderBankCode: '35547753'
+                      status: canceled
+                      updated: '2022-05-17T19:53:26.838543+00:00'
+                    created: '2022-05-17T19:53:26.577172+00:00'
+                    errors: []
+                    id: '4715250498666496'
+                    type: canceled
         '400':
           description: Input error
           content:
@@ -3266,7 +4010,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ChargebackLogs'
+                type: object
+              example:
+                log:
+                  chargeback:
+                    amount: 10000
+                    analysis: ''
+                    bacenId: af9cffdb-c8ca-4b30-9eab-f69093751690
+                    created: '2022-05-17T19:52:40.057934+00:00'
+                    description: Client payed for an item and never received it.
+                    id: '5418937940443136'
+                    reason: fraud
+                    receiverBankCode: '09313766'
+                    referenceId: E20018183202201201450u34sDGd19lz
+                    rejectionReason: ''
+                    result: ''
+                    reversalReferenceId: ''
+                    senderBankCode: '35547753'
+                    status: canceled
+                    updated: '2022-05-17T19:53:26.838543+00:00'
+                  created: '2022-05-17T19:53:26.577172+00:00'
+                  errors: []
+                  id: '4715250498666496'
+                  type: canceled
         '400':
           description: Input error
           content:
@@ -3302,7 +4068,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Domains'
+                type: object
+              example:
+                domains:
+                  - certificates:
+                      - content: >
+                          -----BEGIN CERTIFICATE-----
+
+                          MIIG/TCCBeWgAwIBAgIQDf12Gq ... SeLP+POvEIiZYh4rRTwbVHM=
+
+                          -----END CERTIFICATE-----
+                    name: api-h.banrisul.com.br
+                  - certificates:
+                      - content: >
+                          -----BEGIN CERTIFICATE-----
+
+                          MIIG/TCCBeWgAwIBAgIQDf12Gq ... SeLP+POvEIiZYh4rRTwbVHM=
+
+                          -----END CERTIFICATE-----
+                    name: qrcodes-pix-h.gerencianet.com.br
         '400':
           description: Input error
           content:
@@ -3337,7 +4121,14 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IssuingBalances'
+                type: object
+              example:
+                balances:
+                  - amount: 4192241
+                    currency: BRL
+                    id: '5714296759648256'
+                    updated: '2022-05-17T18:21:02.199759+00:00'
+                cursor: null
         '400':
           description: Input error
           content:
@@ -3396,7 +4187,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Bins'
+                type: object
+              example:
+                bins:
+                  - category: prepaid
+                    client: business
+                    created: '2022-05-01T18:58:00+00:00'
+                    id: '53810203'
+                    network: mastercard
+                    settlement: credit
+                    updated: '2022-05-01T18:58:00+00:00'
+                  - category: prepaid
+                    client: business
+                    created: '2022-05-01T18:57:00+00:00'
+                    id: '53810202'
+                    network: mastercard
+                    settlement: credit
+                    updated: '2022-05-01T18:57:00+00:00'
+                cursor: null
         '400':
           description: Input error
           content:
@@ -3475,27 +4283,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                cards:
-                  - city: Sao Paulo
-                    displayName: ANTHONY STARK
-                    district: Bela Vista
-                    holderExternalId: my-entity/123
-                    holderName: Tony Stark
-                    holderTaxId: 012.345.678-90
-                    rules:
-                      - amount: 900000
-                        currencyCode: BRL
-                        interval: week
-                        name: Example Rule
-                    stateCode: SP
-                    streetLine1: Av. Paulista, 200
-                    streetLine2: Apto. 123
-                    tags:
-                      - travel
-                      - food
-                    zipCode: 01311-200
+              $ref: '#/components/schemas/Cards'
       responses:
         '200':
           description: OK
@@ -3618,7 +4406,69 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Cards'
+                type: object
+              example:
+                cards:
+                  - binId: '53810202'
+                    city: Sao Paulo
+                    created: '2022-05-17T20:00:37.619527+00:00'
+                    displayName: ANTHONY STARK
+                    district: Bela Vista
+                    expiration: '****-**-**T**:**:**.******+00:00'
+                    holderExternalId: my-entity/123
+                    holderId: '4843929958612992'
+                    holderName: Tony Stark
+                    holderTaxId: 012.345.678-90
+                    id: '5701684319748096'
+                    number: '**** **** **** 3714'
+                    rules:
+                      - amount: 900000
+                        currencyCode: BRL
+                        id: '5138734366326784'
+                        interval: week
+                        name: Example Rule
+                    securityCode: '***'
+                    stateCode: SP
+                    status: active
+                    streetLine1: Av. Paulista, 200
+                    streetLine2: Apto. 123
+                    tags:
+                      - travel
+                      - food
+                    type: virtual
+                    updated: '2022-05-17T20:00:38.058520+00:00'
+                    zipCode: 01311-200
+                  - binId: '53810202'
+                    city: Sao Paulo
+                    created: '2022-05-17T18:18:21.162200+00:00'
+                    displayName: ANTHONY STARK
+                    district: Bela Vista
+                    expiration: '****-**-**T**:**:**.******+00:00'
+                    holderExternalId: '500738'
+                    holderId: '6145137520410624'
+                    holderName: Holder Test
+                    holderTaxId: 012.345.678-90
+                    id: '5619061027241984'
+                    number: '**** **** **** 4520'
+                    rules:
+                      - amount: 900000
+                        currencyCode: BRL
+                        id: '6744960934084608'
+                        interval: week
+                        name: Example Rule
+                    securityCode: '***'
+                    stateCode: SP
+                    status: canceled
+                    streetLine1: Av. Paulista, 200
+                    streetLine2: Apto. 123
+                    tags:
+                      - travel
+                      - food
+                    type: virtual
+                    updated: '2022-05-17T18:18:23.332977+00:00'
+                    zipCode: 01311-200
+                cursor: >-
+                  ClAKFAoHY3JlYXRlZBIJCNidodOS5_cCEjRqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIYCxILSXNzdWluZ0NhcmQYgICAxJnQ_QkMGAAgAQ==
         '400':
           description: Input error
           content:
@@ -3675,7 +4525,38 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Cards'
+                type: object
+              example:
+                card:
+                  binId: '53810202'
+                  city: Sao Paulo
+                  created: '2022-05-17T20:00:37.619527+00:00'
+                  displayName: ANTHONY STARK
+                  district: Bela Vista
+                  expiration: '****-**-**T**:**:**.******+00:00'
+                  holderExternalId: my-entity/123
+                  holderId: '4843929958612992'
+                  holderName: Tony Stark
+                  holderTaxId: 012.345.678-90
+                  id: '5701684319748096'
+                  number: '**** **** **** 3714'
+                  rules:
+                    - amount: 900000
+                      currencyCode: BRL
+                      id: '5138734366326784'
+                      interval: week
+                      name: Example Rule
+                  securityCode: '***'
+                  stateCode: SP
+                  status: active
+                  streetLine1: Av. Paulista, 200
+                  streetLine2: Apto. 123
+                  tags:
+                    - travel
+                    - food
+                  type: virtual
+                  updated: '2022-05-17T20:00:38.058520+00:00'
+                  zipCode: 01311-200
         '400':
           description: Input error
           content:
@@ -3719,26 +4600,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - id
-              properties:
-                id:
-                  type: string
-                  example: 5656565656565656
-                status:
-                  type: string
-                  example: blocked
-                displayName:
-                  type: string
-                  example: ANTHONY STARK
-                rules:
-                  type: string
-                  example: D20018183202201201450u34sDGd19lz
-                tags:
-                  items:
-                    type: string
-                  example: ["travel", "food"]
+              $ref: '#/components/schemas/Card'
       parameters:
         - name: version
           in: path
@@ -3813,7 +4675,38 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Cards'
+                type: object
+              example:
+                card:
+                  binId: '53810202'
+                  city: Sao Paulo
+                  created: '2022-05-17T20:00:37.619527+00:00'
+                  displayName: Updated Holder
+                  district: Bela Vista
+                  expiration: '****-**-**T**:**:**.******+00:00'
+                  holderExternalId: my-entity/123
+                  holderId: '4843929958612992'
+                  holderName: Tony Stark
+                  holderTaxId: 012.345.678-90
+                  id: '5701684319748096'
+                  number: '**** **** **** 3714'
+                  rules:
+                    - amount: 900000
+                      currencyCode: BRL
+                      id: '6533407823626240'
+                      interval: week
+                      name: Example Rule
+                  securityCode: '***'
+                  stateCode: SP
+                  status: canceled
+                  streetLine1: Av. Paulista, 200
+                  streetLine2: Apto. 123
+                  tags:
+                    - technology
+                  type: virtual
+                  updated: '2022-05-17T20:01:37.045064+00:00'
+                  zipCode: 01311-200
+                message: Card successfully updated
         '400':
           description: Input error
           content:
@@ -3908,7 +4801,75 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardLogs'
+                type: object
+              example:
+                cursor: >-
+                  ClMKFAoHY3JlYXRlZBIJCN7Qmdip5_cCEjdqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIbCxIOSXNzdWluZ0NhcmRMb2cYgICA5JjDrQgMGAAgAQ==
+                logs:
+                  - card:
+                      binId: '53810202'
+                      city: Sao Paulo
+                      created: '2022-05-17T20:00:37.619527+00:00'
+                      displayName: Updated Holder
+                      district: Bela Vista
+                      expiration: '****-**-**T**:**:**.******+00:00'
+                      holderExternalId: my-entity/123
+                      holderId: '4843929958612992'
+                      holderName: Tony Stark
+                      holderTaxId: 012.345.678-90
+                      id: '5701684319748096'
+                      number: '**** **** **** 3714'
+                      rules:
+                        - amount: 900000
+                          currencyCode: BRL
+                          id: '6533407823626240'
+                          interval: week
+                          name: Example Rule
+                      securityCode: '***'
+                      stateCode: SP
+                      status: canceled
+                      streetLine1: Av. Paulista, 200
+                      streetLine2: Apto. 123
+                      tags:
+                        - technology
+                      type: virtual
+                      updated: '2022-05-17T20:01:38.636960+00:00'
+                      zipCode: 01311-200
+                    created: '2022-05-17T20:01:37.012860+00:00'
+                    id: '5716316736454656'
+                    type: canceled
+                  - card:
+                      binId: '53810202'
+                      city: Sao Paulo
+                      created: '2022-05-17T20:00:37.619527+00:00'
+                      displayName: Updated Holder
+                      district: Bela Vista
+                      expiration: '****-**-**T**:**:**.******+00:00'
+                      holderExternalId: my-entity/123
+                      holderId: '4843929958612992'
+                      holderName: Tony Stark
+                      holderTaxId: 012.345.678-90
+                      id: '5701684319748096'
+                      number: '**** **** **** 3714'
+                      rules:
+                        - amount: 900000
+                          currencyCode: BRL
+                          id: '6533407823626240'
+                          interval: week
+                          name: Example Rule
+                      securityCode: '***'
+                      stateCode: SP
+                      status: active
+                      streetLine1: Av. Paulista, 200
+                      streetLine2: Apto. 123
+                      tags:
+                        - technology
+                      type: virtual
+                      updated: '2022-05-17T20:01:38.636125+00:00'
+                      zipCode: 01311-200
+                    created: '2022-05-17T20:01:25.538910+00:00'
+                    id: '4703820475006976'
+                    type: updated
         '400':
           description: Input error
           content:
@@ -3957,7 +4918,41 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CardLogs'
+                type: object
+              example:
+                log:
+                  card:
+                    binId: '53810202'
+                    city: Sao Paulo
+                    created: '2022-05-17T20:00:37.619527+00:00'
+                    displayName: Updated Holder
+                    district: Bela Vista
+                    expiration: '****-**-**T**:**:**.******+00:00'
+                    holderExternalId: my-entity/123
+                    holderId: '4843929958612992'
+                    holderName: Tony Stark
+                    holderTaxId: 012.345.678-90
+                    id: '5701684319748096'
+                    number: '**** **** **** 3714'
+                    rules:
+                      - amount: 900000
+                        currencyCode: BRL
+                        id: '6533407823626240'
+                        interval: week
+                        name: Example Rule
+                    securityCode: '***'
+                    stateCode: SP
+                    status: canceled
+                    streetLine1: Av. Paulista, 200
+                    streetLine2: Apto. 123
+                    tags:
+                      - technology
+                    type: virtual
+                    updated: '2022-05-17T20:01:38.636960+00:00'
+                    zipCode: 01311-200
+                  created: '2022-05-17T20:01:37.012860+00:00'
+                  id: '5716316736454656'
+                  type: canceled
         '400':
           description: Input error
           content:
@@ -4006,20 +5001,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                holders:
-                  - name: Jamie Lannister
-                    externalId: '12346'
-                    rules:
-                      - amount: 900000
-                        currencyCode: BRL
-                        interval: week
-                        name: Example Rule
-                    tags:
-                      - iron
-                      - bank
-                    taxId: 012.345.678-90
+              $ref: '#/components/schemas/Holders'
       parameters:
         - name: version
           in: path
@@ -4144,7 +5126,42 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Holders'
+                type: object
+              example:
+                cursor: >-
+                  ClIKFAoHY3JlYXRlZBIJCNjy3NGS5_cCEjZqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIaCxINSXNzdWluZ0hvbGRlchiAgICk3p3hCAwYACAB
+                holders:
+                  - created: '2022-05-17T20:03:05.939249+00:00'
+                    externalId: '123456789'
+                    id: '5055990386917376'
+                    name: Jamie Lannister
+                    rules:
+                      - amount: 900000
+                        currencyCode: BRL
+                        id: '6181890293760000'
+                        interval: week
+                        name: Example Rule
+                    status: active
+                    tags:
+                      - iron
+                      - bank
+                    taxId: 012.345.678-90
+                    updated: '2022-05-17T20:03:06.082272+00:00'
+                  - created: '2022-05-17T18:18:17.945432+00:00'
+                    externalId: 01e2fe69-2abb-47a0-b791-e00143962073
+                    id: '4931231879790592'
+                    name: Iron Bank S.A.
+                    rules:
+                      - amount: 100000
+                        currencyCode: USD
+                        id: '6057131786633216'
+                        interval: day
+                        name: General USD
+                    status: canceled
+                    tags:
+                      - traveler employee
+                    taxId: 012.345.678-90
+                    updated: '2022-05-17T18:18:19.736582+00:00'
         '400':
           description: Input error
           content:
@@ -4200,7 +5217,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Holders'
+                type: object
+              example:
+                holder:
+                  created: '2022-05-17T20:03:05.939249+00:00'
+                  externalId: '123456789'
+                  id: '5055990386917376'
+                  name: Jamie Lannister
+                  rules:
+                    - amount: 900000
+                      currencyCode: BRL
+                      id: '6181890293760000'
+                      interval: week
+                      name: Example Rule
+                  status: active
+                  tags:
+                    - iron
+                    - bank
+                  taxId: 012.345.678-90
+                  updated: '2022-05-17T20:03:06.082272+00:00'
         '400':
           description: Input error
           content:
@@ -4244,26 +5279,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - id
-              properties:
-                id:
-                  type: string
-                  example: 5729405850615808
-                status:
-                  type: string
-                  example: blocked
-                name:
-                  type: string
-                  example: Jamie Lannister
-                rules:
-                  type: string
-                  example: D20018183202201201450u34sDGd19lz
-                tags:
-                  items:
-                    type: string
-                  example: ["travel", "food"]
+              $ref: '#/components/schemas/Holder'
       parameters:
         - name: version
           in: path
@@ -4326,11 +5342,29 @@ paths:
               type: string
       responses:
         '200':
-          description: OK
+          description: Ok
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Holders'
+                type: object
+              example:
+                holder:
+                  created: '2022-05-17T20:03:05.939249+00:00'
+                  externalId: '123456789'
+                  id: '5055990386917376'
+                  name: Updated Holder
+                  rules:
+                    - amount: 900000
+                      currencyCode: BRL
+                      id: '4826637614972928'
+                      interval: week
+                      name: Example Rule
+                  status: canceled
+                  tags:
+                    - food
+                  taxId: 012.345.678-90
+                  updated: '2022-05-17T20:05:12.888972+00:00'
+                message: This card holder is already canceled
         '400':
           description: Input error
           content:
@@ -4427,7 +5461,49 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HolderLogs'
+                type: object
+              example:
+                cursor: >-
+                  ClUKFAoHY3JlYXRlZBIJCKGLrLuq5_cCEjlqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIdCxIQSXNzdWluZ0hvbGRlckxvZxiAgICk0rnJCgwYACAB
+                logs:
+                  - created: '2022-05-17T20:05:12.823675+00:00'
+                    holder:
+                      created: '2022-05-17T20:03:05.939249+00:00'
+                      externalId: '123456789'
+                      id: '5055990386917376'
+                      name: Updated Holder
+                      rules:
+                        - amount: 900000
+                          currencyCode: BRL
+                          id: '4826637614972928'
+                          interval: week
+                          name: Example Rule
+                      status: canceled
+                      tags:
+                        - food
+                      taxId: 012.345.678-90
+                      updated: '2022-05-17T20:05:13.124626+00:00'
+                    id: '6321804045975552'
+                    type: canceled
+                  - created: '2022-05-17T20:04:53.459361+00:00'
+                    holder:
+                      created: '2022-05-17T20:03:05.939249+00:00'
+                      externalId: '123456789'
+                      id: '5055990386917376'
+                      name: Updated Holder
+                      rules:
+                        - amount: 900000
+                          currencyCode: BRL
+                          id: '4826637614972928'
+                          interval: week
+                          name: Example Rule
+                      status: active
+                      tags:
+                        - food
+                      taxId: 012.345.678-90
+                      updated: '2022-05-17T20:05:13.124942+00:00'
+                    id: '5952537521815552'
+                    type: updated
         '400':
           description: Input error
           content:
@@ -4476,7 +5552,28 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HolderLogs'
+                type: object
+              example:
+                log:
+                  created: '2022-05-17T20:04:53.459361+00:00'
+                  holder:
+                    created: '2022-05-17T20:03:05.939249+00:00'
+                    externalId: '123456789'
+                    id: '5055990386917376'
+                    name: Updated Holder
+                    rules:
+                      - amount: 900000
+                        currencyCode: BRL
+                        id: '4826637614972928'
+                        interval: week
+                        name: Example Rule
+                    status: active
+                    tags:
+                      - food
+                    taxId: 012.345.678-90
+                    updated: '2022-05-17T20:05:13.124942+00:00'
+                  id: '5952537521815552'
+                  type: updated
         '400':
           description: Input error
           content:
@@ -4520,14 +5617,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                amount: 1000
-                name: Lamie Lannister
-                tags:
-                  - iron
-                  - bank
-                taxId: 012.345.678-90
+              $ref: '#/components/schemas/IssuingInvoice'
       parameters:
         - name: version
           in: path
@@ -4540,7 +5630,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IssuingInvoices'
+                $ref: '#/components/schemas/IssuingInvoice'
         '400':
           description: Input error
           content:
@@ -4628,7 +5718,43 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IssuingInvoices'
+                type: object
+              example:
+                cursor: >-
+                  ClMKFAoHY3JlYXRlZBIJCLadk9OS5_cCEjdqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIbCxIOSXNzdWluZ0ludm9pY2UYgICApK3x1wkMGAAgAQ==
+                invoices:
+                  - amount: 1000
+                    brcode: >-
+                      00020101021226930014br.gov.bcb.pix2571invoice-h.development.starkbank.com/v2/99dd6b55a515467d9fe47c6330aa0ed95204000053039865802BR5925Stark
+                      Bank S.A. - Institu6009Sao Paulo62070503***6304D1FB
+                    created: '2022-05-17T20:06:11.895751+00:00'
+                    due: '2022-05-24T20:06:11.923645+00:00'
+                    id: '6329614553055232'
+                    issuingTransactionId: null
+                    link: >-
+                      https://starkbank-card-issuer.development.starkbank.com/invoicelink/99dd6b55a515467d9fe47c6330aa0ed9
+                    name: Lamie Lannister
+                    status: created
+                    tags:
+                      - iron
+                      - bank
+                    taxId: 20.018.183/0001-80
+                    updated: '2022-05-17T20:06:16.784144+00:00'
+                  - amount: 10000
+                    brcode: >-
+                      00020101021226930014br.gov.bcb.pix2571invoice-h.development.starkbank.com/v2/abb8c90c6b3e4b00a3ff223e626985a15204000053039865802BR5925Stark
+                      Bank S.A. - Institu6009Sao Paulo62070503***630422DB
+                    created: '2022-05-17T18:18:20.932790+00:00'
+                    due: '2022-05-24T18:18:20.959304+00:00'
+                    id: '5453074432786432'
+                    issuingTransactionId: '6017752305238016'
+                    link: >-
+                      https://starkbank-card-issuer.development.starkbank.com/invoicelink/abb8c90c6b3e4b00a3ff223e626985a1
+                    name: Stark Bank S.A. - Instituicao de Pagamento
+                    status: paid
+                    tags: []
+                    taxId: 20.018.183/0001-80
+                    updated: '2022-05-17T18:21:02.398275+00:00'
         '400':
           description: Input error
           content:
@@ -4677,7 +5803,24 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IssuingInvoices'
+                type: object
+              example:
+                invoice:
+                  amount: 10000
+                  brcode: >-
+                    00020101021226930014br.gov.bcb.pix2571invoice-h.development.starkbank.com/v2/abb8c90c6b3e4b00a3ff223e626985a15204000053039865802BR5925Stark
+                    Bank S.A. - Institu6009Sao Paulo62070503***630422DB
+                  created: '2022-05-17T18:18:20.932790+00:00'
+                  due: '2022-05-24T18:18:20.959304+00:00'
+                  id: '5453074432786432'
+                  issuingTransactionId: '6017752305238016'
+                  link: >-
+                    https://starkbank-card-issuer.development.starkbank.com/invoicelink/abb8c90c6b3e4b00a3ff223e626985a1
+                  name: Stark Bank S.A. - Instituicao de Pagamento
+                  status: paid
+                  tags: []
+                  taxId: 20.018.183/0001-80
+                  updated: '2022-05-17T18:21:02.398275+00:00'
         '400':
           description: Input error
           content:
@@ -4766,7 +5909,51 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IssuingInvoiceLogs'
+                type: object
+              example:
+                cursor: >-
+                  ClYKFAoHY3JlYXRlZBIJCKH_w6CT5_cCEjpqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIeCxIRSXNzdWluZ0ludm9pY2VMb2cYgICA5JjDzQkMGAAgAQ==
+                logs:
+                  - created: '2022-05-17T20:06:12.361877+00:00'
+                    id: '4922239669501952'
+                    invoice:
+                      amount: 1000
+                      brcode: >-
+                        00020101021226930014br.gov.bcb.pix2571invoice-h.development.starkbank.com/v2/99dd6b55a515467d9fe47c6330aa0ed95204000053039865802BR5925Stark
+                        Bank S.A. - Institu6009Sao Paulo62070503***6304D1FB
+                      created: '2022-05-17T20:06:11.895751+00:00'
+                      due: '2022-05-24T20:06:11.923645+00:00'
+                      id: '6329614553055232'
+                      issuingTransactionId: null
+                      link: >-
+                        https://starkbank-card-issuer.development.starkbank.com/invoicelink/99dd6b55a515467d9fe47c6330aa0ed9
+                      name: Lamie Lannister
+                      status: created
+                      tags:
+                        - iron
+                        - bank
+                      taxId: 20.018.183/0001-80
+                      updated: '2022-05-17T20:06:16.818940+00:00'
+                    type: created
+                  - created: '2022-05-17T18:21:03.212449+00:00'
+                    id: '5407507916783616'
+                    invoice:
+                      amount: 10000
+                      brcode: >-
+                        00020101021226930014br.gov.bcb.pix2571invoice-h.development.starkbank.com/v2/99d559fa364343ea99d7f194ed2b67dc5204000053039865802BR5925Stark
+                        Bank S.A. - Institu6009Sao Paulo62070503***6304B085
+                      created: '2022-05-17T18:12:56.337755+00:00'
+                      due: '2022-05-24T18:12:56.357590+00:00'
+                      id: '5212706856501248'
+                      issuingTransactionId: '5694751571443712'
+                      link: >-
+                        https://starkbank-card-issuer.development.starkbank.com/invoicelink/99d559fa364343ea99d7f194ed2b67dc
+                      name: Stark Bank S.A. - Instituicao de Pagamento
+                      status: paid
+                      tags: []
+                      taxId: 20.018.183/0001-80
+                      updated: '2022-05-17T18:21:06.315262+00:00'
+                    type: credited
         '400':
           description: Input error
           content:
@@ -4815,7 +6002,21 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IssuingInvoiceLogs'
+                type: object
+              example:
+                log:
+                  created: '2022-05-17T18:21:03.212449+00:00'
+                  id: '5407507916783616'
+                  invoice:
+                    amount: 10000
+                    created: '2022-05-17T18:12:56.337755+00:00'
+                    id: '5212706856501248'
+                    issuingTransactionId: '5694751571443712'
+                    status: paid
+                    tags: []
+                    taxId: 20.018.183/0001-80
+                    updated: '2022-05-17T18:21:06.315262+00:00'
+                  type: credited
         '400':
           description: Input error
           content:
@@ -4928,7 +6129,72 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Purchases'
+                type: object
+              example:
+                cursor: null
+                purchases:
+                  - acquirerId: '35016'
+                    amount: 1300
+                    cardEnding: '5255'
+                    cardId: '6492113835393024'
+                    created: '2022-05-17T22:12:13.205801+00:00'
+                    endToEndId: 18d87d1a-09f2-40cf-8f6e-0c96a431c2d3
+                    holderName: Tony Stark
+                    id: '5029260213354496'
+                    issuerAmount: 1300
+                    issuerCurrencyCode: BRL
+                    issuerCurrencySymbol: R$
+                    issuingTransactionIds:
+                      - '6155160120197120'
+                    merchantAmount: 1300
+                    merchantCategoryCode: fastFoodRestaurants
+                    merchantCountryCode: BRA
+                    merchantCurrencyCode: BRL
+                    merchantCurrencySymbol: R$
+                    merchantFee: 0
+                    merchantId: '478093973800893'
+                    merchantName: TESTE DO JOAO
+                    methodCode: token
+                    purpose: purchase
+                    score: null
+                    status: confirmed
+                    tags:
+                      - customer-purchase-order/ditto
+                    tax: 0
+                    updated: '2022-05-17T23:00:45.800490+00:00'
+                    walletId: ''
+                    zipCode: '02101234'
+                  - acquirerId: '306487'
+                    amount: 1200
+                    cardEnding: '5255'
+                    cardId: '6492113835393024'
+                    created: '2022-05-17T22:11:57.298155+00:00'
+                    endToEndId: 6a8af4f5-fb14-49cb-9fb0-754adf5fd255
+                    holderName: Tony Stark
+                    id: '6204168180072448'
+                    issuerAmount: 1200
+                    issuerCurrencyCode: BRL
+                    issuerCurrencySymbol: R$
+                    issuingTransactionIds:
+                      - '4796793296519168'
+                    merchantAmount: 1200
+                    merchantCategoryCode: fastFoodRestaurants
+                    merchantCountryCode: BRA
+                    merchantCurrencyCode: BRL
+                    merchantCurrencySymbol: R$
+                    merchantFee: 0
+                    merchantId: '671957775124999'
+                    merchantName: TESTE DO JOAO
+                    methodCode: token
+                    purpose: purchase
+                    score: null
+                    status: confirmed
+                    tags:
+                      - customer-purchase-order/ditto
+                    tax: 0
+                    updated: '2022-05-17T23:00:48.438638+00:00'
+                    walletId: ''
+                    zipCode: '02101234'
         '400':
           description: Input error
           content:
@@ -4977,7 +6243,40 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Purchases'
+                type: object
+              example:
+                purchase:
+                  acquirerId: '35016'
+                  amount: 1300
+                  cardEnding: '5255'
+                  cardId: '6492113835393024'
+                  created: '2022-05-17T22:12:13.205801+00:00'
+                  endToEndId: 18d87d1a-09f2-40cf-8f6e-0c96a431c2d3
+                  holderName: Tony Stark
+                  id: '5029260213354496'
+                  issuerAmount: 1300
+                  issuerCurrencyCode: BRL
+                  issuerCurrencySymbol: R$
+                  issuingTransactionIds:
+                    - '6155160120197120'
+                  merchantAmount: 1300
+                  merchantCategoryCode: fastFoodRestaurants
+                  merchantCountryCode: BRA
+                  merchantCurrencyCode: BRL
+                  merchantCurrencySymbol: R$
+                  merchantFee: 0
+                  merchantId: '478093973800893'
+                  merchantName: TESTE DO JOAO
+                  methodCode: token
+                  purpose: purchase
+                  score: null
+                  status: confirmed
+                  tags:
+                    - customer-purchase-order/ditto
+                  tax: 0
+                  updated: '2022-05-17T23:00:45.800490+00:00'
+                  walletId: ''
+                  zipCode: '02101234'
         '400':
           description: Input error
           content:
@@ -5066,7 +6365,85 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PurchaseLogs'
+                type: object
+              example:
+                cursor: >-
+                  ClcKFAoHY3JlYXRlZBIJCP2VktTR5_cCEjtqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIfCxISSXNzdWluZ1B1cmNoYXNlTG9nGICAgOTT1poKDBgAIAE=
+                logs:
+                  - created: '2022-05-17T23:00:16.807417+00:00'
+                    errors: []
+                    id: '4875182556577792'
+                    issuingTransactionId: ''
+                    purchase:
+                      acquirerId: '306487'
+                      amount: 1200
+                      cardEnding: '5255'
+                      cardId: '6492113835393024'
+                      created: '2022-05-17T22:11:57.298155+00:00'
+                      endToEndId: 6a8af4f5-fb14-49cb-9fb0-754adf5fd255
+                      holderName: Tony Stark
+                      id: '6204168180072448'
+                      issuerAmount: 1200
+                      issuerCurrencyCode: BRL
+                      issuerCurrencySymbol: R$
+                      issuingTransactionIds:
+                        - '4796793296519168'
+                      merchantAmount: 1200
+                      merchantCategoryCode: fastFoodRestaurants
+                      merchantCountryCode: BRA
+                      merchantCurrencyCode: BRL
+                      merchantCurrencySymbol: R$
+                      merchantFee: 0
+                      merchantId: '671957775124999'
+                      merchantName: TESTE DO JOAO
+                      methodCode: token
+                      purpose: purchase
+                      score: null
+                      status: confirmed
+                      tags:
+                        - customer-purchase-order/ditto
+                      tax: 0
+                      updated: '2022-05-17T23:00:48.478631+00:00'
+                      walletId: ''
+                      zipCode: '02101234'
+                    type: confirmed
+                  - created: '2022-05-17T23:00:14.446333+00:00'
+                    errors: []
+                    id: '5746826170859520'
+                    issuingTransactionId: ''
+                    purchase:
+                      acquirerId: '35016'
+                      amount: 1300
+                      cardEnding: '5255'
+                      cardId: '6492113835393024'
+                      created: '2022-05-17T22:12:13.205801+00:00'
+                      endToEndId: 18d87d1a-09f2-40cf-8f6e-0c96a431c2d3
+                      holderName: Tony Stark
+                      id: '5029260213354496'
+                      issuerAmount: 1300
+                      issuerCurrencyCode: BRL
+                      issuerCurrencySymbol: R$
+                      issuingTransactionIds:
+                        - '6155160120197120'
+                      merchantAmount: 1300
+                      merchantCategoryCode: fastFoodRestaurants
+                      merchantCountryCode: BRA
+                      merchantCurrencyCode: BRL
+                      merchantCurrencySymbol: R$
+                      merchantFee: 0
+                      merchantId: '478093973800893'
+                      merchantName: TESTE DO JOAO
+                      methodCode: token
+                      purpose: purchase
+                      score: null
+                      status: confirmed
+                      tags:
+                        - customer-purchase-order/ditto
+                      tax: 0
+                      updated: '2022-05-17T23:00:45.841792+00:00'
+                      walletId: ''
+                      zipCode: '02101234'
+                    type: confirmed
         '400':
           description: Input error
           content:
@@ -5115,7 +6492,46 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PurchaseLogs'
+                type: object
+              example:
+                log:
+                  created: '2022-05-17T23:00:16.807417+00:00'
+                  errors: []
+                  id: '4875182556577792'
+                  issuingTransactionId: ''
+                  purchase:
+                    acquirerId: '306487'
+                    amount: 1200
+                    cardEnding: '5255'
+                    cardId: '6492113835393024'
+                    created: '2022-05-17T22:11:57.298155+00:00'
+                    endToEndId: 6a8af4f5-fb14-49cb-9fb0-754adf5fd255
+                    holderName: Tony Stark
+                    id: '6204168180072448'
+                    issuerAmount: 1200
+                    issuerCurrencyCode: BRL
+                    issuerCurrencySymbol: R$
+                    issuingTransactionIds:
+                      - '4796793296519168'
+                    merchantAmount: 1200
+                    merchantCategoryCode: fastFoodRestaurants
+                    merchantCountryCode: BRA
+                    merchantCurrencyCode: BRL
+                    merchantCurrencySymbol: R$
+                    merchantFee: 0
+                    merchantId: '671957775124999'
+                    merchantName: TESTE DO JOAO
+                    methodCode: token
+                    purpose: purchase
+                    score: null
+                    status: confirmed
+                    tags:
+                      - customer-purchase-order/ditto
+                    tax: 0
+                    updated: '2022-05-17T23:00:48.478631+00:00'
+                    walletId: ''
+                    zipCode: '02101234'
+                  type: confirmed
         '400':
           description: Input error
           content:
@@ -5212,7 +6628,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Transactions'
+                type: object
+              example:
+                cursor: >-
+                  CmkKFAoHY3JlYXRlZBIJCODx9p-T5_cCChAKCmNoYWluQ291bnQSAggWEjtqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIfCxISSXNzdWluZ1RyYW5zYWN0aW9uGICAgOSK644KDBgAIAE=
+                transactions:
+                  - amount: 10000
+                    balance: 4192241
+                    created: '2022-05-17T18:21:02.199444+00:00'
+                    description: Carga no saldo global de cartão
+                    id: '6458238019043328'
+                    source: issuing-invoice/5310735190065152
+                    tags: []
+                  - amount: 10000
+                    balance: 4182241
+                    created: '2022-05-17T18:21:01.949152+00:00'
+                    description: Carga no saldo global de cartão
+                    id: '5694751571443712'
+                    source: issuing-invoice/5212706856501248
+                    tags: []
         '400':
           description: Input error
           content:
@@ -5261,7 +6695,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Transactions'
+                type: object
+              example:
+                transaction:
+                  amount: 10000
+                  balance: 4192241
+                  created: '2022-05-17T18:21:02.199444+00:00'
+                  description: Carga no saldo global de cartão
+                  id: '6458238019043328'
+                  source: issuing-invoice/5310735190065152
+                  tags: []
         '400':
           description: Input error
           content:
@@ -5304,14 +6747,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                amount: 10000
-                description: Sending back
-                externalId: my_external_id
-                tags:
-                  - iron
-                  - bank
+              $ref: '#/components/schemas/Withdrawal'
       parameters:
         - name: version
           in: path
@@ -5324,7 +6760,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Withdrawals'
+                $ref: '#/components/schemas/Withdrawal'
         '400':
           description: Input error
           content:
@@ -5412,7 +6848,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Withdrawals'
+                type: object
+              example:
+                cursor: >-
+                  ClYKFAoHY3JlYXRlZBIJCNqalNKS5_cCEjpqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIeCxIRSXNzdWluZ1dpdGhkcmF3YWwYgICAxOnpxAkMGAAgAQ==
+                withdrawals:
+                  - amount: 10000
+                    created: '2022-05-17T20:10:18.179144+00:00'
+                    description: Sending back
+                    externalId: my_external_id_1
+                    id: '6037115762638848'
+                    issuingTransactionId: '5474165809217536'
+                    tags:
+                      - iron
+                      - bank
+                    transactionId: '5658206160289792'
+                    updated: '2022-05-17T20:10:18.580625+00:00'
+                  - amount: 10000
+                    created: '2022-05-17T18:18:18.851674+00:00'
+                    description: Sending back
+                    externalId: 006ca81f-ea92-413c-9408-9ad062fcfc9a
+                    id: '5369252844404736'
+                    issuingTransactionId: '6495152751247360'
+                    tags: []
+                    transactionId: '5672161985429504'
+                    updated: '2022-05-17T18:18:19.497659+00:00'
         '400':
           description: Input error
           content:
@@ -5461,7 +6921,20 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Withdrawals'
+                type: object
+              example:
+                withdrawal:
+                  amount: 10000
+                  created: '2022-05-17T20:10:18.179144+00:00'
+                  description: Sending back
+                  externalId: my_external_id_1
+                  id: '6037115762638848'
+                  issuingTransactionId: '5474165809217536'
+                  tags:
+                    - iron
+                    - bank
+                  transactionId: '5658206160289792'
+                  updated: '2022-05-17T20:10:18.580625+00:00'
         '400':
           description: Input error
           content:
@@ -5642,7 +7115,58 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Notes'
+                type: object
+              example:
+                cursor: null
+                notes:
+                  - amount: 193461
+                    created: '2022-05-17T20:14:23.054318+00:00'
+                    documentId: '6647908271128576'
+                    expiration: '2022-08-05T07:00:00+00:00'
+                    externalId: my_unique_id
+                    id: '6425285620662272'
+                    interest: 20.55
+                    invoices:
+                      - amount: 234413
+                        descriptions: []
+                        discounts: []
+                        due: '2023-06-17T02:59:59.999999+00:00'
+                        expiration: 5097600
+                        fine: 3
+                        id: ''
+                        interest: 1
+                        name: Jamie Lannister
+                        tags: []
+                        taxId: 012.345.678-90
+                    name: Jamie Lannister
+                    nominalAmount: 200000
+                    payment:
+                      accountNumber: '5005482'
+                      accountType: checking
+                      amount: 193461
+                      bankCode: '60701190'
+                      branchCode: '7248'
+                      id: ''
+                      name: Jamie Lannister
+                      scheduled: '2022-05-17T20:14:22.858881+00:00'
+                      status: ''
+                      tags: []
+                      taxId: 594.739.480-42
+                    paymentType: transfer
+                    rebateAmount: 0
+                    scheduled: '2022-06-07T07:00:00+00:00'
+                    signers:
+                      - contact: jamie.lannister@gmail.com
+                        method: link
+                        name: Jamie Lannister
+                    status: created
+                    tags: []
+                    taxAmount: 6539
+                    taxId: 012.345.678-90
+                    templateId: '5707012469948416'
+                    transactionIds: []
+                    updated: '2022-05-17T20:14:24.326562+00:00'
+                    workspaceId: '6275127679385600'
         '400':
           description: Input error
           content:
@@ -5684,7 +7208,7 @@ paths:
           schema:
             type: array
             items:
-              type: string
+              type: string 
 
       responses:
         '200':
@@ -5692,7 +7216,57 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Notes'
+                type: object
+              example:
+                note:
+                  amount: 193461
+                  created: '2022-05-17T20:14:23.054318+00:00'
+                  documentId: '6647908271128576'
+                  expiration: '2022-08-05T07:00:00+00:00'
+                  externalId: my_unique_id
+                  id: '6425285620662272'
+                  interest: 20.55
+                  invoices:
+                    - amount: 234413
+                      descriptions: []
+                      discounts: []
+                      due: '2023-06-17T02:59:59.999999+00:00'
+                      expiration: 5097600
+                      fine: 3
+                      id: ''
+                      interest: 1
+                      name: Jamie Lannister
+                      tags: []
+                      taxId: 012.345.678-90
+                  name: Jamie Lannister
+                  nominalAmount: 200000
+                  payment:
+                    accountNumber: '5005482'
+                    accountType: checking
+                    amount: 193461
+                    bankCode: '60701190'
+                    branchCode: '7248'
+                    id: ''
+                    name: Jamie Lannister
+                    scheduled: '2022-05-17T20:14:22.858881+00:00'
+                    status: ''
+                    tags: []
+                    taxId: 594.739.480-42
+                  paymentType: transfer
+                  rebateAmount: 0
+                  scheduled: '2022-06-07T07:00:00+00:00'
+                  signers:
+                    - contact: jamie.lannister@gmail.com
+                      method: link
+                      name: Jamie Lannister
+                  status: created
+                  tags: []
+                  taxAmount: 6539
+                  taxId: 012.345.678-90
+                  templateId: '5707012469948416'
+                  transactionIds: []
+                  updated: '2022-05-17T20:14:24.326562+00:00'
+                  workspaceId: '6275127679385600'
         '400':
           description: Input error
           content:
@@ -5779,7 +7353,116 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NoteLogs'
+                type: object
+              example:
+                cursor: null
+                logs:
+                  - errors: []
+                    id: '6483512089640960'
+                    note:
+                      amount: 193461
+                      created: '2022-05-17T20:14:23.054318+00:00'
+                      documentId: '6647908271128576'
+                      expiration: '2022-08-05T07:00:00+00:00'
+                      externalId: my_unique_id
+                      id: '6425285620662272'
+                      interest: 20.55
+                      invoices:
+                        - amount: 234413
+                          descriptions: []
+                          discounts: []
+                          due: '2023-06-17T02:59:59.999999+00:00'
+                          expiration: 5097600
+                          fine: 3
+                          id: ''
+                          interest: 1
+                          name: Jamie Lannister
+                          tags: []
+                          taxId: 012.345.678-90
+                      name: Jamie Lannister
+                      nominalAmount: 200000
+                      payment:
+                        accountNumber: '5005482'
+                        accountType: checking
+                        amount: 193461
+                        bankCode: '60701190'
+                        branchCode: '7248'
+                        id: ''
+                        name: Jamie Lannister
+                        scheduled: '2022-05-17T20:14:22.858881+00:00'
+                        status: ''
+                        tags: []
+                        taxId: 594.739.480-42
+                      paymentType: transfer
+                      rebateAmount: 0
+                      scheduled: '2022-06-07T07:00:00+00:00'
+                      signers:
+                        - contact: jamie.lannister@gmail.com
+                          method: link
+                          name: Jamie Lannister
+                      status: created
+                      tags: []
+                      taxAmount: 6539
+                      taxId: 012.345.678-90
+                      templateId: '5707012469948416'
+                      transactionIds: []
+                      updated: '2022-05-17T20:14:24.355339+00:00'
+                      workspaceId: '6275127679385600'
+                    type: registered
+                    updated: '2022-05-17T20:14:24.355346+00:00'
+                  - errors: []
+                    id: '5017910737108992'
+                    note:
+                      amount: 193461
+                      created: '2022-05-17T20:14:23.054318+00:00'
+                      documentId: ''
+                      expiration: '2022-08-05T07:00:00+00:00'
+                      externalId: my_unique_id
+                      id: '6425285620662272'
+                      interest: 20.55
+                      invoices:
+                        - amount: 234413
+                          descriptions: []
+                          discounts: []
+                          due: '2023-06-17T02:59:59.999999+00:00'
+                          expiration: 5097600
+                          fine: 3
+                          id: ''
+                          interest: 1
+                          name: Jamie Lannister
+                          tags: []
+                          taxId: 012.345.678-90
+                      name: Jamie Lannister
+                      nominalAmount: 200000
+                      payment:
+                        accountNumber: '5005482'
+                        accountType: checking
+                        amount: 193461
+                        bankCode: '60701190'
+                        branchCode: '7248'
+                        id: ''
+                        name: Jamie Lannister
+                        scheduled: '2022-05-17T20:14:22.858881+00:00'
+                        status: ''
+                        tags: []
+                        taxId: 594.739.480-42
+                      paymentType: transfer
+                      rebateAmount: 0
+                      scheduled: '2022-06-07T07:00:00+00:00'
+                      signers:
+                        - contact: jamie.lannister@gmail.com
+                          method: link
+                          name: Jamie Lannister
+                      status: created
+                      tags: []
+                      taxAmount: 6539
+                      taxId: 012.345.678-90
+                      templateId: '5707012469948416'
+                      transactionIds: []
+                      updated: '2022-05-17T20:14:24.355060+00:00'
+                      workspaceId: '6275127679385600'
+                    type: created
+                    updated: '2022-05-17T20:14:24.355069+00:00'
         '400':
           description: Input error
           content:
@@ -5828,7 +7511,62 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NoteLogs'
+                type: object
+              example:
+                log:
+                  errors: []
+                  id: '6483512089640960'
+                  note:
+                    amount: 193461
+                    created: '2022-05-17T20:14:23.054318+00:00'
+                    documentId: '6647908271128576'
+                    expiration: '2022-08-05T07:00:00+00:00'
+                    externalId: my_unique_id
+                    id: '6425285620662272'
+                    interest: 20.55
+                    invoices:
+                      - amount: 234413
+                        descriptions: []
+                        discounts: []
+                        due: '2023-06-17T02:59:59.999999+00:00'
+                        expiration: 5097600
+                        fine: 3
+                        id: ''
+                        interest: 1
+                        name: Jamie Lannister
+                        tags: []
+                        taxId: 012.345.678-90
+                    name: Jamie Lannister
+                    nominalAmount: 200000
+                    payment:
+                      accountNumber: '5005482'
+                      accountType: checking
+                      amount: 193461
+                      bankCode: '60701190'
+                      branchCode: '7248'
+                      id: ''
+                      name: Jamie Lannister
+                      scheduled: '2022-05-17T20:14:22.858881+00:00'
+                      status: ''
+                      tags: []
+                      taxId: 594.739.480-42
+                    paymentType: transfer
+                    rebateAmount: 0
+                    scheduled: '2022-06-07T07:00:00+00:00'
+                    signers:
+                      - contact: jamie.lannister@gmail.com
+                        method: link
+                        name: Jamie Lannister
+                    status: created
+                    tags: []
+                    taxAmount: 6539
+                    taxId: 012.345.678-90
+                    templateId: '5707012469948416'
+                    transactionIds: []
+                    updated: '2022-05-17T20:14:24.355339+00:00'
+                    workspaceId: '6275127679385600'
+                  type: registered
+                  updated: '2022-05-17T20:14:24.355346+00:00'
         '400':
           description: Input error
           content:
@@ -5907,7 +7645,129 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Events'
+                type: object
+              example:
+                cursor: >-
+                  Ck0KFAoHY3JlYXRlZBIJCOzOjcus5_cCEjFqFGl-YXBpLW1zLXdlYmhvb2stZGV2chkLEgxOb3RpZmljYXRpb24YgICAhP6w2woMGAAgAQ==
+                events:
+                  - created: '2022-05-17T20:14:24.267083+00:00'
+                    id: '6414584130830336'
+                    isDelivered: true
+                    log:
+                      errors: []
+                      id: '6483512089640960'
+                      note:
+                        amount: 193461
+                        created: '2022-05-17T20:14:23.054318+00:00'
+                        documentId: '6647908271128576'
+                        expiration: '2022-08-05T07:00:00+00:00'
+                        externalId: my_unique_id
+                        id: '6425285620662272'
+                        interest: 20.55
+                        invoices:
+                          - amount: 234413
+                            descriptions: []
+                            discounts: []
+                            due: '2023-06-17T02:59:59.999999+00:00'
+                            expiration: 5097600
+                            fine: 3
+                            id: ''
+                            interest: 1
+                            name: Jamie Lannister
+                            tags: []
+                            taxId: 012.345.678-90
+                        name: Jamie Lannister
+                        nominalAmount: 200000
+                        payment:
+                          accountNumber: '5005482'
+                          accountType: checking
+                          amount: 193461
+                          bankCode: '60701190'
+                          branchCode: '7248'
+                          id: ''
+                          name: Jamie Lannister
+                          scheduled: '2022-05-17T20:14:22.858881+00:00'
+                          status: ''
+                          tags: []
+                          taxId: 594.739.480-42
+                        paymentType: transfer
+                        rebateAmount: 0
+                        scheduled: '2022-06-07T07:00:00+00:00'
+                        signers:
+                          - contact: jamie.lannister@gmail.com
+                            method: link
+                            name: Jamie Lannister
+                        status: created
+                        tags: []
+                        taxAmount: 6539
+                        taxId: 012.345.678-90
+                        templateId: '5707012469948416'
+                        transactionIds: []
+                        updated: '2022-05-17T20:14:23.565643+00:00'
+                        workspaceId: '6275127679385600'
+                      type: registered
+                      updated: '2022-05-17T20:14:23.565648+00:00'
+                    subscription: credit-note
+                    workspaceId: '6275127679385600'
+                  - created: '2022-05-17T20:14:23.385452+00:00'
+                    id: '6031404865421312'
+                    isDelivered: true
+                    log:
+                      errors: []
+                      id: '5017910737108992'
+                      note:
+                        amount: 193461
+                        created: '2022-05-17T20:14:23.054318+00:00'
+                        documentId: ''
+                        expiration: '2022-08-05T07:00:00+00:00'
+                        externalId: my_unique_id
+                        id: '6425285620662272'
+                        interest: 20.55
+                        invoices:
+                          - amount: 234413
+                            descriptions: []
+                            discounts: []
+                            due: '2023-06-17T02:59:59.999999+00:00'
+                            expiration: 5097600
+                            fine: 3
+                            id: ''
+                            interest: 1
+                            name: Jamie Lannister
+                            tags: []
+                            taxId: 012.345.678-90
+                        name: Jamie Lannister
+                        nominalAmount: 200000
+                        payment:
+                          accountNumber: '5005482'
+                          accountType: checking
+                          amount: 193461
+                          bankCode: '60701190'
+                          branchCode: '7248'
+                          id: ''
+                          name: Jamie Lannister
+                          scheduled: '2022-05-17T20:14:22.858881+00:00'
+                          status: ''
+                          tags: []
+                          taxId: 594.739.480-42
+                        paymentType: transfer
+                        rebateAmount: 0
+                        scheduled: '2022-06-07T07:00:00+00:00'
+                        signers:
+                          - contact: jamie.lannister@gmail.com
+                            method: link
+                            name: Jamie Lannister
+                        status: created
+                        tags: []
+                        taxAmount: 6539
+                        taxId: 012.345.678-90
+                        templateId: '5707012469948416'
+                        transactionIds: []
+                        updated: '2022-05-17T20:14:23.073297+00:00'
+                        workspaceId: '6275127679385600'
+                      type: created
+                      updated: '2022-05-17T20:14:23.073303+00:00'
+                    subscription: credit-note
+                    workspaceId: '6275127679385600'
         '400':
           description: Input error
           content:
@@ -5956,7 +7816,68 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Events'
+                type: object
+              example:
+                event:
+                  created: '2022-05-17T20:14:24.267083+00:00'
+                  id: '6414584130830336'
+                  isDelivered: true
+                  log:
+                    errors: []
+                    id: '6483512089640960'
+                    note:
+                      amount: 193461
+                      created: '2022-05-17T20:14:23.054318+00:00'
+                      documentId: '6647908271128576'
+                      expiration: '2022-08-05T07:00:00+00:00'
+                      externalId: my_unique_id
+                      id: '6425285620662272'
+                      interest: 20.55
+                      invoices:
+                        - amount: 234413
+                          descriptions: []
+                          discounts: []
+                          due: '2023-06-17T02:59:59.999999+00:00'
+                          expiration: 5097600
+                          fine: 3
+                          id: ''
+                          interest: 1
+                          name: Jamie Lannister
+                          tags: []
+                          taxId: 012.345.678-90
+                      name: Jamie Lannister
+                      nominalAmount: 200000
+                      payment:
+                        accountNumber: '5005482'
+                        accountType: checking
+                        amount: 193461
+                        bankCode: '60701190'
+                        branchCode: '7248'
+                        id: ''
+                        name: Jamie Lannister
+                        scheduled: '2022-05-17T20:14:22.858881+00:00'
+                        status: ''
+                        tags: []
+                        taxId: 594.739.480-42
+                      paymentType: transfer
+                      rebateAmount: 0
+                      scheduled: '2022-06-07T07:00:00+00:00'
+                      signers:
+                        - contact: jamie.lannister@gmail.com
+                          method: link
+                          name: Jamie Lannister
+                      status: created
+                      tags: []
+                      taxAmount: 6539
+                      taxId: 012.345.678-90
+                      templateId: '5707012469948416'
+                      transactionIds: []
+                      updated: '2022-05-17T20:14:23.565643+00:00'
+                      workspaceId: '6275127679385600'
+                    type: registered
+                    updated: '2022-05-17T20:14:23.565648+00:00'
+                  subscription: credit-note
+                  workspaceId: '6275127679385600'
         '400':
           description: Input error
           content:
@@ -6007,7 +7928,69 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Events'
+                type: object
+              example:
+                event:
+                  created: '2022-05-17T20:14:24.267083+00:00'
+                  id: '6414584130830336'
+                  isDelivered: true
+                  log:
+                    errors: []
+                    id: '6483512089640960'
+                    note:
+                      amount: 193461
+                      created: '2022-05-17T20:14:23.054318+00:00'
+                      documentId: '6647908271128576'
+                      expiration: '2022-08-05T07:00:00+00:00'
+                      externalId: my_unique_id
+                      id: '6425285620662272'
+                      interest: 20.55
+                      invoices:
+                        - amount: 234413
+                          descriptions: []
+                          discounts: []
+                          due: '2023-06-17T02:59:59.999999+00:00'
+                          expiration: 5097600
+                          fine: 3
+                          id: ''
+                          interest: 1
+                          name: Jamie Lannister
+                          tags: []
+                          taxId: 012.345.678-90
+                      name: Jamie Lannister
+                      nominalAmount: 200000
+                      payment:
+                        accountNumber: '5005482'
+                        accountType: checking
+                        amount: 193461
+                        bankCode: '60701190'
+                        branchCode: '7248'
+                        id: ''
+                        name: Jamie Lannister
+                        scheduled: '2022-05-17T20:14:22.858881+00:00'
+                        status: ''
+                        tags: []
+                        taxId: 594.739.480-42
+                      paymentType: transfer
+                      rebateAmount: 0
+                      scheduled: '2022-06-07T07:00:00+00:00'
+                      signers:
+                        - contact: jamie.lannister@gmail.com
+                          method: link
+                          name: Jamie Lannister
+                      status: created
+                      tags: []
+                      taxAmount: 6539
+                      taxId: 012.345.678-90
+                      templateId: '5707012469948416'
+                      transactionIds: []
+                      updated: '2022-05-17T20:14:23.565643+00:00'
+                      workspaceId: '6275127679385600'
+                    type: registered
+                    updated: '2022-05-17T20:14:23.565648+00:00'
+                  subscription: credit-note
+                  workspaceId: '6275127679385600'
+                message: Event successfully deleted
         '400':
           description: Input error
           content:
@@ -6036,17 +8019,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              required:
-                - id
-                - isDelivered
-              properties:
-                id:
-                  type: string
-                  example: 5121992608972800
-                isDelivered:
-                  type: boolean
-                  example: true
+              $ref: '#/components/schemas/Event'
       parameters:
         - name: version
           in: path
@@ -6065,7 +8038,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Events'
+                $ref: '#/components/schemas/Event'
         '400':
           description: Input error
           content:
@@ -6148,31 +8121,6 @@ paths:
       responses:
         '200':
           description: OK
-          headers:
-            content-type:
-              schema:
-                type: string
-                example: application/json
-            x-cloud-trace-context:
-              schema:
-                type: string
-                example: e7482f262cabc194942bca4f2caaeee4;o=1
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-                example: '*'
-            Date:
-              schema:
-                type: string
-                example: Tue, 17 May 2022 20:16:59 GMT
-            Server:
-              schema:
-                type: string
-                example: Google Frontend
-            Content-Length:
-              schema:
-                type: integer
-                example: '230'
           content:
             application/json:
               schema:
@@ -6199,13 +8147,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              example:
-                url: https://webhook.site/287d2ec8-bc67-4a1e-83b9-d3151ebfcfb7
-                subscriptions:
-                  - contract
-                  - credit-note
-                  - signer
+              $ref: '#/components/schemas/Webhook'
       parameters:
         - name: version
           in: path
@@ -6218,7 +8160,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Webhooks'
+                $ref: '#/components/schemas/Webhook'
         '400':
           description: Input error
           content:
@@ -6276,7 +8218,37 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Webhooks'
+                type: object
+              example:
+                cursor: >-
+                  CjISLGoUaX5hcGktbXMtd2ViaG9vay1kZXZyFAsSB1dlYmhvb2sYgICAuMWl2AkMGAAgAA==
+                webhooks:
+                  - id: '5118348345999360'
+                    subscriptions:
+                      - contract
+                      - credit-note
+                      - issuing-card
+                      - issuing-invoice
+                      - issuing-purchase
+                      - pix-request.in
+                      - pix-request.out
+                      - pix-reversal.in
+                      - pix-reversal.out
+                      - signer
+                    url: https://webhook.site/83a371cb-3ba0-487f-8c37-ffe049f271be
+                  - id: '5454867623575552'
+                    subscriptions:
+                      - contract
+                      - credit-note
+                      - issuing-card
+                      - issuing-invoice
+                      - issuing-purchase
+                      - pix-request.in
+                      - pix-request.out
+                      - pix-reversal.in
+                      - pix-reversal.out
+                      - signer
+                    url: https://webhook.site/6cd3c98d-60ca-4f4a-97c6-a7d0365b15a7
         '400':
           description: Input error
           content:
@@ -6325,7 +8297,22 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Webhooks'
+                type: object
+              example:
+                webhook:
+                  id: '5454867623575552'
+                  subscriptions:
+                    - contract
+                    - credit-note
+                    - issuing-card
+                    - issuing-invoice
+                    - issuing-purchase
+                    - pix-request.in
+                    - pix-request.out
+                    - pix-reversal.in
+                    - pix-reversal.out
+                    - signer
+                  url: https://webhook.site/6cd3c98d-60ca-4f4a-97c6-a7d0365b15a7
         '400':
           description: Input error
           content:
@@ -6376,7 +8363,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Webhooks'
+                type: object
+              example:
+                message: Webhook successfully deleted
+                webhook:
+                  id: '5930589634953216'
+                  subscriptions:
+                    - contract
+                    - credit-note
+                    - signer
+                  url: https://webhook.site/287d2ec8-bc67-4a1e-83b9-d3151ebfcfb7
         '400':
           description: Input error
           content:
@@ -6427,71 +8423,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RequestError'
-    IssuingBalance:
-      type: object 
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        amount:
-          type: integer
-          example: 20000
-          readOnly: true
-        currency:
-          type: string
-          format: datetime
-          example: BRL
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    IssuingBalances:
-      type: object
-      properties:
-        issuingBalances:
-          type: array
-          items:
-            $ref: '#/components/schemas/IssuingBalance'
-    Bin:
-      type: object 
-      properties:
-        id:
-          type: string
-          example: 53810200
-          readOnly: true
-        network:
-          type: string
-          example: mastercard
-          readOnly: true
-        settlement:
-          type: string
-          example: credit
-          readOnly: true
-        category:
-          type: string
-          example: prepaid
-          readOnly: true
-        client:
-          type: string
-          example: business
-          readOnly: true
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    Bins:
-      type: object
-      properties:
-        bins:
-          type: array
-          items:
-            $ref: '#/components/schemas/Bin'  
     Card:
       type: object 
       required:
@@ -6582,28 +8513,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Card'
-    CardLog:
-      type: object
-      properties:
-        id:
-          type: string
-          readOnly: true
-          example: 5656565656565656
-        created:
-          type: string
-          format: date
-          readOnly: true
-        type:
-          type: string
-          readOnly: true
-          example: blocked
-        card:
-          $ref: '#/components/schemas/Card'
-    CardLogs:
-      type: object
-      properties:
-        logs:
-          $ref: '#/components/schemas/CardLog'
     Holder:
       type: object 
       required:
@@ -6651,28 +8560,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Holder'
-    HolderLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          format: date
-          readOnly: true
-        type:
-          type: string
-          example: blocked
-          readOnly: true
-        holder:
-          $ref: '#/components/schemas/Holder'
-    HolderLogs:
-      type: object
-      properties:
-        logs:
-          $ref: '#/components/schemas/HolderLog'
     IssuingInvoice:
       type: object 
       required:
@@ -6711,221 +8598,6 @@ components:
           type: string
           format: datetime
           readOnly: true
-    IssuingInvoices:
-      type: object
-      properties:
-        issuingInvoices:
-          type: array
-          items:
-            $ref: '#/components/schemas/IssuingInvoice'
-    IssuingInvoiceLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          format: date
-          readOnly: true
-        type:
-          type: string
-          example: created
-          readOnly: true
-        invoice:
-          $ref: '#/components/schemas/IssuingInvoice'
-    IssuingInvoiceLogs:
-      type: object
-      properties:
-        logs:
-          $ref: '#/components/schemas/IssuingInvoiceLog'
-    Purchase:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        holderName:
-          type: string
-          example: Tony Stark
-          readOnly: true
-        cardId:
-          type: string 
-          example: 5656565656565656
-          readOnly: true
-        cardEnding:
-          type: string 
-          example: 1234
-          readOnly: true
-        amount:
-          type: integer
-          example: 1234
-          readOnly: true
-        tax:
-          type: integer
-          example: 1234
-          readOnly: true
-        issuerAmount:
-          type: integer
-          example: 1234
-          readOnly: true
-        issuerCurrencyCode:
-          type: string
-          example: USD
-          readOnly: true 
-        issuerCurrencySymbol:
-          type: string
-          example: $
-          readOnly: true 
-        merchantAmount:
-          type: integer
-          example: 1234
-          readOnly: true 
-        merchantCurrencyCode:
-          type: string
-          example: USD
-          readOnly: true
-        merchantCurrencySymbol:
-          type: string
-          example: "$"
-          readOnly: true
-        merchantCategoryCode:
-          type: string
-          example: fastFoodRestaurants
-          readOnly: true
-        merchantCountryCode:
-          type: string
-          example: USA
-          readOnly: true
-        acquireId:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        merchantId:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        merchantName:
-          type: string
-          example: Google Cloud Platform
-          readOnly: true
-        merchantFee:
-          type: integer
-          example: 200
-          readOnly: true
-        walletId:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        methodCode:
-          type: string
-          example: "chip"
-          readOnly: true
-        score:
-          type: number
-          example: 7.6
-          readOnly: true
-        issuingTransactionIds:
-          type: string
-          example: 7.6
-          readOnly: true
-        endToEndId:
-          type: string
-          example: E79457883202101262140HHX553UPqeq
-          readOnly: true
-        status:
-          type: string
-          example: "approved"
-          readOnly: true
-        tags:
-          items:
-            type: string
-          example: ["travel", "food"]
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    Purchases:
-      type: object
-      properties:
-        purchases:
-          type: array
-          items:
-            $ref: '#/components/schemas/Purchase'
-    PurchaseLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          format: date
-          readOnly: true
-        issuingTransactionId:
-          type: string
-          readOnly: true
-        errors:
-          type: array
-          items:
-            type: string
-          readOnly: true
-        type:
-          type: string
-          example: approved
-          readOnly: true
-        purchase:
-          $ref: '#/components/schemas/Purchase'
-    PurchaseLogs:
-      type: object
-      properties:
-        logs:
-          $ref: '#/components/schemas/PurchaseLog'
-    Transaction:
-      type: object 
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        amount:
-          type: integer
-          example: 1234
-          readOnly: true
-        balance:
-          type: integer
-          example: 200
-          readOnly: true
-        description:
-          type: string
-          example: Buying food
-          readOnly: true
-        source:
-          type: string
-          example: issuing-purchase/5656565656565656
-          readOnly: true
-        tags:
-          items:
-            type: string
-          readOnly: true
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-    Transactions:
-      type: object
-      properties:
-        transactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Transaction'
     Withdrawal:
       type: object 
       required:
@@ -6964,13 +8636,6 @@ components:
           type: string
           format: datetime
           readOnly: true
-    Withdrawals:
-      type: object
-      properties:
-        withdrawals:
-          type: array
-          items:
-            $ref: '#/components/schemas/Withdrawal'
     Rule:
       type: object 
       required:
@@ -7144,34 +8809,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Request'
-    RequestLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          example: sent
-          readOnly: true
-        errors:
-          type: array
-          items:
-            type: string
-          readOnly: true
-        request:
-          $ref: '#/components/schemas/Request'
-    RequestLogs:
-      type: object
-      properties:
-        logs:
-          type: array
-          items:
-            $ref: '#/components/schemas/RequestLog'
     Key:
       type: object
       required:
@@ -7235,67 +8872,6 @@ components:
           type: string
           format: datetime
           readOnly: true
-    Keys:
-      type: object
-      properties:
-        keys:
-          type: array
-          items:
-            $ref: '#/components/schemas/Key'
-    KeyLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          example: updated
-          readOnly: true
-        errors:
-          type: array
-          readOnly: true
-          items:
-            type: string
-        key:
-          $ref: '#/components/schemas/Key'
-    KeyLogs:
-      type: object
-      properties:
-        logs:
-          type: array
-          items:
-            $ref: '#/components/schemas/KeyLog'
-    Balance:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        amount:
-          type: integer
-          example: 2000
-          readOnly: true
-        currency:
-          type: string
-          example: BRL
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    Balances:
-      type: object
-      properties:
-        balances:
-          type: array
-          items:
-            $ref: '#/components/schemas/Balance'
     Chargeback:
       type: object
       required:
@@ -7363,34 +8939,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Chargeback'
-    ChargebackLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          example: created
-          readOnly: true
-        errors:
-          type: array
-          items:
-            type: string
-          readOnly: true
-        chargeback:
-          $ref: '#/components/schemas/Chargeback'
-    ChargebackLogs:
-      type: object
-      properties:
-        logs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ChargebackLog'
     Claim:
       type: object
       required:
@@ -7459,50 +9007,6 @@ components:
           type: string
           format: datetime
           readOnly: true
-    Claims:
-      type: object
-      properties:
-        claims:
-          type: array
-          items:
-            $ref: '#/components/schemas/Claim'
-    ClaimLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-        type:
-          type: string
-          example: created
-          readOnly: true
-        errors:
-          type: array
-          readOnly: true
-          items:
-            type: string
-        agent:
-          type: string
-          example: claimer
-          readOnly: true
-        reason:
-          type: string
-          example: fraud
-          readOnly: true
-        claim:
-          $ref: '#/components/schemas/Claim'
-    ClaimLogs:
-      type: object
-      properties:
-        logs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ClaimLog'
     Director:
       type: object
       required:
@@ -7543,42 +9047,7 @@ components:
         status:
           type: string
           example: success
-          readOnly: true  
-    Directors:
-      type: object
-      properties:
-        directors:
-          type: array
-          items:
-            $ref: '#/components/schemas/Director'
-    Certificate:
-      type: object
-      properties:
-        content:
-          type: string
-          readOnly: true  
-    Certificates:
-      type: object
-      properties:
-        certificates:
-          type: array
-          items:
-            $ref: '#/components/schemas/Certificate'
-    Domain:
-      type: object
-      properties:
-        certificates:
-          $ref: '#/components/schemas/Certificates'
-        name:
-          type: string
-          readOnly: true  
-    Domains:
-      type: object
-      properties:
-        domains:
-          type: array
-          items:
-            $ref: '#/components/schemas/Domain'
+          readOnly: true
     Infraction:
       type: object
       required:
@@ -7642,34 +9111,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Infraction'
-    InfractionLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          example: created
-          readOnly: true
-        errors:
-          type: array
-          readOnly: true
-          items:
-            type: string
-        infraction:
-          $ref: '#/components/schemas/Infraction'
-    InfractionLogs:
-      type: object
-      properties:
-        logs:
-          type: array
-          items:
-            $ref: '#/components/schemas/InfractionLog'
     Reversal:
       type: object
       required:
@@ -7733,34 +9174,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Reversal'
-    ReversalLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          readOnly: true
-        type:
-          type: string
-          example: sent
-          readOnly: true
-        errors:
-          type: array
-          readOnly: true
-          items:
-            type: string
-        reversal:
-          $ref: '#/components/schemas/Reversal'
-    ReversalLogs:
-      type: object
-      properties:
-        logs:
-          type: array
-          items:
-            $ref: '#/components/schemas/ReversalLog'
     Statement:
       type: object
       required:
@@ -7797,13 +9210,6 @@ components:
           type: string
           format: datetime
           readOnly: true
-    Statements:
-      type: object
-      properties:
-        statements:
-          type: array
-          items:
-            $ref: '#/components/schemas/Statement'
     Note:
       type: object
       required:
@@ -7906,32 +9312,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Note'
-    NoteLog:
-      type: object
-      properties:
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        created:
-          type: string
-          readOnly: true
-        errors:
-          type: array
-          readOnly: true
-          items:
-            type: string
-        type:
-          type: string
-          example: created
-          readOnly: true
-        note:
-          $ref: '#/components/schemas/Note'
-    NoteLogs:
-      type: object
-      properties:
-        logs:
-          $ref: '#/components/schemas/NoteLog'
     Invoice:
       type: object
       required:
@@ -8142,13 +9522,6 @@ components:
           type: string
           example: 5656565656565656
           readOnly: true
-    Webhooks:
-      type: object
-      properties:
-        webhooks:
-          type: array
-          items:
-            $ref: '#/components/schemas/Webhook'
     Event:
       type: object
       properties:
@@ -8176,11 +9549,3 @@ components:
           type: string
           example: 4545454545454545
           readOnly: true
-    Events:
-      type: object
-      properties:
-        events:
-          type: array
-          items:
-            $ref: '#/components/schemas/Event'
-            
