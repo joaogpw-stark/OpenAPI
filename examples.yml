@@ -1,261 +1,845 @@
-        - name: requests
-          in: body
-          schema:
-            type: application/json
-
-------------------------------------------------------------------------------------------------------------------------
-
-        - name: cursor
-          in: query
-          description: String used to get the next batch of results.
-          required: false
-          schema:
+    IssuingBalance:
+      type: object 
+      properties:
+        id:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        amount:
+          type: integer
+          readOnly: true
+          example: 20000
+        currency:
+          type: string
+          format: datetime
+          readOnly: true
+          example: BRL
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    IssuingBalances:
+      type: object
+      properties:
+        issuingBalances:
+          type: array
+          items:
+            $ref: '#/components/schemas/IssuingBalance'
+    Bin:
+      type: object 
+      properties:
+        id:
+          type: string
+          readOnly: true
+          example: 538102
+        network:
+          type: string
+          readOnly: true
+          example: mastercard
+        settlement:
+          type: string
+          readOnly: true
+          example: credit
+        category:
+          type: string
+          readOnly: true
+          example: prepaid
+        client:
+          type: string
+          readOnly: true
+          example: business
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Bins:
+      type: object
+      properties:
+        bins:
+          type: array
+          items:
+            $ref: '#/components/schemas/Bin'  
+    Card:
+      type: object 
+      required:
+        - holderName
+        - holderTaxId
+        - holderExternalId
+      properties:
+        holderName:
+          type: string
+          example: Tony Stark
+        holderTaxId:
+          type: string
+          example: 012.345.678-90
+        holderExternalId:
+          type: string
+          example: my-entity/123
+        displayName:
+          type: string
+          example: ANTHONY STAR
+        rules:
+          items:
+            type: ADICIONAR SCHEMA DE ISSUING RULES
+        binId:
+          type: string
+          example: 53810200
+        tags:
+          items:
             type: string
-            format: byte
-        - name: limit
-          in: query
-          description: Number of results per cursor. Max = 100.
-          required: false
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 100
-        - name: fields
-          in: query
-          description: List of strings to filter response JSON keys.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: after
-          in: query
-          description: Filter entities created after this date.
-          required: false
-          schema:
+          example: ["travel", "food"]
+        streetLine1:
+          type: string
+          example: Av. Paulista, 200
+        streetLine2:
+          type: string
+          example: Apto. 123
+        district:
+          type: string
+          example: Bela Vista
+        city:
+          type: string
+          example: Rio de Janeiro
+        stateCode:
+          type: string
+          example: RJ
+        zipCode:
+          type: string
+          example: 01311-200
+        id:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        holderId:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        type:
+          type: string
+          readOnly: true
+          example: virtual
+        status:
+          type: string
+          readOnly: true
+          example: "active", "blocked", "canceled", "expired"
+        number:
+          type: string
+          readOnly: true
+          example: 123
+        security_code:
+          type: string
+          readOnly: true
+          example: 123
+        expiration:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Cards:
+      type: object
+      properties:
+        cards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Card'
+    Holder:
+      type: object 
+      required:
+        - name
+        - taxId
+        - externalId
+      properties:
+        name:
+          type: string
+          example: Tony Stark
+        taxId:
+          type: string
+          example: 012.345.678-90
+        externalId:
+          type: string
+          example: my-entity/123
+        rules:
+          items:
+            type: ADICIONAR SCHEMA DE ISSUING RULES
+        tags:
+          items:
             type: string
-            format: date
-        - name: before
-          in: query
-          description: Filter entities created before this date.
-          required: false
-          schema:
+          example: ["travel", "food"]
+        id:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        status:
+          type: string
+          readOnly: true
+          example: "active", "blocked", "canceled"
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Holders:
+      type: object
+      properties:
+        holders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Holder'
+    IssuingInvoice:
+      type: object 
+      required:
+        - amount
+      properties:
+        amount:
+          type: integer
+          example: 1234
+        taxId:
+          type: string 
+          example: 20.018.183/0001-80
+        name:
+          type: string
+          example: Tony Stark
+        tags:
+          items:
             type: string
-            format: date
-        - name: eventlIds
-          in: query
-          description: List of strings to get specific entities by Event ids.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: webhookIds
-          in: query
-          description: List of strings to get specific entities by Webhook ids.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: isDelivered
-          in: query
-          description: If false, only gets events that haven't been delivered. If true, only gets events that have already been delivered.
-          required: false
-          schema:
-            type: boolean
-        - name: tags
-          in: query
-          description: List of strings to get specific entities by their tags.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: ids
-          in: query
-          description: List of strings to get specific entities by their ids.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: holderIds
-          in: query
-          description: List of strings to filter Issuing Purchases by cardholder's ids.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: cardIds
-          in: query
-          description: List of strings to filter Issuing Purchases by Issuing Card ids.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: endToEndIds
-          in: query
-          description: List of strings to filter Issuing Purchases by endToEndIds.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: agent
-          in: query
-          description: Filter entities by their agent.
-          required: false
-          schema:
+          example: ["travel", "food"]
+        id:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        status:
+          type: string
+          readOnly: true
+          example: "created", "expired", "overdue", "paid"
+        issuingTransactionId:
+          type: string
+          readOnly: true
+          example: issuing-invoice/5656565656565656
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    IssuingInvoices:
+      type: object
+      properties:
+        issuingInvoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/IssuingInvoice'
+    Purchase:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        holderName:
+          type: string
+          example: Tony Stark
+          readOnly: true
+        cardId:
+          type: string 
+          example: 5656565656565656
+          readOnly: true
+        cardEnding:
+          type: string 
+          example: 1234
+          readOnly: true
+        amount:
+          type: integer
+          example: Tony Stark
+          readOnly: true
+        tax:
+          type: integer
+          example: 1234
+          readOnly: true
+        issuerAmount:
+          type: integer
+          example: 1234
+          readOnly: true
+        issuerCurrencyCode:
+          type: string
+          example: USD
+          readOnly: true 
+        issuerCurrencySymbol:
+          type: string
+          example: $
+          readOnly: true 
+        merchantAmount:
+          type: integer
+          example: 1234
+          readOnly: true 
+        merchantCurrencyCode:
+          type: string
+          example: USD
+          readOnly: true
+        merchantCurrencySymbol:
+          type: string
+          example: $
+          readOnly: 
+        merchantCategoryCode:
+          type: string
+          example: fastFoodRestaurants
+          readOnly: true
+        merchantCountryCode:
+          type: string
+          example: USA
+          readOnly: true
+        acquireId:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        merchantId:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        merchantName:
+          type: string
+          readOnly: true
+          example: Google Cloud Platform
+        merchantFee:
+          type: integer
+          readOnly: true
+          example: 200
+        walletId:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        methodCode:
+          type: string
+          readOnly: true
+          example: "chip", "token", "server", "manual", "magstripe" or "contactless"
+        score:
+          type: number
+          readOnly: true
+          example: 7.6
+        issuingTransactionIds:
+          type: string
+          readOnly: true
+          example: 7.6
+        endToEndId:
+          type: string
+          readOnly: true
+          example: E79457883202101262140HHX553UPqeq
+        status:
+          type: string
+          readOnly: true
+          example: "created", "expired", "overdue", "paid"
+        tags:
+          items:
             type: string
-        - name: returnIds
-          in: query
-          description: List of strings to get specific entities by returnIds.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: externalIds
-          in: query
-          description: List of strings to get specific entities by externalIds.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-
-------------------------------------------------------------------------------------------------------------------------
-
-        - name: eventId
-          in: path
-          description: Entity unique identifier.
-          required: true
-          schema:
+          example: ["travel", "food"]
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Purchases:
+      type: object
+      properties:
+        purchases:
+          type: array
+          items:
+            $ref: '#/components/schemas/Purchase'
+    Transaction:
+      type: object 
+      properties:
+        id:
+          type: string
+          readOnly: true
+          example: 538102
+        amount:
+          type: integer
+          readOnly: true
+          example: 1234
+        balance:
+          type: integer
+          readOnly: true
+          example: 200
+        description:
+          type: string
+          readOnly: true
+          example: Buying food
+        source:
+          type: string
+          readOnly: true
+          example: issuing-purchase/5656565656565656
+        tags:
+          items:
             type: string
-            format: '^\d{16}$'
-        - name: fields
-          in: query
-          description: List of strings to filter response JSON keys.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-
-------------------------------------------------------------------------------------------------------------------------
-
-        - name: cursor
-          in: query
-          description: String used to get the next batch of results.
-          required: false
-          schema:
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+    Transactions:
+      type: object
+      properties:
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transaction'
+    Withdrawal:
+      type: object 
+      required:
+        - amount
+        - externalId
+        - description
+      properties:
+        amount:
+          type: integer
+          example: 12345
+        externalId:
+          type: string
+          example: my-entity/123
+        description:
+          type: string
+          example: sending money back
+        tags:
+          items:
             type: string
-            format: byte
-        - name: limit
-          in: query
-          description: Number of results per cursor. Max = 100.
-          required: false
-          schema:
-            type: integer
-            minimum: 1
-            maximum: 100
-        - name: fields
-          in: query
-          description: List of strings to filter response JSON keys.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: after
-          in: query
-          description: Filter entities created after this date.
-          required: false
-          schema:
+          example: ["travel", "food"]
+        id:
+          type: string
+          readOnly: true
+          example: 5656565656565656
+        transactionId:
+          type: string
+          readOnly: true
+        issuingTransactionId:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Withdrawals:
+      type: object
+      properties:
+        withdrawals:
+          type: array
+          items:
+            $ref: '#/components/schemas/Withdrawal'
+    Request:
+      type: object
+      required:
+        - amount
+        - externalId
+        - senderName
+        - senderTaxId
+        - senderBranchCode
+        - senderAccountNumber
+        - senderAccountType
+        - receiverName
+        - receiverTaxId
+        - receiverBankCode
+        - receiverAccountNumber
+        - receiverBranchCode
+        - receiverAccountType
+        - endToEndId
+      properties:
+        amount:
+          type: integer
+        cashAmount:
+          type: string
+        cashierBankCode:
+          type: string
+        cashierType:
+          type: string
+        created:
+          type: string
+          format: date
+          readOnly: true
+        endToEndId:
+          type: string
+        external_id:
+          type: string
+        fee:
+          type: integer
+          readOnly: true
+        flow:
+          type: string
+          readOnly: true
+        id:
+          type: string
+          readOnly: true
+        initiatorTaxId:
+          type: string
+        method:
+          type: string
+        receiverAccountNumber:
+          type: string
+        receiverAccountType:
+          type: string
+        receiverBankCode:
+          type: string
+        receiverBranchCode:
+          type: string
+        receiverKeyId:
+          type: string
+        receiverName:
+          type: string
+        receiverTaxId:
+          type: string
+        reconciliation_id:
+          type: string
+        senderAccountNumber:
+          type: string
+        senderAccountType:
+          type: string
+        senderBankCode:
+          readOnly: true
+          type: string
+        senderBranchCode:
+          type: string
+        senderName:
+          type: string
+        senderTaxId:
+          type: string
+        status:
+          type: string
+          readOnly: true
+        tags:
+          items:
             type: string
-            format: date
-        - name: before
-          in: query
-          description: Filter entities created before this date.
-          required: false
-          schema:
+        updated:
+          type: string
+          format: date
+          readOnly: true
+    Requests:
+      type: object
+      properties:
+        requests:
+          type: array
+          items:
+            $ref: '#/components/schemas/Request'
+    Key:
+      type: object
+      required:
+        - accountCreated
+        - accountNumber
+        - accountType
+        - branchCode
+        - name
+        - taxId
+      properties:
+        accountCreated:
+          type: string
+          format: datetime
+        accountNumber:
+          type: string
+          format: date
+        accountType:
+          type: string
+          format: date
+          readOnly: true
+        branchCode:
+          type: string
+          readOnly: true
+        name:
+          type: string
+        taxId:
+          type: string
+        id:
+          type: string
+        tags:
+          items:
             type: string
-            format: date
-        - name: types
-          in: query
-          description: Filter logs by log types.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: chargebackIds
-          in: query
-          description: List of strings to get specific logs by their Pix Chargeback ids.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-        - name: ids
-          in: query
-          description: List of strings to get specific entities by their ids.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-------------------------------------------------------------------------------------------------------------------------
-
-        - name: logId
-          in: path
-          description: Entity unique identifier.
-          required: true
-          schema:
+        owned:
+          type: string
+          format: datetime
+          readOnly: true
+        ownerType:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+    Keys:
+      type: object
+      properties:
+        keys:
+          type: array
+          items:
+            $ref: '#/components/schemas/Key'
+    Balance:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        amount:
+          type: string
+          readOnly: true
+        currency:
+          type: string
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Balances:
+      type: object
+      properties:
+        balances:
+          type: array
+          items:
+            $ref: '#/components/schemas/Balance'
+    Chargeback:
+      type: object
+      required:
+        - amount
+        - referenceId
+        - reason
+      properties:
+        amount:
+          type: integer
+        referenceId:
+          type: string
+        reason:
+          type: string
+        description:
+          type: string 
+        analysis:
+          type: string
+          readOnly: true
+        bacenId:
+          type: string
+          readOnly: true  
+        senderBankCode:
+          type: string
+          readOnly: true  
+        recieverBankCode:
+          type: string
+          readOnly: true
+        rejectionReason:
+          type: string
+          readOnly: true  
+        reversalReferenceId:
+          type: string
+          readOnly: true 
+        id:
+          type: string
+          readOnly: true   
+        result:
+          type: string
+          readOnly: true 
+        status:
+          type: string
+          readOnly: true 
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Chargebacks:
+      type: object
+      properties:
+        chargebacks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chargeback'
+    Claim:
+      type: object
+      required:
+        - accountCreated
+        - accountNumber
+        - accountType
+        - branchCode
+        - name
+        - taxId
+        - keyId
+      properties:
+        accountCreated:
+          type: string
+          format: datetime
+        accountNumber:
+          type: string
+        accountType:
+          type: string
+        branchCode:
+          type: string 
+        name:
+          type: string 
+        taxId:
+          type: string 
+        keyId:
+          type: string 
+        id:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true  
+        type:
+          type: string
+          readOnly: true  
+        keyType:
+          type: string
+          readOnly: true
+        agent:
+          type: string
+          readOnly: true  
+        bankCode:
+          type: string
+          readOnly: true 
+        claimedBankCode:
+          type: string
+          readOnly: true   
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Claims:
+      type: object
+      properties:
+        claims:
+          type: array
+          items:
+            $ref: '#/components/schemas/Claim'
+    Director:
+      type: object
+      required:
+        - name
+        - taxId
+        - phone
+        - email
+        - password
+        - teamEmail
+        - teamPhones
+      properties:
+        name:
+          type: string
+        taxId:
+          type: string
+        phone:
+          type: string
+        email:
+          type: string 
+        password:
+          type: string 
+        teamEmail:
+          type: string 
+        teamPhones:
+          items:
             type: string
-            format: '^\d{16}$'
-        - name: fields
-          in: query
-          description: List of strings to filter response JSON keys.
-          required: false
-          schema:
-            type: array
-            items:
-              type: string
-
---------------------------------------------------------------------------------------------------------
-
-        '400':
-          description: Input error
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                code: 400
-                message: Input error
-        '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-              example:
-                code: 500
-                message: Huston, we have a problem
-
-----------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
+        id:
+          type: string
+          readOnly: true
+        status:
+          type: string
+          readOnly: true  
+    Directors:
+      type: object
+      properties:
+        directors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Director'
+    Domain:
+      type: object
+      properties:
+        certificates:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true  
+    Domains:
+      type: object
+      properties:
+        domains:
+          type: array
+          items:
+            $ref: '#/components/schemas/Domain'
+    Infraction:
+      type: object
+      required:
+        - referenceId
+        - type
+      properties:
+        referenceId:
+          type: integer
+        type:
+          type: string
+        description:
+          type: string 
+        id:
+          type: string
+          readOnly: true
+        creditedBankCode:
+          type: string
+          readOnly: true  
+        debitedBankCode:
+          type: string
+          readOnly: true  
+        agent:
+          type: string
+          readOnly: true
+        analysis:
+          type: string
+          readOnly: true  
+        bacenId:
+          type: string
+          readOnly: true 
+        reportedBy:
+          type: string
+          readOnly: true   
+        result:
+          type: string
+          readOnly: true 
+        status:
+          type: string
+          readOnly: true 
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Infractions:
+      type: object
+      properties:
+        infractions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Infraction'
     Reversal:
       type: object
       required:
@@ -266,15 +850,19 @@
       properties:
         amount:
           type: integer
+          example: 1000
         bankCode:
           type: string
           readOnly: true
+          example: 20018183
         created:
           type: string
           format: datetime
           readOnly: true
+          example: 2022-05-07 13:07:38.186+00:00,
         externalId:
           type: string
+          example: "my_unique_id"
         endToEndId:
           type: string
         fee:
@@ -304,12 +892,10 @@
     Reversals:
       type: object
       properties:
-        requests:
+        reversals:
           type: array
           items:
             $ref: '#/components/schemas/Reversal'
-
-
     Statement:
       type: object
       required:
@@ -340,41 +926,308 @@
           type: string
           format: datetime
           readOnly: true
-
-
-
-    Key:
+    Statements:
+      type: object
+      properties:
+        statements:
+          type: array
+          items:
+            $ref: '#/components/schemas/Statement'
+    Note:
       type: object
       required:
-        - after
-        - before
-        - type
+        - templateId
+        - name
+        - taxId
+        - nominalAmount
+        - scheduled
+        - invoices
+        - payment
+        - signers
+        - externalId
+        - paymentType
       properties:
-        accountCreated:
+        templateId:
           type: string
-          format: datetime
-        accountNumber:
+        name:
           type: string
-          format: date
-        accountType:
+        taxId:
+          type: string 
+        nominalAmount:
+          type: integer
+        scheduled:
           type: string
-          format: date
+          format: datetime 
+        invoices:
+          items:
+            type: object 
+        payment:
+          type: object
+        signers:
+          items:
+            type: object 
+        externalId:
+          type: string
+        paymentType:
+          type: string  
+        rebateAmount:
+          type: integer
+        tags:
+          items:
+            type: string
+        id:
+          type: string
           readOnly: true
-        branchCode:
+        amount:
+          type: integer
+          readOnly: true
+        expiration:
+          type: integer 
+          readOnly: true
+        documentId:
           type: string
           readOnly: true
         status:
+          type: string 
+          readOnly: true
+        transactionsIds:
+          items:
+            type: string
+          readOnly: true
+        workspaceId:
           type: string
           readOnly: true
-        transactionCount:
+        interest:
+          type: number
+          readOnly: true
+        created:
           type: string
+          format: datetime
           readOnly: true
         updated:
           type: string
           format: datetime
           readOnly: true
+    Notes:
+      type: object
+      properties:
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Note'
+    Invoice:
+      type: object
+      required:
+        - amount
+      properties:
+        amount:
+          type: integer
+        due:
+          type: string
+          format: date
+        expiration:
+          type: integer
+          format: date 
+        fine:
+          type: number
+        interest:
+          type: number
+        discounts:
+          items:
+            type: object 
+        tags:
+          items:
+            type: strings
+        descriptions:
+          items:
+            type: object 
+        name:
+          type: string
+          readOnly: true
+        taxId:
+          type: string
+          readOnly: true
+        pdf:
+          type: string 
+          readOnly: true
+        link:
+          type: string
+          readOnly: true
+        nominalAmount:
+          type: integer 
+          readOnly: true
+        fineAmount:
+          type: integer
+          readOnly: true
+        interestAmount:
+          type: integer
+          readOnly: true
+        discountAmount:
+          type: integer
+          readOnly: true
+        id:
+          type: string
+          readOnly: true
+        brcode:
+          type: string 
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        fee:
+          type: integer
+          readOnly: true
+        transactionIds:
+          items:
+            type: number
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          readOnly: true
+    Invoices:
+      type: object
+      properties:
+        invoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/Invoice'
+    Signer:
+      type: object
+      required:
+        - name
+        - contact
+        - method
+      properties:
+        name:
+          type: string
+        contact:
+          type: string
+        method:
+          type: string
+    Signers:
+      type: object
+      properties:
+        signers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Signer'
+    Transfer:
+      type: object
+      required:
+        - name
+        - taxId
+        - bankCode
+        - branchCode
+        - accountNumber
+      properties:
+        name:
+          type: string
+        taxId:
+          type: string
+        bankCode:
+          type: string
+        branchCode:
+          type: string
+        accountNumber:
+          type: string
+        accountType:
+          type: string 
+        tags:
+          items:
+            type: string
+        amount:
+          type: integer
+          readOnly: true
+        externalId:
+          type: integer
+          readOnly: true
+        scheduled:
+          type: string
+          format: date
+          readOnly: true
+        description:
+          type: string
+          readOnly: true
+        id:
+          type: string
+          readOnly: true
+        fee:
+          type: integer
+          readOnly: true
+        status:
+          type: string
+          readOnly: true
+        transactionIds:
+          items: 
+            type: string
+          readOnly: true
+        created:
+          type: string
+          format: date
+          readOnly: true
+        updated:
+          type: string
+          format: date
+          readOnly: true
+    Transfers:
+      type: object
+      properties:
+        transfers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transfer'
+    Webhook:
+      type: object
+      required:
+        - url
+        - subcscriptions
+      properties:
+        url:
+          type: string
+        subcscriptions:
+          items:
+            type: string
+        id:
+          type: string
+    Webhooks:
+      type: object
+      properties:
+        webhooks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Webhook'
+    Event:
+      type: object
+      properties:
+        id:
+          type: string
+        log:
+          items:
+            type: string
+        created:
+          type: string
+          format: date
+          readOnly: true
+        isDelivered:
+          type: boolean
+        subscription:
+          type: string
+        workspaceId:
+          type: string
+    Events:
+      type: object
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
 
-
+    
 accountCreated:
   type: string
 accountNumber:
@@ -385,7 +1238,7 @@ bankCode:
   type: string
 bankName:
   type: string
-branchCode
+branchCode:
   type: string
 created:
   type: string
