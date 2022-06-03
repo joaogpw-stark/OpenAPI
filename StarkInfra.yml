@@ -401,7 +401,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                - $ref: '#/components/schemas/Requests'
+                - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ==
@@ -514,7 +520,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Request'
               example:
                 request:
                   amount: 10000
@@ -646,6 +652,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  request:
+                    $ref: '#/components/schemas/Request'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CkoKFAoHY3JlYXRlZBIJCMaFuPOC1fcCEi5qEGl-YXBpLW1zLXNwaS1kZXZyGgsSDVBpeFJlcXVlc3RMb2cYgICAlPDXyAgMGAAgAQ==
@@ -775,6 +799,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  request:
+                    $ref: '#/components/schemas/Request'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   created: '2022-05-17T18:58:41.842058+00:00'
@@ -987,7 +1026,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Reversals'
+                  - type: object
+                properties:
+                    cursor:
+                      type: string
+                      example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CkgKFAoHY3JlYXRlZBIJCNru8oXIzfYCEixqEGl-YXBpLW1zLXNwaS1kZXZyGAsSC1BpeFJldmVyc2FsGICAgKSCxrAJDBgAIAE=
@@ -1064,7 +1109,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Reversal'
               example:
                 reversal:
                   amount: 10
@@ -1168,6 +1213,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  reversal:
+                    $ref: '#/components/schemas/Reversal'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CksKFAoHY3JlYXRlZBIJCISgxMjG1fcCEi9qEGl-YXBpLW1zLXNwaS1kZXZyGwsSDlBpeFJldmVyc2FsTG9nGICAgKSyvLsLDBgAIAE=
@@ -1255,6 +1318,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  reversal:
+                    $ref: '#/components/schemas/Reversal'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   created: '2022-05-10T18:22:44.867189+00:00'
@@ -1307,7 +1385,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Balance'
+                  - type: object
+                properties:
+                    cursor:
+                      type: string
+                      example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 balances:
                   - amount: 46641
@@ -1439,7 +1523,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Statements'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CjMSLWoQaX5hcGktbXMtc3BpLWRldnIZCxIMUGl4U3RhdGVtZW50GICAgKTO7pIIDBgAIAA=
@@ -1508,7 +1598,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Statement'
               example:
                 statement:
                   after: '2022-01-01T03:00:00+00:00'
@@ -1732,7 +1822,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Keys'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CkUKFAoHY3JlYXRlZBIJCMbA3o385PcCEilqEWl-YXBpLW1zLWRpY3QtZGV2chQLEgdEaWN0S2V5GICAgITe4YkKDBgAIAE=
@@ -1828,7 +1924,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Key'
               example:
                 key:
                   accountCreated: '2022-02-02T02:59:59.999999+00:00'
@@ -1892,7 +1988,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                - $ref: '#/components/schemas/Key'
+                - type: object
+                properties:
+                  status:
+                    type: string
+                    example: "canceled"
               example:
                 key:
                   accountCreated: '2022-02-02T02:59:59.999999+00:00'
@@ -1966,7 +2068,39 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Key'
+              type: object
+              required:
+                - id
+                - reason
+              properties:
+                id:
+                  type: integer
+                  example: +5511989898989
+                reason:
+                  type: string
+                  example: reconciliation
+                accountCreated:
+                  type: string
+                  example: "2022-01-01T12:00:00:00"
+                accountNumber:
+                  type: string
+                  example: 76543
+                accountType:
+                  type: string
+                  example: salary
+                branchCode:
+                  type: string
+                  example: 1234
+                name:
+                  type: string
+                  example: Jamie Lannister
+            example:
+                reason: reconciliation
+                accountCreated: "2022-01-01T12:00:00:00"
+                accountNumber: 76543
+                accountType: salary
+                branchCode: 1234
+                name: Jamie Lannister
       parameters:
         - name: version
           in: path
@@ -2083,6 +2217,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  key:
+                    $ref: '#/components/schemas/Key'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CkgKFAoHY3JlYXRlZBIJCMb5weSh5_cCEixqEWl-YXBpLW1zLWRpY3QtZGV2chcLEgpEaWN0S2V5TG9nGICAgISC_4oIDBgAIAE=
@@ -2176,6 +2328,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  key:
+                    $ref: '#/components/schemas/Key'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   created: '2022-05-17T19:27:38.430274+00:00'
@@ -2388,7 +2555,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Claims'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 claims:
                   - accountCreated: '2022-02-02T02:59:59.999999+00:00'
@@ -2475,7 +2648,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Claim'
               example:
                 claim:
                   accountCreated: '2022-02-02T02:59:59.999999+00:00'
@@ -2542,7 +2715,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Claim'
+              type: object
+              required:
+                - id
+                - status
+              properties:
+                id:
+                  type: integer
+                  example: 5719405850615809
+                status:
+                  type: string
+                  example: confirmed
+                reason:
+                  type: string
+                  example: fraud
+            example:
+                status: confirmed
+                reason: fraud
       parameters:
         - name: version
           in: path
@@ -2657,6 +2846,30 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  claim:
+                    $ref: '#/components/schemas/Claim'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  agent:
+                    type: string
+                    example: "claimed"
+                  reason:
+                    type: string
+                    example: ""
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CkoKFAoHY3JlYXRlZBIJCLHpgZyj5_cCEi5qEWl-YXBpLW1zLWRpY3QtZGV2chkLEgxEaWN0Q2xhaW1Mb2cYgICAhI28ywsMGAAgAQ==
@@ -2758,6 +2971,27 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  claim:
+                    $ref: '#/components/schemas/Claim'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  agent:
+                    type: string
+                    example: "claimed"
+                  reason:
+                    type: string
+                    example: ""
               example:
                 log:
                   agent: claimer
@@ -3003,7 +3237,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Infractions'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   Ck4KFAoHY3JlYXRlZBIJCJi1_ePi5vcCEjJqEWl-YXBpLW1zLWRpY3QtZGV2ch0LEhBJbmZyYWN0aW9uUmVwb3J0GICAgPjs998JDBgAIAE=
@@ -3084,7 +3324,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Infraction'
               example:
                 infraction:
                   agent: reporter
@@ -3140,7 +3380,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Infraction'
+              type: object
+              required:
+                - id
+                - result
+              properties:
+                id:
+                  type: string
+                  example: 5719405850615809
+                result:
+                  type: string
+                  example: agreed
+                analysis:
+                  type: string
+                  example: Client payed for an item and never received it.
+            example:
+                result: reversal
+                analysis: Client payed for an item and never received it.
       parameters:
         - name: version
           in: path
@@ -3209,7 +3465,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                - $ref: '#/components/schemas/Infraction'
+                - type: object
+                properties:
+                  status:
+                    type: string
+                    example: "canceled"
               example:
                 infraction:
                   agent: reporter
@@ -3324,6 +3586,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  infraction:
+                    $ref: '#/components/schemas/Infraction'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   ClEKFAoHY3JlYXRlZBIJCOrK9Oak5_cCEjVqEWl-YXBpLW1zLWRpY3QtZGV2ciALEhNJbmZyYWN0aW9uUmVwb3J0TG9nGICAgISNvKsIDBgAIAE=
@@ -3417,6 +3697,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  infraction:
+                    $ref: '#/components/schemas/Infraction'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   created: '2022-05-17T19:40:13.028853+00:00'
@@ -3583,7 +3878,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Chargebacks'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 chargebacks:
                   - amount: 100
@@ -3666,7 +3967,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Chargeback'
               example:
                 chargeback:
                   amount: 100
@@ -3732,7 +4033,32 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Chargeback'
+              type: object
+              required:
+                - id
+                - result
+                - rejectionReason
+                - reversalReferenceId
+              properties:
+                id:
+                  type: string
+                  example: 5719405850615809
+                result:
+                  type: string
+                  example: rejected
+                rejectionReason:
+                  type: string
+                  example: noBalance
+                reversalReferenceId:
+                  type: string
+                  example: D20018183202201201450u34sDGd19lz
+                analysis:
+                  type: string
+                  example: Upon investigation fraud was confirmed.
+            example:
+                analysis: Upon investigation fraud was confirmed.
+                result: rejected
+                description: Client payed for an item and never received it.
       parameters:
         - name: version
           in: path
@@ -3801,7 +4127,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                - $ref: '#/components/schemas/Chargeback'
+                - type: object
+                properties:
+                  status:
+                    type: string
+                    example: "canceled"
               example:
                 chargeback:
                   amount: 100
@@ -3918,6 +4250,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  chargeback:
+                    $ref: '#/components/schemas/Chargeback'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   ClAKFAoHY3JlYXRlZBIJCJSQ6POn5_cCEjRqEWl-YXBpLW1zLWRpY3QtZGV2ch8LEhJSZXZlcnNhbFJlcXVlc3RMb2cYgICA-OyPsAgMGAAgAQ==
@@ -4011,6 +4361,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  chargeback:
+                    $ref: '#/components/schemas/Chargeback'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   chargeback:
@@ -4068,7 +4433,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Domains'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 domains:
                   - certificates:
@@ -4121,7 +4492,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/IssuingBalance'
+                  - type: object
+                properties:
+                    cursor:
+                      type: string
+                      example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 balances:
                   - amount: 4192241
@@ -4187,7 +4564,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Bin'
+                  - type: object
+                properties:
+                    cursor:
+                      type: string
+                      example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 bins:
                   - category: prepaid
@@ -4406,7 +4789,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Cards'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cards:
                   - binId: '53810202'
@@ -4525,7 +4914,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Card'
               example:
                 card:
                   binId: '53810202'
@@ -4600,7 +4989,25 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Card'
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  example: rejected
+                status:
+                  type: string
+                  example: blocked
+                displayName:
+                  type: string
+                rules:
+                  type: string
+                tags:
+                  items:
+                    type: string
+            example:
+                status: blocked
       parameters:
         - name: version
           in: path
@@ -4675,7 +5082,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                - $ref: '#/components/schemas/Card'
+                - type: object
+                properties:
+                  status:
+                    type: string
+                    example: "canceled"
               example:
                 card:
                   binId: '53810202'
@@ -4802,6 +5215,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  card:
+                    $ref: '#/components/schemas/Card'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   ClMKFAoHY3JlYXRlZBIJCN7Qmdip5_cCEjdqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIbCxIOSXNzdWluZ0NhcmRMb2cYgICA5JjDrQgMGAAgAQ==
@@ -4919,6 +5350,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  card:
+                    $ref: '#/components/schemas/Card'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   card:
@@ -5126,7 +5572,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Holders'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   ClIKFAoHY3JlYXRlZBIJCNjy3NGS5_cCEjZqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIaCxINSXNzdWluZ0hvbGRlchiAgICk3p3hCAwYACAB
@@ -5217,7 +5669,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Holder'
               example:
                 holder:
                   created: '2022-05-17T20:03:05.939249+00:00'
@@ -5279,7 +5731,25 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Holder'
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  example: rejected
+                status:
+                  type: string
+                  example: blocked
+                name:
+                  type: string
+                rules:
+                  type: string
+                tags:
+                  items:
+                    type: string
+            example:
+                status: blocked
       parameters:
         - name: version
           in: path
@@ -5346,7 +5816,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                - $ref: '#/components/schemas/Holder'
+                - type: object
+                properties:
+                  status:
+                    type: string
+                    example: "canceled"
               example:
                 holder:
                   created: '2022-05-17T20:03:05.939249+00:00'
@@ -5462,6 +5938,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  holder:
+                    $ref: '#/components/schemas/Holder'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   ClUKFAoHY3JlYXRlZBIJCKGLrLuq5_cCEjlqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIdCxIQSXNzdWluZ0hvbGRlckxvZxiAgICk0rnJCgwYACAB
@@ -5553,6 +6047,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  holder:
+                    $ref: '#/components/schemas/Holder'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   created: '2022-05-17T20:04:53.459361+00:00'
@@ -5718,7 +6227,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/IssuingInvoices'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   ClMKFAoHY3JlYXRlZBIJCLadk9OS5_cCEjdqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIbCxIOSXNzdWluZ0ludm9pY2UYgICApK3x1wkMGAAgAQ==
@@ -5803,7 +6318,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/IssuingInvoice'
               example:
                 invoice:
                   amount: 10000
@@ -5910,6 +6425,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  invoice:
+                    $ref: '#/components/schemas/IssuingInvoice'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   ClYKFAoHY3JlYXRlZBIJCKH_w6CT5_cCEjpqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIeCxIRSXNzdWluZ0ludm9pY2VMb2cYgICA5JjDzQkMGAAgAQ==
@@ -6003,6 +6536,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  invoice:
+                    $ref: '#/components/schemas/IssuingInvoice'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   created: '2022-05-17T18:21:03.212449+00:00'
@@ -6129,7 +6677,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Purchases'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: null
                 purchases:
@@ -6243,7 +6797,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Purchase'
               example:
                 purchase:
                   acquirerId: '35016'
@@ -6366,6 +6920,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  purchase:
+                    $ref: '#/components/schemas/Purchase'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   ClcKFAoHY3JlYXRlZBIJCP2VktTR5_cCEjtqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIfCxISSXNzdWluZ1B1cmNoYXNlTG9nGICAgOTT1poKDBgAIAE=
@@ -6493,6 +7065,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  purchase:
+                    $ref: '#/components/schemas/Purchase'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   created: '2022-05-17T23:00:16.807417+00:00'
@@ -6628,7 +7215,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Transactions'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CmkKFAoHY3JlYXRlZBIJCODx9p-T5_cCChAKCmNoYWluQ291bnQSAggWEjtqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIfCxISSXNzdWluZ1RyYW5zYWN0aW9uGICAgOSK644KDBgAIAE=
@@ -6695,7 +7288,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Transaction'
               example:
                 transaction:
                   amount: 10000
@@ -6848,7 +7441,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Withdrawals'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   ClYKFAoHY3JlYXRlZBIJCNqalNKS5_cCEjpqGGR-YXBpLW1zLWNhcmQtaXNzdWVyLWRldnIeCxIRSXNzdWluZ1dpdGhkcmF3YWwYgICAxOnpxAkMGAAgAQ==
@@ -6921,7 +7520,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Withdrawal'
               example:
                 withdrawal:
                   amount: 10000
@@ -7115,7 +7714,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Notes'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: null
                 notes:
@@ -7216,7 +7821,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Note'
               example:
                 note:
                   amount: 193461
@@ -7354,6 +7959,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  note:
+                    $ref: '#/components/schemas/Note'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: null
                 logs:
@@ -7512,6 +8135,21 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  note:
+                    $ref: '#/components/schemas/Note'
+                  created:
+                    type: string
+                    example: '2022-05-04T17:16:34.805+00:00'
+                  errors: 
+                    type: string
+                    example: []
+                  id:
+                    type: string
+                    example: "5676741565612032"
+                  type:
+                    type: string
+                    example: "created"
               example:
                 log:
                   errors: []
@@ -7645,7 +8283,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Events'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   Ck0KFAoHY3JlYXRlZBIJCOzOjcus5_cCEjFqFGl-YXBpLW1zLXdlYmhvb2stZGV2chkLEgxOb3RpZmljYXRpb24YgICAhP6w2woMGAAgAQ==
@@ -7816,7 +8460,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Event'
               example:
                 event:
                   created: '2022-05-17T20:14:24.267083+00:00'
@@ -7928,7 +8572,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Event'
               example:
                 event:
                   created: '2022-05-17T20:14:24.267083+00:00'
@@ -8019,7 +8663,18 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Event'
+              type: object
+              required:
+                - id
+              properties:
+                id:
+                  type: string
+                  example: rejected
+                isDelivered:
+                  type: boolean
+                  example: true
+            example:
+                isDelivered: true
       parameters:
         - name: version
           in: path
@@ -8124,7 +8779,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                - $ref: '#/components/schemas/Attempts'
+                - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 attempts:
                   - code: invalidConnection
@@ -8218,7 +8879,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: '#/components/schemas/Webhooks'
+                  - type: object
+                properties:
+                  cursor:
+                    type: string
+                    example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
               example:
                 cursor: >-
                   CjISLGoUaX5hcGktbXMtd2ViaG9vay1kZXZyFAsSB1dlYmhvb2sYgICAuMWl2AkMGAAgAA==
@@ -8297,7 +8964,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Webhook'
               example:
                 webhook:
                   id: '5454867623575552'
@@ -8363,7 +9030,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Webhook'
               example:
                 message: Webhook successfully deleted
                 webhook:
@@ -8389,306 +9056,6 @@ paths:
           description: Unexpected error
 components:
   schemas:
-    InternalError:
-      type: object
-      properties:
-        code: 
-          type: string
-          readOnly: true
-          example: InternalServerError
-        message:
-          type: string
-          readOnly: true
-          example: Houston, we have a problem!
-    InternalErrors:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/InternalError'
-    RequestError:
-      type: object
-      properties:
-        code: 
-          type: string
-          readOnly: true
-        message:
-          type: string
-          readOnly: true
-    RequestErrors:
-      type: object
-      properties:
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/RequestError'
-    Card:
-      type: object 
-      required:
-        - holderName
-        - holderTaxId
-        - holderExternalId
-      properties:
-        holderName:
-          type: string
-          example: Tony Stark
-        holderTaxId:
-          type: string
-          example: 012.345.678-90
-        holderExternalId:
-          type: string
-          example: my-entity/123
-        displayName:
-          type: string
-          example: ANTHONY STAR
-        rules:
-          type: object
-          example: 
-            $ref: '#/components/schemas/Rules'
-        binId:
-          type: string
-          example: 53810200
-        tags:
-          items:
-            type: string
-          example: ["travel", "food"]
-        streetLine1:
-          type: string
-          example: Av. Paulista, 200
-        streetLine2:
-          type: string
-          example: Apto. 123
-        district:
-          type: string
-          example: Bela Vista
-        city:
-          type: string
-          example: Rio de Janeiro
-        stateCode:
-          type: string
-          example: RJ
-        zipCode:
-          type: string
-          example: 01311-200
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        holderId:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        type:
-          type: string
-          example: virtual
-          readOnly: true
-        status:
-          type: string
-          example: "active"
-          readOnly: true
-        number:
-          type: string
-          example: 123
-          readOnly: true
-        securityCode:
-          type: string
-          example: 123
-          readOnly: true
-        expiration:
-          type: string
-          readOnly: true
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    Cards:
-      type: object
-      properties:
-        cards:
-          type: array
-          items:
-            $ref: '#/components/schemas/Card'
-    Holder:
-      type: object 
-      required:
-        - name
-        - taxId
-        - externalId
-      properties:
-        name:
-          type: string
-          example: Tony Stark
-        taxId:
-          type: string
-          example: 012.345.678-90
-        externalId:
-          type: string
-          example: my-entity/123
-        rules:
-          type: object
-          example: 
-            $ref: '#/components/schemas/Rules'
-        tags:
-          items:
-            type: string
-          example: ["travel", "food"]
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        status:
-          type: string
-          example: "active"
-          readOnly: true
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    Holders:
-      type: object
-      properties:
-        holders:
-          type: array
-          items:
-            $ref: '#/components/schemas/Holder'
-    IssuingInvoice:
-      type: object 
-      required:
-        - amount
-      properties:
-        amount:
-          type: integer
-          example: 1234
-        taxId:
-          type: string 
-          example: 20.018.183/0001-80
-        name:
-          type: string
-          example: Tony Stark
-        tags:
-          items:
-            type: string
-          example: ["travel", "food"]
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        status:
-          type: string
-          example: "created"
-          readOnly: true
-        issuingTransactionId:
-          type: string
-          example: issuing-invoice/5656565656565656
-          readOnly: true
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    Withdrawal:
-      type: object 
-      required:
-        - amount
-        - externalId
-        - description
-      properties:
-        amount:
-          type: integer
-          example: 12345
-        externalId:
-          type: string
-          example: my-entity/123
-        description:
-          type: string
-          example: sending money back
-        tags:
-          items:
-            type: string
-          example: ["travel", "food"]
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-        transactionId:
-          type: string
-          readOnly: true
-        issuingTransactionId:
-          type: string
-          readOnly: true
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    Rule:
-      type: object 
-      required:
-        - name
-        - amount
-        - interval
-      properties:
-        name:
-          type: string
-          example: Travel
-        amount:
-          type: integer
-          example: 20000
-        interval:
-          type: integer
-          example: day
-        currencyCode:
-          type: string
-          example: BRL
-        categories:
-          items:
-            type: string
-          example: ["eatingPlacesRestaurants", "travelAgenciesTourOperators"]
-        countries:
-          items:
-            type: string
-          example: ["BRA", "USA"]
-        methods:
-          items:
-            type: string
-          example: ["chip", "token", "server", "manual", "magstripe", "contactless"]
-        counterAmount:
-          type: string
-          example: 1000
-          readOnly: true
-        currencySymbol:
-          type: string
-          example: R$
-          readOnly: true
-        currencyName:
-          example: Brazilian Real
-          readOnly: true
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true
-    Rules:
-      type: object
-      properties:
-        rules:
-          type: array
-          items:
-            $ref: '#/components/schemas/Rule'
     Request:
       type: object
       required:
@@ -8710,70 +9077,73 @@ components:
         amount:
           type: integer
           example: 12344
-        cashAmount:
-          type: string
-          example: 1000
-        cashierBankCode:
-          type: string
-          example: "00000000"
-        cashierType:
-          example: merchant
-          type: string
-        endToEndId:
-          type: string
-          example: E79457883202101262140HHX553UPqeq
-        external_id:
+        externalId:
           type: string
           example: my-internal-id-123456
-        initiatorTaxId:
-          type: string
-          example: 20.018.183/0001-80
-        method:
-          type: string
-          example: manual
-        receiverAccountNumber:
-          type: string
-          example: 876543-2
-        receiverAccountType:
-          type: string
-          example: "savings"
-        receiverBankCode:
-          type: string
-          example: 20018183
-        receiverBranchCode:
-          type: string
-          example: 1357-9
-        receiverKeyId:
-          type: string
-          example: 20.018.183/0001-80
-        receiverName:
-          type: string
-          example: Edward Stark
-        receiverTaxId:
-          type: string
-          example: 20.018.183/0001-80
-        reconciliation_id:
-          type: string
-          example: b77f5236-7ab9-4487-9f95-66ee6eaf1781
-        senderAccountNumber:
-          type: string
-          example: 876543-2
-        senderAccountType:
-          type: string
-          example: checking
-        senderBranchCode:
-          type: string
-          example: 1357-9
         senderName:
           type: string
           example: Edward Stark
         senderTaxId:
           type: string
           example: 20.018.183/0001-80
+        senderBranchCode:
+          type: string
+          example: 1357-9
+        senderAccountNumber:
+          type: string
+          example: 876543-2
+        senderAccountType:
+          type: string
+          example: checking
+        receiverName:
+          type: string
+          example: Edward Stark
+        receiverTaxId:
+          type: string
+          example: 20.018.183/0001-80
+        receiverBankCode:
+          type: string
+          example: 20018183
+        receiverAccountNumber:
+          type: string
+          example: 876543-2
+        receiverBranchCode:
+          type: string
+          example: 1357-9
+        receiverAccountType:
+          type: string
+          example: "savings"
+        endToEndId:
+          type: string
+          example: E79457883202101262140HHX553UPqeq
+        receiverKeyId:
+          type: string
+          example: 20.018.183/0001-80
+        reconciliationId:
+          type: string
+          example: b77f5236-7ab9-4487-9f95-66ee6eaf1781
+        description:
+          example: merchant
+          type: string
+        initiatorTaxId:
+          type: string
+          example: 20.018.183/0001-80
+        cashAmount:
+          type: string
+          example: 1000
+        cashierBankCode:
+          type: string
+          example: "20018183"
+        cashierType:
+          example: merchant
+          type: string
         tags:
           items:
             type: string
             example: ["employees", "monthly"]
+        method:
+          type: string
+          example: manual
         status:
           type: string
           example: created
@@ -8797,10 +9167,12 @@ components:
         created:
           type: string
           format: date
+          example: 2022-05-03 17:16:34.787+00:00
           readOnly: true
         updated:
           type: string
           format: date
+          example: 2022-05-03 17:16:34.787+00:00
           readOnly: true
     Requests:
       type: object
@@ -8809,6 +9181,136 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Request'
+    Reversal:
+      type: object
+      required:
+        - amount
+        - externalId
+        - endToEndId
+        - reason
+      properties:
+        amount:
+          type: integer
+          example: 1000
+        endToEndId:
+          type: string
+          example: E79457883202101262140HHX553UPqeq
+        externalId:
+          type: string
+          example: "my_unique_id"
+        reason:
+          type: string
+          example: fraud
+        tags:
+          items:
+            type: string
+          example: ["employees", "monthly"]
+        id:
+          type: string
+          example: 5656565656565656
+          readOnly: true
+        returnId:
+          type: string
+          example: D20018183202202030109X3OoBHG74wo
+          readOnly: true
+        bankCode:
+          type: string
+          readOnly: true
+          example: 20018183
+        fee:
+          type: integer
+          example: 200
+          readOnly: true
+        status:
+          type: string
+          example: processing
+          readOnly: true
+        flow:
+          type: string
+          example: in
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          example: 2022-05-07 13:07:38.186+00:00
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          example: 2022-05-07 13:07:38.186+00:00
+          readOnly: true
+    Reversals:
+      type: object
+      properties:
+        reversals:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reversal'
+    Balance:
+      type: object
+      properties:
+        amount:
+          type: string
+          example: 100
+          readOnly: true
+        currency:
+          type: string
+          example: BRL
+          readOnly: true
+        id:
+          type: string
+          example: 5692908409716736
+          readOnly: true
+        updated:
+          type: string
+          format: date
+          example: 2022-05-04 18:02:18.297+00:00
+          readOnly: true
+    Statement:
+      type: object
+      required:
+        - after
+        - before
+        - type
+      properties:
+        after:
+          type: string
+          format: date
+        before:
+          type: string
+          format: date
+        type:
+          type: string
+          example: interchangeTotal
+        id:
+          type: string
+          example: 5656565656565656
+          readOnly: true
+        status:
+          type: string
+          example: success
+          readOnly: true
+        transactionCount:
+          type: integer
+          example: 11
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          example: 2022-02-01T14:49:21.831976+00:00
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          example: 2022-02-01T14:49:21.831984+00:00
+          readOnly: true
+    Statements:
+      type: object
+      properties:
+        statements:
+          type: array
+          items:
+            $ref: '#/components/schemas/Statement'
     Key:
       type: object
       required:
@@ -8822,6 +9324,7 @@ components:
         accountCreated:
           type: string
           format: datetime
+          example: 2022-02-01T00:00:00.00
         accountNumber:
           type: string
           example: 76543
@@ -8871,74 +9374,15 @@ components:
         created:
           type: string
           format: datetime
+          example: 2022-05-04 18:02:18.297+00:00
           readOnly: true
-    Chargeback:
-      type: object
-      required:
-        - amount
-        - referenceId
-        - reason
-      properties:
-        amount:
-          type: integer
-          example: 11234
-        referenceId:
-          type: string
-          example: E20018183202201201450u34sDGd19lz
-        reason:
-          type: string
-          example: fraud
-        description:
-          type: string 
-        analysis:
-          type: string
-          readOnly: true
-        bacenId:
-          type: string
-          readOnly: true  
-        senderBankCode:
-          type: string
-          example: 20018183
-          readOnly: true  
-        recieverBankCode:
-          type: string
-          example: 20018183
-          readOnly: true
-        rejectionReason:
-          type: string
-          example: noBalance
-          readOnly: true  
-        reversalReferenceId:
-          type: string
-          example: D20018183202202030109X3OoBHG74wo
-          readOnly: true 
-        id:
-          type: string
-          example: 5656565656565656
-          readOnly: true   
-        result:
-          type: string
-          example: rejected
-          readOnly: true 
-        status:
-          type: string
-          example: delivered
-          readOnly: true 
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    Chargebacks:
+    Keys:
       type: object
       properties:
-        chargebacks:
+        keys:
           type: array
           items:
-            $ref: '#/components/schemas/Chargeback'
+            $ref: '#/components/schemas/Key'
     Claim:
       type: object
       required:
@@ -9002,11 +9446,20 @@ components:
         created:
           type: string
           format: datetime
+          example: 2022-01-01T00:00:00+00:00
           readOnly: true
         updated:
           type: string
           format: datetime
+          example: 2022-05-04T00:00:00+00:00
           readOnly: true
+    Claims:
+      type: object
+      properties:
+        claims:
+          type: array
+          items:
+            $ref: '#/components/schemas/Claim'
     Director:
       type: object
       required:
@@ -9099,10 +9552,12 @@ components:
         created:
           type: string
           format: datetime
+          example: 2022-05-05 09:08:40.280+00:00
           readOnly: true
         updated:
           type: string
           format: datetime
+          example: 2022-05-06 09:08:40.280+00:00
           readOnly: true
     Infractions:
       type: object
@@ -9111,105 +9566,516 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Infraction'
-    Reversal:
+    Chargeback:
       type: object
       required:
         - amount
-        - externalId
-        - endToEndId
+        - referenceId
         - reason
       properties:
         amount:
           type: integer
-          example: 1000
-        endToEndId:
+          example: 11234
+        referenceId:
           type: string
-          example: E79457883202101262140HHX553UPqeq
-        externalId:
-          type: string
-          example: "my_unique_id"
+          example: E20018183202201201450u34sDGd19lz
         reason:
           type: string
           example: fraud
+        description:
+          type: string 
+        analysis:
+          type: string
+          readOnly: true
+        bacenId:
+          type: string
+          readOnly: true  
+        senderBankCode:
+          type: string
+          example: 20018183
+          readOnly: true  
+        recieverBankCode:
+          type: string
+          example: 20018183
+          readOnly: true
+        rejectionReason:
+          type: string
+          example: noBalance
+          readOnly: true  
+        reversalReferenceId:
+          type: string
+          example: D20018183202202030109X3OoBHG74wo
+          readOnly: true 
+        id:
+          type: string
+          example: 5656565656565656
+          readOnly: true   
+        result:
+          type: string
+          example: rejected
+          readOnly: true 
+        status:
+          type: string
+          example: delivered
+          readOnly: true 
+        created:
+          type: string
+          format: datetime
+          example: 2022-05-05 09:32:17.027+00:00
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          example: 2022-05-05 09:32:17.027+00:00
+          readOnly: true
+    Chargebacks:
+      type: object
+      properties:
+        chargebacks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chargeback'
+    Domain:
+      type: object
+      properties:
+        certificates:
+          $ref: '#/components/schemas/Certificates'
+        name:
+          type: string
+          example: invoice-h.development.starkbank.com
+    Domains:
+      type: object
+      properties:
+        domains:
+          type: array
+          items:
+            $ref: '#/components/schemas/Domain'
+    Certificate:
+      type: object
+      properties:
+        content:
+          type: string
+          example: -----BEGIN CERTIFICATE-----\nMIIGzjCCB...\n-----END CERTIFICATE-----\n
+    Certificates:
+      type: object
+      properties:
+        certificates:
+          type: array
+          items:
+            $ref: '#/components/schemas/Certificate'
+    IssuingBalance:
+      type: object
+      properties:
+        amount:
+          type: string
+          example: 100
+          readOnly: true
+        currency:
+          type: string
+          example: BRL
+          readOnly: true
+        id:
+          type: string
+          example: 5729405850615808
+          readOnly: true
+        updated:
+          type: string
+          format: date
+          example: 2022-05-04 18:02:18.297+00:00
+          readOnly: true
+    Bin:
+      type: object
+      properties:
+        category:
+          type: string
+          example: prepaid
+          readOnly: true
+        client:
+          type: string
+          example: business
+          readOnly: true
+        id:
+          type: string
+          example: 538102
+          readOnly: true
+        created:
+          type: string
+          format: date
+          example: 2022-05-04 18:02:18.297+00:00
+          readOnly: true
+        network:
+          type: string
+          example: mastercard
+          readOnly: true
+        settlement:
+          type: string
+          example: credit
+          readOnly: true
+        updated:
+          type: string
+          format: date
+          example: 2022-05-04 18:02:18.297+00:00
+          readOnly: true
+    Card:
+      type: object 
+      required:
+        - holderName
+        - holderTaxId
+        - holderExternalId
+      properties:
+        holderName:
+          type: string
+          example: Tony Stark
+        holderTaxId:
+          type: string
+          example: 012.345.678-90
+        holderExternalId:
+          type: string
+          example: my-entity/123
+        displayName:
+          type: string
+          example: ANTHONY STAR
+        rules:
+          $ref: '#/components/schemas/Rules'
+        binId:
+          type: string
+          example: 53810200
         tags:
           items:
             type: string
-          example: ["employees", "monthly"]
+          example: ["travel", "food"]
+        streetLine1:
+          type: string
+          example: Av. Paulista, 200
+        streetLine2:
+          type: string
+          example: Apto. 123
+        district:
+          type: string
+          example: Bela Vista
+        city:
+          type: string
+          example: Rio de Janeiro
+        stateCode:
+          type: string
+          example: RJ
+        zipCode:
+          type: string
+          example: 01311-200
         id:
           type: string
           example: 5656565656565656
           readOnly: true
-        returnId:
+        holderId:
           type: string
-          example: D20018183202202030109X3OoBHG74wo
+          example: 5656565656565656
           readOnly: true
-        bankCode:
-          type: string
-          readOnly: true
-          example: 20018183
-        fee:
-          type: integer
-          example: 200
-          readOnly: true
-        status:
-          type: string
-          example: processing
-          readOnly: true
-        flow:
-          type: string
-          example: in
-          readOnly: true
-        created:
-          type: string
-          format: datetime
-          readOnly: true
-        updated:
-          type: string
-          format: datetime
-          readOnly: true
-    Reversals:
-      type: object
-      properties:
-        reversals:
-          type: array
-          items:
-            $ref: '#/components/schemas/Reversal'
-    Statement:
-      type: object
-      required:
-        - after
-        - before
-        - type
-      properties:
-        after:
-          type: string
-          format: date
-        before:
-          type: string
-          format: date
         type:
           type: string
-          example: interchangeTotal
+          example: virtual
+          readOnly: true
+        status:
+          type: string
+          example: "active"
+          readOnly: true
+        number:
+          type: string
+          example: 123
+          readOnly: true
+        securityCode:
+          type: string
+          example: 123
+          readOnly: true
+        expiration:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          example: 2022-05-05 10:12:36.310+00:00
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          example: 2022-05-05 10:12:36.310+00:00
+          readOnly: true
+    Cards:
+      type: object
+      properties:
+        cards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Card'
+    Holder:
+      type: object 
+      required:
+        - name
+        - taxId
+        - externalId
+      properties:
+        name:
+          type: string
+          example: Tony Stark
+        taxId:
+          type: string
+          example: 012.345.678-90
+        externalId:
+          type: string
+          example: my-entity/123
+        rules:
+          type: object
+          example: 
+            $ref: '#/components/schemas/Rules'
+        tags:
+          items:
+            type: string
+          example: ["travel", "food"]
         id:
           type: string
           example: 5656565656565656
           readOnly: true
         status:
           type: string
-          example: success
-          readOnly: true
-        transactionCount:
-          type: integer
-          example: 11
+          example: "active"
           readOnly: true
         created:
           type: string
           format: datetime
+          example: 2022-05-05 11:54:31.409+00:00
           readOnly: true
         updated:
           type: string
           format: datetime
+          example: 2022-05-05 11:54:31.409+00:00
           readOnly: true
+    Holders:
+      type: object
+      properties:
+        holders:
+          type: array
+          items:
+            $ref: '#/components/schemas/Holder'
+    IssuingInvoice:
+      type: object 
+      required:
+        - amount
+      properties:
+        amount:
+          type: integer
+          example: 1234
+        taxId:
+          type: string 
+          example: 20.018.183/0001-80
+        name:
+          type: string
+          example: Tony Stark
+        tags:
+          items:
+            type: string
+          example: ["travel", "food"]
+        id:
+          type: string
+          example: 5656565656565656
+          readOnly: true
+        status:
+          type: string
+          example: "created"
+          readOnly: true
+        issuingTransactionId:
+          type: string
+          example: issuing-invoice/5656565656565656
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          example: 2022-05-05 11:54:31.422+00:00
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          example: 2022-05-05 11:54:31.422+00:00
+          readOnly: true
+    IssuingInvoices:
+      type: object
+      properties:
+        issuingInvoices:
+          type: array
+          items:
+            $ref: '#/components/schemas/IssuingInvoice'
+    Purchase:
+      type: object 
+      properties:
+        limit:
+          type: integer
+          example: 1
+        after:
+          type: string 
+          example: "2022-01-20"
+        before:
+          type: string
+          example: "2022-02-20"
+        ids:
+          items:
+            type: string
+          example: ["5656565656565656"]
+        status:
+          items:
+            type: string
+          example: ["approved"]
+        endToEndIds:
+          items:
+            type: string
+          example: ["679cd385-642b-49d0-96b7-89491e1249a5"]
+        holderIds:
+          items:
+            type: string
+          example: ["5151515151515151"]
+        cardIds:
+          items:
+            type: string
+          example: ["5757575757575757"]
+        tags:
+          items:
+            type: string
+          example: ["travel", "food"]
+    Purchases:
+      type: object
+      properties:
+        purchases:
+          type: array
+          items:
+            $ref: '#/components/schemas/Purchase'
+    Transaction:
+      type: object 
+      properties:
+        limit:
+          type: integer
+          example: 1
+        after:
+          type: string 
+          example: "2022-01-20"
+        before:
+          type: string
+          example: "2022-02-20"
+        ids:
+          items:
+            type: string
+          example: ["5656565656565656"]
+        externalIds:
+          items:
+            type: string
+          example: ["my_external_id"]
+        tags:
+          items:
+            type: string
+          example: ["travel", "food"]
+    Transactions:
+      type: object
+      properties:
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transaction'
+    Withdrawal:
+      type: object 
+      required:
+        - amount
+        - externalId
+        - description
+      properties:
+        amount:
+          type: integer
+          example: 12345
+        externalId:
+          type: string
+          example: my-entity/123
+        description:
+          type: string
+          example: sending money back
+        tags:
+          items:
+            type: string
+          example: ["travel", "food"]
+        id:
+          type: string
+          example: 5656565656565656
+          readOnly: true
+        transactionId:
+          type: string
+          readOnly: true
+        issuingTransactionId:
+          type: string
+          readOnly: true
+        created:
+          type: string
+          format: datetime
+          example: 2022-05-05 11:54:31.444+00:00
+          readOnly: true
+        updated:
+          type: string
+          format: datetime
+          example: 2022-05-05 11:54:31.444+00:00
+          readOnly: true
+    Withdrawals:
+      type: object
+      properties:
+        withdrawals:
+          type: array
+          items:
+            $ref: '#/components/schemas/Withdrawal'
+    Rule:
+      type: object 
+      required:
+        - name
+        - amount
+        - interval
+      properties:
+        name:
+          type: string
+          example: Travel
+        amount:
+          type: integer
+          example: 20000
+        interval:
+          type: integer
+          example: day
+        currencyCode:
+          type: string
+          example: BRL
+        categories:
+          items:
+            type: string
+          example: ["eatingPlacesRestaurants", "travelAgenciesTourOperators"]
+        countries:
+          items:
+            type: string
+          example: ["BRA", "USA"]
+        methods:
+          items:
+            type: string
+          example: ["chip", "token", "server", "manual", "magstripe", "contactless"]
+        counterAmount:
+          type: string
+          example: 1000
+          readOnly: true
+        currencySymbol:
+          type: string
+          example: R$
+          readOnly: true
+        currencyName:
+          example: Brazilian Real
+          readOnly: true
+        id:
+          type: string
+          example: 5656565656565656
+          readOnly: true
+    Rules:
+      type: object
+      properties:
+        rules:
+          type: array
+          items:
+            $ref: '#/components/schemas/Rule'
     Note:
       type: object
       required:
@@ -9240,17 +10106,11 @@ components:
           type: string
           format: datetime 
         invoices:
-          type: object
-          example: 
-            $ref: '#/components/schemas/Invoices'
+          $ref: '#/components/schemas/Invoices'
         payment:
-          type: object
-          example: 
-            $ref: '#/components/schemas/Transfer'
+          $ref: '#/components/schemas/Transfer'
         signers:
-          type: object
-          example: 
-            $ref: '#/components/schemas/Signers'
+          $ref: '#/components/schemas/Signers'
         externalId:
           type: string
           example: my-internal-id-123456
@@ -9260,6 +10120,9 @@ components:
         rebateAmount:
           type: integer
           example: 11234
+        expirations:
+          type: integer
+          example: 5097600
         tags:
           items:
             type: string
@@ -9399,10 +10262,12 @@ components:
         created:
           type: string
           format: datetime
+          example: 2022-05-06 11:54:31.462+00:00
           readOnly: true
         updated:
           type: string
           format: datetime
+          example: 2022-05-06 11:54:31.463+00:00
           readOnly: true
     Invoices:
       type: object
@@ -9517,11 +10382,18 @@ components:
         subcscriptions:
           items:
             type: string
-            example: ["contract", "credit-note", "signer", "issuing-card", "issuing-invoice", "issuing-purchase", "pix-request.in", "pix-request.out", "pix-reversal.in", "pix-reversal.out", "pix-claim", "pix-key", "pix-chargeback", "pix-infraction"]
+          example: ["contract", "credit-note", "signer", "issuing-card", "issuing-invoice", "issuing-purchase", "pix-request.in", "pix-request.out", "pix-reversal.in", "pix-reversal.out", "pix-claim", "pix-key", "pix-chargeback", "pix-infraction"]
         id:
           type: string
           example: 5656565656565656
           readOnly: true
+    Webhooks:
+      type: object
+      properties:
+        webhooks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Webhook'
     Event:
       type: object
       properties:
@@ -9530,9 +10402,7 @@ components:
           example: 5656565656565656
           readOnly: true
         log:
-          items:
-            type: string
-          readOnly: true
+          $ref: '#/components/schemas/Note'
         created:
           type: string
           format: date
@@ -9543,9 +10413,82 @@ components:
           readOnly: true
         subscription:
           type: string
-          example: pix-request.in
+          example: credit-note
           readOnly: true
-        workspaceId:
+    Events:
+      type: object
+      properties:
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/Event'
+    Attempt:
+      type: object
+      properties:
+        code:
           type: string
-          example: 4545454545454545
+          example: invalidConnection
           readOnly: true
+        eventId:
+          type: string
+          example: 4836873369288704
+          readOnly: true
+        created:
+          type: string
+          format: date
+          example: 2022-05-11T21:48:27.755908+00:00
+          readOnly: true
+        id:
+          type: string
+          example: 5364974092288000
+          readOnly: true
+        message:
+          type: string
+          example: Connection failed
+          readOnly: true
+        webhookId:
+          type: string
+          example: 5625289241526272
+          readOnly: true
+    Attempts:
+      type: object
+      properties:
+        attempt:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attempt'
+    InternalError:
+      type: object
+      properties:
+        code: 
+          type: string
+          readOnly: true
+          example: InternalServerError
+        message:
+          type: string
+          readOnly: true
+          example: Houston, we have a problem!
+    InternalErrors:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/InternalError'
+    RequestError:
+      type: object
+      properties:
+        code: 
+          type: string
+          readOnly: true
+        message:
+          type: string
+          readOnly: true
+    RequestErrors:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/RequestError'
+            
