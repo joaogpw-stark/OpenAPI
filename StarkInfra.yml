@@ -4,7 +4,7 @@ info:
   version: v2
   description: Stark Infra API for financial services in Brazil
   contact:
-    email: developers@starkinfra.com
+    email: developers@starkbank.com
     name: Stark Infra Developers
     url: 'https://starkinfra.com'
   license:
@@ -14,8 +14,6 @@ externalDocs:
   description: StarkInfra API documentation
 servers:
   # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/leandro.lima2/starkinfra/v2
   - url: 'https://sandbox.api.starkinfra.com/'
   - url: 'https://api.starkinfra.com/'
 tags:
@@ -9233,12 +9231,12 @@ components:
         created:
           type: string
           format: date
-          example: 2022-05-03 17:16:34.787+00:00
+          example: '2022-05-03 17:16:34.787+00:00'
           readOnly: true
         updated:
           type: string
           format: date
-          example: 2022-05-03 17:16:34.787+00:00
+          example: '2022-05-03 17:16:34.787+00:00'
           readOnly: true
     Requests:
       type: object
@@ -9298,12 +9296,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-05-07 13:07:38.186+00:00
+          example: '2022-05-07 13:07:38.186+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-05-07 13:07:38.186+00:00
+          example: '2022-05-07 13:07:38.186+00:00'
           readOnly: true
     Reversals:
       type: object
@@ -9330,7 +9328,7 @@ components:
         updated:
           type: string
           format: date
-          example: 2022-05-04 18:02:18.297+00:00
+          example: '2022-05-04 18:02:18.297+00:00'
           readOnly: true
     Statement:
       type: object
@@ -9363,12 +9361,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-02-01T14:49:21.831976+00:00
+          example: '2022-02-01T14:49:21.831976+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-02-01T14:49:21.831984+00:00
+          example: '2022-02-01T14:49:21.831984+00:00'
           readOnly: true
     Statements:
       type: object
@@ -9390,7 +9388,7 @@ components:
         accountCreated:
           type: string
           format: datetime
-          example: 2022-02-01T00:00:00.00
+          example: '2022-02-01T00:00:00.00'
         accountNumber:
           type: string
           example: 76543
@@ -9440,7 +9438,7 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-05-04 18:02:18.297+00:00
+          example: '2022-05-04 18:02:18.297+00:00'
           readOnly: true
     Keys:
       type: object
@@ -9512,12 +9510,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-01-01T00:00:00+00:00
+          example: '2022-01-01T00:00:00+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-05-04T00:00:00+00:00
+          example: '2022-05-04T00:00:00+00:00'
           readOnly: true
     Claims:
       type: object
@@ -9618,12 +9616,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-05-05 09:08:40.280+00:00
+          example: '2022-05-05 09:08:40.280+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-05-06 09:08:40.280+00:00
+          example: '2022-05-06 09:08:40.280+00:00'
           readOnly: true
     Infractions:
       type: object
@@ -9687,12 +9685,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-05-05 09:32:17.027+00:00
+          example: '2022-05-05 09:32:17.027+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-05-05 09:32:17.027+00:00
+          example: '2022-05-05 09:32:17.027+00:00'
           readOnly: true
     Chargebacks:
       type: object
@@ -9747,7 +9745,7 @@ components:
         updated:
           type: string
           format: date
-          example: 2022-05-04 18:02:18.297+00:00
+          example: '2022-05-04 18:02:18.297+00:00'
           readOnly: true
     Bin:
       type: object
@@ -9767,7 +9765,7 @@ components:
         created:
           type: string
           format: date
-          example: 2022-05-04 18:02:18.297+00:00
+          example: '2022-05-04 18:02:18.297+00:00'
           readOnly: true
         network:
           type: string
@@ -9780,7 +9778,7 @@ components:
         updated:
           type: string
           format: date
-          example: 2022-05-04 18:02:18.297+00:00
+          example: '2022-05-04 18:02:18.297+00:00'
           readOnly: true
     Card:
       type: object 
@@ -9858,12 +9856,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-05-05 10:12:36.310+00:00
+          example: '2022-05-05 10:12:36.310+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-05-05 10:12:36.310+00:00
+          example: '2022-05-05 10:12:36.310+00:00'
           readOnly: true
     Cards:
       type: object
@@ -9905,12 +9903,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-05-05 11:54:31.409+00:00
+          example: '2022-05-05 11:54:31.409+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-05-05 11:54:31.409+00:00
+          example: '2022-05-05 11:54:31.409+00:00'
           readOnly: true
     Holders:
       type: object
@@ -9952,12 +9950,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-05-05 11:54:31.422+00:00
+          example: '2022-05-05 11:54:31.422+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-05-05 11:54:31.422+00:00
+          example: '2022-05-05 11:54:31.422+00:00'
           readOnly: true
     IssuingInvoices:
       type: object
@@ -10073,12 +10071,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-05-05 11:54:31.444+00:00
+          example: '2022-05-05 11:54:31.444+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-05-05 11:54:31.444+00:00
+          example: '2022-05-05 11:54:31.444+00:00'
           readOnly: true
     Withdrawals:
       type: object
@@ -10350,12 +10348,12 @@ components:
         created:
           type: string
           format: datetime
-          example: 2022-05-06 11:54:31.462+00:00
+          example: '2022-05-06 11:54:31.462+00:00'
           readOnly: true
         updated:
           type: string
           format: datetime
-          example: 2022-05-06 11:54:31.463+00:00
+          example: '2022-05-06 11:54:31.463+00:00'
           readOnly: true
     Invoices:
       type: object
@@ -10524,7 +10522,7 @@ components:
         created:
           type: string
           format: date
-          example: 2022-05-11T21:48:27.755908+00:00
+          example: '2022-05-11T21:48:27.755908+00:00'
           readOnly: true
         id:
           type: string
