@@ -653,20 +653,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  request:
-                    $ref: '#/components/schemas/Request'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      request:
+                        $ref: '#/components/schemas/Request'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -800,20 +803,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  request:
-                    $ref: '#/components/schemas/Request'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      request:
+                        $ref: '#/components/schemas/Request'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   created: '2022-05-17T18:58:41.842058+00:00'
@@ -1214,20 +1220,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  reversal:
-                    $ref: '#/components/schemas/Reversal'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      reversal:
+                        $ref: '#/components/schemas/Reversal'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -1319,20 +1328,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  reversal:
-                    $ref: '#/components/schemas/Reversal'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      reversal:
+                        $ref: '#/components/schemas/Reversal'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   created: '2022-05-10T18:22:44.867189+00:00'
@@ -2074,7 +2086,7 @@ paths:
                 - reason
               properties:
                 id:
-                  type: integer
+                  type: string
                   example: +5511989898989
                 reason:
                   type: string
@@ -2218,20 +2230,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  key:
-                    $ref: '#/components/schemas/Key'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      key:
+                        $ref: '#/components/schemas/Key'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -2329,20 +2344,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  key:
-                    $ref: '#/components/schemas/Key'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      key:
+                        $ref: '#/components/schemas/Key'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   created: '2022-05-17T19:27:38.430274+00:00'
@@ -2847,26 +2865,29 @@ paths:
               schema:
                 type: object
                 properties:
-                  claim:
-                    $ref: '#/components/schemas/Claim'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
-                  agent:
-                    type: string
-                    example: "claimed"
-                  reason:
-                    type: string
-                    example: ""
+                  Log:
+                    type: object
+                    properties:
+                      claim:
+                        $ref: '#/components/schemas/Claim'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
+                      agent:
+                        type: string
+                        example: "claimed"
+                      reason:
+                        type: string
+                        example: ""
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -2972,26 +2993,29 @@ paths:
               schema:
                 type: object
                 properties:
-                  claim:
-                    $ref: '#/components/schemas/Claim'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
-                  agent:
-                    type: string
-                    example: "claimed"
-                  reason:
-                    type: string
-                    example: ""
+                  Log:
+                    type: object
+                    properties:
+                      claim:
+                        $ref: '#/components/schemas/Claim'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
+                      agent:
+                        type: string
+                        example: "claimed"
+                      reason:
+                        type: string
+                        example: ""
               example:
                 log:
                   agent: claimer
@@ -3587,20 +3611,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  infraction:
-                    $ref: '#/components/schemas/Infraction'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      infraction:
+                        $ref: '#/components/schemas/Infraction'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -3698,20 +3725,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  infraction:
-                    $ref: '#/components/schemas/Infraction'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      infraction:
+                        $ref: '#/components/schemas/Infraction'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   created: '2022-05-17T19:40:13.028853+00:00'
@@ -4251,20 +4281,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  chargeback:
-                    $ref: '#/components/schemas/Chargeback'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      chargeback:
+                        $ref: '#/components/schemas/Chargeback'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -4362,20 +4395,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  chargeback:
-                    $ref: '#/components/schemas/Chargeback'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      chargeback:
+                        $ref: '#/components/schemas/Chargeback'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   chargeback:
@@ -5216,20 +5252,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  card:
-                    $ref: '#/components/schemas/Card'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      card:
+                        $ref: '#/components/schemas/Card'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -5351,20 +5390,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  card:
-                    $ref: '#/components/schemas/Card'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      card:
+                        $ref: '#/components/schemas/Card'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   card:
@@ -5939,20 +5981,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  holder:
-                    $ref: '#/components/schemas/Holder'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      holder:
+                        $ref: '#/components/schemas/Holder'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -6048,20 +6093,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  holder:
-                    $ref: '#/components/schemas/Holder'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      holder:
+                        $ref: '#/components/schemas/Holder'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   created: '2022-05-17T20:04:53.459361+00:00'
@@ -6426,20 +6474,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  invoice:
-                    $ref: '#/components/schemas/IssuingInvoice'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      invoice:
+                        $ref: '#/components/schemas/IssuingInvoice'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -6537,20 +6588,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  invoice:
-                    $ref: '#/components/schemas/IssuingInvoice'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      invoice:
+                        $ref: '#/components/schemas/IssuingInvoice'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   created: '2022-05-17T18:21:03.212449+00:00'
@@ -6921,20 +6975,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  purchase:
-                    $ref: '#/components/schemas/Purchase'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      purchase:
+                        $ref: '#/components/schemas/Purchase'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -7066,20 +7123,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  purchase:
-                    $ref: '#/components/schemas/Purchase'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      purchase:
+                        $ref: '#/components/schemas/Purchase'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   created: '2022-05-17T23:00:16.807417+00:00'
@@ -7960,20 +8020,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  note:
-                    $ref: '#/components/schemas/Note'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      note:
+                        $ref: '#/components/schemas/Note'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
                   cursor:
                     type: string
                     example: " CkcKFAoHY3JlYXRlZBIJCMyR69q55_cCEitqEGl-YXBpLW1zLXNwaS1kZXZyFwsSClBpeFJlcXVlc3QYgICA5NDXkAoMGAAgAQ== "
@@ -8136,20 +8199,23 @@ paths:
               schema:
                 type: object
                 properties:
-                  note:
-                    $ref: '#/components/schemas/Note'
-                  created:
-                    type: string
-                    example: '2022-05-04T17:16:34.805+00:00'
-                  errors: 
-                    type: string
-                    example: []
-                  id:
-                    type: string
-                    example: "5676741565612032"
-                  type:
-                    type: string
-                    example: "created"
+                  Log:
+                    type: object
+                    properties:
+                      note:
+                        $ref: '#/components/schemas/Note'
+                      created:
+                        type: string
+                        example: '2022-05-04T17:16:34.805+00:00'
+                      errors: 
+                        type: string
+                        example: []
+                      id:
+                        type: string
+                        example: "5676741565612032"
+                      type:
+                        type: string
+                        example: "created"
               example:
                 log:
                   errors: []
@@ -9140,7 +9206,7 @@ components:
         tags:
           items:
             type: string
-            example: ["employees", "monthly"]
+          example: ["employees", "monthly"]
         method:
           type: string
           example: manual
@@ -9823,9 +9889,7 @@ components:
           type: string
           example: my-entity/123
         rules:
-          type: object
-          example: 
-            $ref: '#/components/schemas/Rules'
+          $ref: '#/components/schemas/Rules'
         tags:
           items:
             type: string
@@ -10089,6 +10153,12 @@ components:
         - signers
         - externalId
         - paymentType
+        - street_line_1
+        - street_line_2
+        - district
+        - city
+        - state_code
+        - zip_code
       properties:
         templateId:
           type: string
@@ -10117,6 +10187,24 @@ components:
         paymentType:
           type: string  
           example: transfer
+        street_line_1:
+          type: string  
+          example: Av. Paulista, 200
+        street_line_2:
+          type: string  
+          example: Apto. 123
+        district:
+          type: string  
+          example: Bela Vista
+        city:
+          type: string  
+          example: Sao Paulo
+        state_code:
+          type: string  
+          example: SP
+        zip_code:
+          type: string  
+          example: 01311-200
         rebateAmount:
           type: integer
           example: 11234
