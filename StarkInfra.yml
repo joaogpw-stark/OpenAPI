@@ -13,12 +13,11 @@ externalDocs:
   url: 'https://starkinfra.com/docs/api'
   description: StarkInfra API documentation
 servers:
-  # Added by API Auto Mocking Plugin
   - url: 'https://sandbox.api.starkinfra.com/'
   - url: 'https://api.starkinfra.com/'
 tags:
   - name: Pix
-  - name: Pix > Pix Request
+  - name: Pix Request
     description: >-
       Pix Requests are used to receive or send instant payments to accounts
       hosted in other Pix participants.
@@ -36,7 +35,7 @@ tags:
 
       If there is no authorization url registered, all inbound Pix Requests will
       be denied by default.
-  - name: Pix > Pix Reversal
+  - name: Pix Reversal
     description: >-
       Pix Reversals are instant payments used to revert Pix Request. You can
       only revert inbound Pix Requests.
@@ -54,18 +53,18 @@ tags:
 
       If there is no authorization url registered, all inbound Pix Reversals
       will be accepted by default.
-  - name: Pix > Pix Balance
+  - name: Pix Balance
     description: >-
       The Pix balance entity holds the total funds available in your banking
       account and can be calculated as the sum of its transactions (cash-in +
       cash-out). Therefore, you can also interpret Transactions as balance
       change logs.
-  - name: Pix > Pix Statement
+  - name: Pix Statement
     description: >-
       Pix Statement objects store information about all Pix transactions that
       happened during a specific day. Pix Statements are only available for
       direct participants.
-  - name: Pix > Pix Key
+  - name: Pix Key
     description: >-
       Pix Keys are registered at DICT (Diretório de Identificadores de Contas
       Transacionais), which is a centralized Pix service managed by the
@@ -75,12 +74,12 @@ tags:
 
       The types of keys currently available are CPF, CNPJ, phone number, e-mail
       and EVP (random key).
-  - name: Pix > Pix Claim
+  - name: Pix Claim
     description: >-
       A Pix Claim is a request to transfer a Pix Key to an account hosted in
       another Pix participant. Pix Claims must always be requested by the
       claimer.
-  - name: Pix > Pix Director
+  - name: Pix Director
     description: >-
       Pix Directors are used for registering Pix participants\` emergency
       contact information at the Brazilian Central Bank. This process is
@@ -89,7 +88,7 @@ tags:
 
       A new Pix Director can be created at any time to update the registered
       contact information.
-  - name: Pix > Pix Infraction
+  - name: Pix Infraction
     description: >-
       Pix Infractions are used to report transactions suspected of fraud,
       request reversals or chargeback reversals.
@@ -98,7 +97,7 @@ tags:
       Pix Infractions can be created by either participant of a transaction.
       After created, the receiving party must analyse the infraction and close
       it by agreeing or disagreeing.
-  - name: Pix > Pix Chargeback
+  - name: Pix Chargeback
     description: >-
       A Pix Chargeback can be created when fraud is detected on a transaction or
       a system malfunction results in an erroneous transaction.
@@ -107,7 +106,7 @@ tags:
       If the reason for the Pix Chargeback is "fraud", it must be created only
       after a Pix Infraction regarding the same transaction has been agreed and
       closed.
-  - name: Pix > Pix Domain
+  - name: Pix Domain
     description: >-
       The Pix Domain object displays the domain name and the QR Code domain
       certificates of registered Pix participants able to issue dynamic QR
@@ -117,11 +116,11 @@ tags:
       Certificates are used in the validation of the URLs contained in the
       dynamic QR Codes.
   - name: Issuing
-  - name: Issuing > Issuing Balance
+  - name: Issuing Balance
     description: >-
       The Issuing Balance entity holds the total funds your sub-issuer has
       available for authorizing purchases and creating physical cards.
-  - name: Issuing > Issuing Bin
+  - name: Issuing Bin
     description: >-
       The Issuing Bin object displays the information of BINs registered to your
       Workspace.
@@ -129,32 +128,32 @@ tags:
 
       BINs represent a group of cards that begin with the same numbers (BIN) and
       offer the same product to end customers.
-  - name: Issuing > Issuing Card
+  - name: Issuing Card
     description: >-
       The Issuing Card resource is used to issue cards under your sub-issuer.
 
 
       To avoid security concerns, sensitive information will only be returned
       when the "expand" parameter is used.
-  - name: Issuing > Issuing Holder
+  - name: Issuing Holder
     description: >-
       The Issuing Holder describes a cardholder that may group several cards.
 
 
       To avoid security concerns, sensitive information will only be returned
       when the "expand" parameter is used.
-  - name: Issuing > Issuing Invoice
+  - name: Issuing Invoice
     description: >-
       Issuing invoices are requests to transfer money to your issuing account.
       When an Issuing Invoice you created is paid and credited, your issuing
       balance changes.
-  - name: Issuing > Issuing Purchase
+  - name: Issuing Purchase
     description: Issuing purchases are created when a cardholder makes a card purchase.
-  - name: Issuing > Issuing Transaction
+  - name: Issuing Transaction
     description: >-
       Issuing transactions are created whenever there is an issuing balance
       shift.
-  - name: Issuing > Issuing Withdrawal
+  - name: Issuing Withdrawal
     description: >-
       Issuing Withdrawals transfer cash from your issuing account to your
       banking account.
@@ -189,7 +188,7 @@ paths:
     post:
       operationId: createPixRequests
       tags:
-        - Pix > Pix Request
+        - Pix Request
       summary: Create Pix requests
       description: >-
         Send Pix Requests to accounts hosted in other Pix participants.
@@ -305,7 +304,7 @@ paths:
     get:
       operationId: listPixRequests
       tags:
-        - Pix > Pix Request
+        - Pix Request
       summary: List Pix requests
       description: >-
         Here you can list and filter all Pix Requests you have made. We return
@@ -488,7 +487,7 @@ paths:
     get:
       operationId: getPixRequest
       tags:
-        - Pix > Pix Request
+        - Pix Request
       summary: Get a Pix request by ID
       description: Get a single Pix Request by its id.
       parameters:
@@ -571,7 +570,7 @@ paths:
     get:
       operationId: listPixRequestLogs
       tags:
-        - Pix > Pix Request
+        - Pix Request
       summary: List Pix request logs
       description: >-
         Get a paged list of all Pix Request Logs. A log tracks a change a Pix
@@ -769,7 +768,7 @@ paths:
     get:
       operationId: getPixRequestLog
       tags:
-        - Pix > Pix Request
+        - Pix Request
       summary: Get a Pix request log by ID
       description: Get a single Pix Request Log by its id.
       parameters:
@@ -875,7 +874,7 @@ paths:
     post:
       operationId: createPixReversals
       tags:
-        - Pix > Pix Reversal
+        - Pix Reversal
       summary: Create Pix reversals
       description: >-
         Send back a received Pix. Direction: Outbound.
@@ -936,7 +935,7 @@ paths:
     get:
       operationId: listPixReversals
       tags:
-        - Pix > Pix Reversal
+        - Pix Reversal
       summary: List Pix reversals
       description: >-
         Here you can list and filter all Pix Reversals you have made. We return
@@ -1083,7 +1082,7 @@ paths:
     get:
       operationId: getPixReversal
       tags:
-        - Pix > Pix Reversal
+        - Pix Reversal
       summary: Get a Pix reversal by ID
       description: Get a single Pix Reversal by its id.
       parameters:
@@ -1146,7 +1145,7 @@ paths:
     get:
       operationId: listPixReversalLogs
       tags:
-        - Pix > Pix Reversal
+        - Pix Reversal
       summary: List Pix reversal logs
       description: >-
         Get a paged list of all Pix Reversal Logs. A log tracks a change in the
@@ -1294,7 +1293,7 @@ paths:
     get:
       operationId: getPixReversalLog
       tags:
-        - Pix > Pix Reversal
+        - Pix Reversal
       summary: Get a Pix reversal log by ID
       description: Get a single Pix Reversal Log by its id.
       parameters:
@@ -1380,7 +1379,7 @@ paths:
     get:
       operationId: listPixBalances
       tags:
-        - Pix > Pix Balance
+        - Pix Balance
       summary: List Pix balances
       description: Get the current Pix Balance in your workspace.
       parameters:
@@ -1427,7 +1426,7 @@ paths:
     post:
       operationId: createPixStatement
       tags:
-        - Pix > Pix Statement
+        - Pix Statement
       summary: Create a Pix statement
       description: >-
         Create a Pix Statement for a specific date. After that, the statement
@@ -1485,7 +1484,7 @@ paths:
     get:
       operationId: listPixStatements
       tags:
-        - Pix > Pix Statement
+        - Pix Statement
       summary: List Pix statements
       description: >-
         Here you can list and filter all Pix Statements you have created. We
@@ -1576,7 +1575,7 @@ paths:
     get:
       operationId: getPixStatement
       tags:
-        - Pix > Pix Statement
+        - Pix Statement
       summary: Get a Pix statement by ID
       description: >-
         Retrieve a specific Pix Statement that was previously created by it's
@@ -1636,7 +1635,7 @@ paths:
     get:
       operationId: getPixStatementCSV
       tags:
-        - Pix > Pix Statement
+        - Pix Statement
       summary: Get a Pix statement csv by ID
       description: >-
         Download a specific Pix Statement in CSV format. You can only download a
@@ -1680,7 +1679,7 @@ paths:
     post:
       operationId: createPixKey
       tags:
-        - Pix > Pix Key
+        - Pix Key
       summary: Create a Pix key
       description: >-
         Create a Pix Key linked to a specific account.
@@ -1750,7 +1749,7 @@ paths:
     get:
       operationId: listPixKeys
       tags:
-        - Pix > Pix Key
+        - Pix Key
       summary: List Pix key
       description: Here you can list and filter all Pix Keys you have. We return it paged.
       parameters:
@@ -1891,7 +1890,7 @@ paths:
     get:
       operationId: getPixKey
       tags:
-        - Pix > Pix Key
+        - Pix Key
       summary: Get a Pix key by ID
       description: >-
         Get a specific Pix Key by it's id. This method can access any Pix Key,
@@ -1969,7 +1968,7 @@ paths:
     delete:
       operationId: cancelPixKey
       tags:
-        - Pix > Pix Key
+        - Pix Key
       summary: Cancel a Pix key by ID
       description: Cancel a single Pix Key.
       parameters:
@@ -2040,7 +2039,7 @@ paths:
     patch:
       operationId: updatePixKey
       tags:
-        - Pix > Pix Key
+        - Pix Key
       summary: Update a Pix key by ID
       description: >-
         Update the account information or the holder's name linked to a Pix Key
@@ -2148,7 +2147,7 @@ paths:
     get:
       operationId: listPixKeyLogs
       tags:
-        - Pix > Pix Key
+        - Pix Key
       summary: List Pix key logs
       description: >-
         Get a paged list of all Pix Key Logs. A log tracks a change in the Pix
@@ -2310,7 +2309,7 @@ paths:
     get:
       operationId: getPixKeyLog
       tags:
-        - Pix > Pix Key
+        - Pix Key
       summary: Get a Pix key log by ID
       description: Get a single Pix Key Log by its id.
       parameters:
@@ -2399,7 +2398,7 @@ paths:
     post:
       operationId: createPixClaim
       tags:
-        - Pix > Pix Claim
+        - Pix Claim
       summary: Create a Pix claim
       description: >-
         Create a Pix Claim to request the transfer of a Pix Key to an account
@@ -2477,7 +2476,7 @@ paths:
     get:
       operationId: listPixClaims
       tags:
-        - Pix > Pix Claim
+        - Pix Claim
       summary: List Pix claim
       description: >-
         Here you can list and filter all Pix Claims you have. We return it
@@ -2634,7 +2633,7 @@ paths:
     get:
       operationId: getPixClaim
       tags:
-        - Pix > Pix Claim
+        - Pix Claim
       summary: Get a Pix claim by ID
       description: Get a specific Pix Claim by it's id.
       parameters:
@@ -2701,7 +2700,7 @@ paths:
     patch:
       operationId: updatePixClaim
       tags:
-        - Pix > Pix Claim
+        - Pix Claim
       summary: Update a Pix claim by ID
       description: >-
         A Pix Claim can be patched for two distinct reasons.
@@ -2785,7 +2784,7 @@ paths:
     get:
       operationId: listPixClaimLogs
       tags:
-        - Pix > Pix Claim
+        - Pix Claim
       summary: List Pix claim logs
       description: Here you can list and filter all Pix Claim Logs. We return it paged.
       parameters:
@@ -2959,7 +2958,7 @@ paths:
     get:
       operationId: getPixClaimLog
       tags:
-        - Pix > Pix Claim
+        - Pix Claim
       summary: Get a Pix claim log by ID
       description: Get a single Pix Claim Log by its id.
       parameters:
@@ -3058,7 +3057,7 @@ paths:
     post:
       operationId: createPixDirector
       tags:
-        - Pix > Pix Director
+        - Pix Director
       summary: Create a Pix director
       description: >-
         Register Pix Director information at the Central Bank. This route can
@@ -3127,7 +3126,7 @@ paths:
     post:
       operationId: createPixInfractions
       tags:
-        - Pix > Pix Infraction
+        - Pix Infraction
       summary: Create Pix infractions
       description: >-
         Pix Infractions can be created by either participant of a transaction.
@@ -3183,7 +3182,7 @@ paths:
     get:
       operationId: listPixInfractions
       tags:
-        - Pix > Pix Infraction
+        - Pix Infraction
       summary: List Pix infractions
       description: >-
         Here you can list and filter all Pix Infractions you have. We return it
@@ -3316,7 +3315,7 @@ paths:
     get:
       operationId: getPixInfraction
       tags:
-        - Pix > Pix Infraction
+        - Pix Infraction
       summary: Get a Pix infraction by ID
       description: Get a specific Pix Infraction by it's id.
       parameters:
@@ -3380,7 +3379,7 @@ paths:
     patch:
       operationId: updatePixInfraction
       tags:
-        - Pix > Pix Infraction
+        - Pix Infraction
       summary: Update a Pix infraction by ID
       description: >-
         A received Pix Infraction can be confirmed or declined by setting its
@@ -3455,7 +3454,7 @@ paths:
     delete:
       operationId: cancelPixInfraction
       tags:
-        - Pix > Pix Infraction
+        - Pix Infraction
       summary: Cancel a Pix infraction by ID
       description: >-
         Cancel a specific Pix Infraction using its id. Only the reporter agent
@@ -3529,7 +3528,7 @@ paths:
     get:
       operationId: listPixInfractionLogs
       tags:
-        - Pix > Pix Infraction
+        - Pix Infraction
       summary: List Pix infraction logs
       description: >-
         Here you can list and filter all Pix Infraction Logs. We return it
@@ -3691,7 +3690,7 @@ paths:
     get:
       operationId: getPixInfractionLog
       tags:
-        - Pix > Pix Infraction
+        - Pix Infraction
       summary: Get a Pix infraction log by ID
       description: Get a single Pix Infraction Log by its id.
       parameters:
@@ -3779,7 +3778,7 @@ paths:
     post:
       operationId: createPixChargebacks
       tags:
-        - Pix > Pix Chargeback
+        - Pix Chargeback
       summary: Create Pix chargebacks
       description: >-
         Pix Chargebacks can only be created by the transaction's sender
@@ -3836,7 +3835,7 @@ paths:
     get:
       operationId: listPixChargebacks
       tags:
-        - Pix > Pix Chargeback
+        - Pix Chargeback
       summary: List Pix chargebacks
       description: >-
         Here you can list and filter all Pix Chargebacks you have made. We
@@ -3965,7 +3964,7 @@ paths:
     get:
       operationId: getPixChargeback
       tags:
-        - Pix > Pix Chargeback
+        - Pix Chargeback
       summary: Get a Pix chargeback by ID
       description: Get a specific Pix Chargeback by it's id.
       parameters:
@@ -4030,7 +4029,7 @@ paths:
     patch:
       operationId: updatePixChargeback
       tags:
-        - Pix > Pix Chargeback
+        - Pix Chargeback
       summary: Update a Pix chargeback by ID
       description: >-
         A received Pix Chargeback can be confirmed or declined by setting its
@@ -4123,7 +4122,7 @@ paths:
     delete:
       operationId: cancelPixChargeback
       tags:
-        - Pix > Pix Chargeback
+        - Pix Chargeback
       summary: Cancel a Pix chargeback by ID
       description: >-
         Cancel a specific Pix Chargeback using it's id. Only the participant who
@@ -4197,9 +4196,9 @@ paths:
   /{version}/pix-chargeback/log:
     get:
       tags:
-      - Pix > Pix Chargeback
+      - Pix Chargeback
       operationId: listPixChargebackLogs
-        - Pix > Pix Chargeback
+        - Pix Chargeback
       summary: List Pix chargeback logs
       description: >-
         Here you can list and filter all Pix Chargeback Logs. We return it
@@ -4361,7 +4360,7 @@ paths:
     get:
       operationId: getPixChargebackLogs
       tags:
-        - Pix > Pix Chargeback
+        - Pix Chargeback
       summary: Get a Pix chargeback log by ID
       description: Get a single Pix Chargeback Log by its id.
       parameters:
@@ -4450,7 +4449,7 @@ paths:
     get:
       operationId: listPixDomains
       tags:
-        - Pix > Pix Domain
+        - Pix Domain
       summary: List Pix domain
       description: >-
         Here you can list all Pix Domains registered at the Brazilian Central
@@ -4510,7 +4509,7 @@ paths:
     get:
       operationId: listIssuingBalances
       tags:
-        - Issuing > Issuing Balance
+        - Issuing Balance
       summary: List issuing balances
       description: >-
         Get the current Issuing Balance in your workspace.
@@ -4558,7 +4557,7 @@ paths:
     get:
       operationId: listIssuingBins
       tags:
-        - Issuing > Issuing Bin
+        - Issuing Bin
       summary: List issuing bins
       description: >-
         Here you can list and filter all Issuing Bins you have. We return it
@@ -4640,7 +4639,7 @@ paths:
     post:
       operationId: createIssuingCards
       tags:
-        - Issuing > Issuing Card
+        - Issuing Card
       summary: Create issuing cards
       description: >-
         Create Issuing Cards with specific spending rules.
@@ -4725,7 +4724,7 @@ paths:
     get:
       operationId: listIssuingCards
       tags:
-        - Issuing > Issuing Card
+        - Issuing Card
       summary: List issuing cards
       description: >-
         Here you can list and filter all Issuing Cards you have. We return it
@@ -4910,7 +4909,7 @@ paths:
     get:
       operationId: getIssuingCard
       tags:
-        - Issuing > Issuing Card
+        - Issuing Card
       summary: Get an issuing card by ID
       description: Get a specific Issuing Card by its id.
       parameters:
@@ -4997,7 +4996,7 @@ paths:
     patch:
       operationId: updateIssuingCard
       tags:
-        - Issuing > Issuing Card
+        - Issuing Card
       summary: Update an issuing card by ID
       description: >-
         You can update an Issuing Card to block it, to change spending rules or
@@ -5078,7 +5077,7 @@ paths:
     delete:
       operationId: cancelIssuingCard
       tags:
-        - Issuing > Issuing Card
+        - Issuing Card
       summary: Cancel an issuing card by ID
       description: Cancel a single Issuing Card.
       parameters:
@@ -5172,7 +5171,7 @@ paths:
     get:
       operationId: listIssuingCardLogs
       tags:
-        - Issuing > Issuing Card
+        - Issuing Card
       summary: List issuing card logs
       description: Here you can list and filter all Issuing Card Logs. We return it paged.
       parameters:
@@ -5356,7 +5355,7 @@ paths:
     get:
       operationId: getIssuingCardLog
       tags:
-        - Issuing > Issuing Card
+        - Issuing Card
       summary: Get an issuing card log by ID
       description: Get a single Issuing Card Log by its id.
       parameters:
@@ -5457,7 +5456,7 @@ paths:
     post:
       operationId: createIssuingHolders
       tags:
-        - Issuing > Issuing Holder
+        - Issuing Holder
       summary: Create issuing holders
       description: >-
         You can create cardholders to which your cards will be bound when
@@ -5526,7 +5525,7 @@ paths:
     get:
       operationId: listIssuingHolders
       tags:
-        - Issuing > Issuing Holder
+        - Issuing Holder
       summary: List issuing holders
       description: >-
         Here you can list and filter all Issuing Holders you have. We return it
@@ -5672,7 +5671,7 @@ paths:
     get:
       operationId: getIssuingHolder
       tags:
-        - Issuing > Issuing Holder
+        - Issuing Holder
       summary: Get an issuing holder by ID
       description: Get a specific Issuing Holder by its id.
       parameters:
@@ -5745,7 +5744,7 @@ paths:
     patch:
       operationId: updateIssuingHolder
       tags:
-        - Issuing > Issuing Holder
+        - Issuing Holder
       summary: Update an issuing holder by ID
       description: >-
         You can update an Issuing Holder to block a cardholder, to change
@@ -5826,7 +5825,7 @@ paths:
     delete:
       operationId: cancelIssuingHolder
       tags:
-        - Issuing > Issuing Holder
+        - Issuing Holder
       summary: Cancel an issuing holder by ID
       description: Cancel a single Issuing Holder.
       parameters:
@@ -5899,7 +5898,7 @@ paths:
     get:
       operationId: listIssuingHolderLogs
       tags:
-        - Issuing > Issuing Holder
+        - Issuing Holder
       summary: List issuing holder logs
       description: >-
         Here you can list and filter all Issuing Holder Logs. We return it
@@ -6059,7 +6058,7 @@ paths:
     get:
       operationId: getIssuingHolderLog
       tags:
-        - Issuing > Issuing Holder
+        - Issuing Holder
       summary: Get an issuing holder log by ID
       description: Get a single Issuing Holder Log by its id.
       parameters:
@@ -6147,7 +6146,7 @@ paths:
     post:
       operationId: createIssuingInvoice
       tags:
-        - Issuing > Issuing Invoice
+        - Issuing Invoice
       summary: Create an issuing invoice
       description: >-
         Create an Issuing Invoice to add cash to your Issuing Balance.
@@ -6203,7 +6202,7 @@ paths:
     get:
       operationId: listIssuingInvoices
       tags:
-        - Issuing > Issuing Invoice
+        - Issuing Invoice
       summary: List issuing invoices
       description: >-
         Here you can list and filter all Issuing Invoices you have made. We
@@ -6334,7 +6333,7 @@ paths:
     get:
       operationId: getIssuingInvoice
       tags:
-        - Issuing > Issuing Invoice
+        - Issuing Invoice
       summary: Get an issuing invoice by ID
       description: Get a single Issuing Invoice by its id.
       parameters:
@@ -6400,7 +6399,7 @@ paths:
     get:
       operationId: listIssuingInvoiceLogs
       tags:
-        - Issuing > Issuing Invoice
+        - Issuing Invoice
       summary: List issuing invoice logs
       description: >-
         Here you can list and filter all Issuing Invoice Logs. We return it
@@ -6554,7 +6553,7 @@ paths:
     get:
       operationId: getIssuingInvoiceLog
       tags:
-        - Issuing > Issuing Invoice
+        - Issuing Invoice
       summary: Get an issuing invoice log by ID
       description: Get a single Issuing Invoice Log by its id.
       parameters:
@@ -6635,7 +6634,7 @@ paths:
     get:
       operationId: listIssuingPurchases
       tags:
-        - Issuing > Issuing Purchase
+        - Issuing Purchase
       summary: List issuing purchases
       description: >-
         Here you can list and filter all Issuing Purchases you have under your
@@ -6819,7 +6818,7 @@ paths:
     get:
       operationId: getIssuingPurchase
       tags:
-        - Issuing > Issuing Purchase
+        - Issuing Purchase
       summary: Get an issuing purchase by ID
       description: Get a single issuing Purchase by its id.
       parameters:
@@ -6901,7 +6900,7 @@ paths:
     get:
       operationId: listIssuingPurchaseLogs
       tags:
-        - Issuing > Issuing Purchase
+        - Issuing Purchase
       summary: List issuing purchase logs
       description: >-
         Here you can list and filter all Issuing Purchase Logs. We return it
@@ -7089,7 +7088,7 @@ paths:
     get:
       operationId: getIssuingPurchaseLog
       tags:
-        - Issuing > Issuing Purchase
+        - Issuing Purchase
       summary: Get an issuing purchase log by ID
       description: Get a single Issuing Purchase Log by its id.
       parameters:
@@ -7195,7 +7194,7 @@ paths:
     get:
       operationId: listIssuingTransactions
       tags:
-        - Issuing > Issuing Transaction
+        - Issuing Transaction
       summary: List issuing transactions
       description: >-
         Here you can list and filter all Issuing Transactions you have made. We
@@ -7316,7 +7315,7 @@ paths:
     get:
       operationId: getIssuingTransaction
       tags:
-        - Issuing > Issuing Transaction
+        - Issuing Transaction
       summary: Get an issuing transaction by ID
       description: Get a single Issuing Transaction by its id.
       parameters:
@@ -7374,7 +7373,7 @@ paths:
     post:
       operationId: createIssuingWithdrawal
       tags:
-        - Issuing > Issuing Withdrawal
+        - Issuing Withdrawal
       summary: Create an issuing withdrawal
       description: >-
         Withdrawal money from your Issuing Balance.
@@ -7429,7 +7428,7 @@ paths:
     get:
       operationId: listIssuingWithdrawals
       tags:
-        - Issuing > Issuing Withdrawal
+        - Issuing Withdrawal
       summary: List issuing withdrawals
       description: >-
         Here you can list and filter all Issuing Withdrawals you have made. We
@@ -7548,7 +7547,7 @@ paths:
     get:
       operationId: getIssuingWithdrawal
       tags:
-        - Issuing > Issuing Withdrawal
+        - Issuing Withdrawal
       summary: Get an issuing withdrawal by ID
       description: Get a single issuing Withdrawal by its id.
       parameters:
