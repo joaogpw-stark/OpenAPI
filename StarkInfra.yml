@@ -158,7 +158,7 @@ tags:
       Issuing Withdrawals transfer cash from your issuing account to your
       banking account.
   - name: Credit
-  - name: Credit > Credit Note
+  - name: Credit Note
     description: >-
       Create a CCB to lend or borrow money without being a Financial
       Institution.
@@ -7609,7 +7609,7 @@ paths:
     post:
       operationId: createCreditNotes
       tags:
-        - Credit > Credit Note
+        - Credit Note
       summary: Create credit notes
       description: >-
         Create a Credit Note to generate a CCB contract. The Total Effective
@@ -7693,7 +7693,7 @@ paths:
     get:
       operationId: listCreditNotes
       tags:
-        - Credit > Credit Note
+        - Credit Note
       summary: List credit note
       description: >-
         Here you can list and filter all Credit Notes you have made. We return
@@ -7847,7 +7847,7 @@ paths:
     get:
       operationId: getCreditNote
       tags:
-        - Credit > Credit Note
+        - Credit Note
       summary: Get a credit note by ID
       description: Get a single Credit Note by its id.
       parameters:
@@ -7947,7 +7947,7 @@ paths:
     get:
       operationId: listCreditNoteLogs
       tags:
-        - Credit > Credit Note
+        - Credit Note
       summary: List credit note logs
       description: Here you can list and filter all Credit Note Logs. We return it paged.
       parameters:
@@ -8164,7 +8164,7 @@ paths:
     get:
       operationId: getCreditNoteLog
       tags:
-        - Credit > Credit Note
+        - Credit Note
       summary: Get a credit note log by ID
       description: Get a single Credit Note Log by its id.
       parameters:
