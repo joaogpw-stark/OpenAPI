@@ -10275,9 +10275,11 @@ components:
         fine:
           type: number
           example: 2.5
+          readOnly: true
         interest:
           type: number
           example: 5.2
+          readOnly: true
         tags:
           items:
             type: string
