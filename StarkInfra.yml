@@ -2085,7 +2085,7 @@ paths:
               properties:
                 id:
                   type: string
-                  example: +5511989898989
+                  example: "+5511989898989"
                 reason:
                   type: string
                   example: reconciliation
@@ -4085,7 +4085,7 @@ paths:
                   example: Upon investigation fraud was confirmed.
             example:
                 analysis: Upon investigation fraud was confirmed.
-                result: rejected
+                result: accepted
                 description: Client payed for an item and never received it.
       parameters:
         - name: version
@@ -9406,7 +9406,7 @@ components:
           example: 012.345.678-90
         id:
           type: string
-          example: +5511989898989
+          example: "+5511989898989"
         tags:
           items:
             type: string
@@ -9478,7 +9478,7 @@ components:
           example: 012.345.678-90
         keyId:
           type: string 
-          example: +5511989898989
+          example: "+5511989898989"
         id:
           type: string
           example: 5656565656565656
@@ -9798,7 +9798,7 @@ components:
           example: my-entity/123
         displayName:
           type: string
-          example: ANTHONY STAR
+          example: ANTHONY STARK
         rules:
           $ref: '#/components/schemas/Rules'
         binId:
@@ -10132,12 +10132,9 @@ components:
           example: 5656565656565656
           readOnly: true
     Rules:
-      type: object
-      properties:
-        rules:
-          type: array
-          items:
-            $ref: '#/components/schemas/Rule'
+      type: array
+      items:
+        $ref: '#/components/schemas/Rule'
     Note:
       type: object
       required:
@@ -10285,13 +10282,22 @@ components:
         tags:
           items:
             type: string
+          example: ["employees", "monthly"]
         descriptions:
+          type: array
           items:
-            type: object 
+            type: object
+            properties:
+              key:
+                type: string
+                example: Taxes
+              value: 
+                type: string
+                example: R$100,00
         discounts:
           items:
             type: object 
-            readOnly: true
+          readOnly: true
         name:
           type: string
           example: Iron Bank S.A.
@@ -10356,12 +10362,9 @@ components:
           example: '2022-05-06 11:54:31.463+00:00'
           readOnly: true
     Invoices:
-      type: object
-      properties:
-        invoices:
-          type: array
-          items:
-            $ref: '#/components/schemas/Invoice'
+      type: array
+      items:
+        $ref: '#/components/schemas/Invoice'
     Signer:
       type: object
       required:
@@ -10379,12 +10382,9 @@ components:
           type: string
           example: link
     Signers:
-      type: object
-      properties:
-        signers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Signer'
+      type: array
+      items:
+        $ref: '#/components/schemas/Signer'
     Transfer:
       type: object
       required:
